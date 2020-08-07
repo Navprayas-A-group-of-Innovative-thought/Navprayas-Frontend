@@ -42,7 +42,7 @@ git checkout -b <branch name>
 - Keeping main repo to upto date from your repo
   - First add a remote of this repo to your local named upstream
     ```
-    git remote add upstream <the above link>.git
+    git remote add upstream https://github.com/Navprayas-A-group-of-Innovative-thought/Website.git
     ```
 - Once added you can pull all the commits from main repo using below commands
 
