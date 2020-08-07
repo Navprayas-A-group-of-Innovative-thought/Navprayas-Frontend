@@ -1,9 +1,12 @@
+<p align="center">
 <img src="http://navprayas.in/static/img/pp2.png">
-# Navprayas - Main Website
+  </p>
+<br>
+<h1> Navprayas - Main Website </h1>
 
 This will be our official main website.
 
----
+
 
 ## Tech Stack
 
@@ -54,6 +57,6 @@ git checkout -b <branch name>
   git merge upstream/master
   ```
 
-I these commands are enough but still you forgot some commands you can take help from [here](https://github.com/kmrakash/practice/blob/master/GithubCommands.md)
+I think these commands are enough but still you forgot some commands you can take help from [here](https://github.com/kmrakash/practice/blob/master/GithubCommands.md)
 
 Happy Coding !!!
