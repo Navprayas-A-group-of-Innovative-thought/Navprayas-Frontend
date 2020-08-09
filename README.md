@@ -17,7 +17,10 @@ This will be our official main website.
 ## Contribution Guide
 
 - Fork the repo
-- Clone the forked repo
+- Clone the forked repo (From your profile)
+
+  > Use **yarn** to install the dependency
+
 - Since task will be assign in issue . So It is suggested to create a branch of that issue number and put all codes for the fulfillment of that task in that branch
 
   > For example i am assigned to create a sign in page in issue#1
@@ -32,7 +35,7 @@ This will be our official main website.
 - Now create a Pull Request to dev branch (It will pop on github site)
   - Note: Don't create PR in master branch . May be it create conflicts
 
-> Note: After merging your code into master branch you can delete your branch related to that issue and before working on next issue you must fetch all the code from original repo i.e (Upstream remote) command has been given below and repeat above steps
+> Note: After merging your code into master branch you can delete your branch related to that issue and before working on next issue you must fetch all the code from original repo i.e (Upstream remote) command has been given below
 
 ##### Basic commands
 
@@ -66,7 +69,7 @@ git checkout -b <branch name>
 - To check remote
   `git remote -v`
   > Generally origin is remote name associated to repo from your profile
-  > and upstream is remote name to associated to main repo
+  > and upstream is remote name associated to main repo
 
 I think these commands are enough but still you forgot some commands you can take help from [here](https://github.com/kmrakash/practice/blob/master/GithubCommands.md)
 
