@@ -6,8 +6,6 @@
 
 This will be our official main website.
 
-
-
 ## Tech Stack
 
 - _Frontend_
@@ -16,17 +14,25 @@ This will be our official main website.
   - [Redux](https://redux.js.org/)
   - [React Router](https://github.com/ReactTraining/react-router#readme)
 
-* _Backend_
-  - [Nodejs](https://nodejs.org/en/)
-  - [Express js](http://expressjs.com/)
-  - [Mongoose](https://mongoosejs.com/)
-
 ## Contribution Guide
 
 - Fork the repo
 - Clone the forked repo
-- push the assign task in your repo and create a Pull Request to dev branch
+- Since task will be assign in issue . So It is suggested to create a branch of that issue number and put all codes for the fulfillment of that task in that branch
+
+  > For example i am assigned to create a sign in page in issue#1
+
+  - First create a branch `git checkout -b issue#1`
+  - Added Sign in page and update this to github by following commands
+  - `git add .`
+  - `git commit -m "Added Sign in Page"`
+    Note:- Always add relevant commit message that define your work
+  - `git push -u origin issue#1`
+
+- Now create a Pull Request to dev branch (It will pop on github site)
   - Note: Don't create PR in master branch . May be it create conflicts
+
+> Note: After merging your code into master branch you can delete your branch related to that issue and before working on next issue you must fetch all the code from original repo i.e (Upstream remote) command has been given below and repeat above steps
 
 ##### Basic commands
 
@@ -56,6 +62,11 @@ git checkout -b <branch name>
 
   git merge upstream/master
   ```
+
+- To check remote
+  `git remote -v`
+  > Generally origin is remote name associated to repo from your profile
+  > and upstream is remote name to associated to main repo
 
 I think these commands are enough but still you forgot some commands you can take help from [here](https://github.com/kmrakash/practice/blob/master/GithubCommands.md)
 
