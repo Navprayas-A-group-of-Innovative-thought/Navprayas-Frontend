@@ -5,14 +5,18 @@
 <h1> Navprayas - Official Website </h1>
 
 This will be our official website. <br>Before contributing to this repo you must read this file to get started
+<br> Use below link for documentation reference
 
 ## Tech Stack
 
 - _Frontend_
+
   - [React](https://reactjs.org/)
   - [Reactstrap](https://reactstrap.github.io/)
   - [Redux](https://redux.js.org/)
-  - [React Router](https://github.com/ReactTraining/react-router#readme)
+  - [React Router](https://knowbody.github.io/react-router-docs/guides/NavigateOutsideComponents.html)
+  - [Font Awesome](https://fontawesome.com/)
+  - [Bootstrap](https://getbootstrap.com/)
 
 ## How to run
 
@@ -151,8 +155,8 @@ https://github.com/<your-username>/Backend.git
 
 - Keep all components in component folder
   - Naming conventions : componentName.component.js
-- For custom css styling , Keep all files in Style Folder
-  - Naming conventions : componentName.module.css
+- Keep the custom styling in same folder in which it is applicable
+  - Naming conventions : componentName.css
     > Note:- componentName is the component where style is applicable
 - All Redux file will be inside Redux Folder
   - Naming conventions
