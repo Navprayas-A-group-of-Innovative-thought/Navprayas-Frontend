@@ -6,13 +6,13 @@
 */
 
 import React from "react";
-import styles from "../styles/sample.module.css";
-import cx from "classnames";
+import "./sample.css";
+
 const sample = () => {
   return (
-    <div className={styles.sampleClassName}>
+    <div className="sampleClassName">
       Sample Component
-      <div className={cx(styles.style1, styles.style2)}>
+      <div className="style1 style2">
         This is how multiple classes is applied at one DOM check sample
         component for details
       </div>
