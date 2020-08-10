@@ -1,8 +1,8 @@
 <p align="center">
 <img src="http://navprayas.in/static/img/pp2.png">
-  </p>
+</p>
 <br>
-<h1> Navprayas - Official Website </h1>
+<h1> Navprayas-A Group of Innovative Thoughts ( Main Website Frontend ) </h1>
 
 This will be our official website. <br>Before contributing to this repo you must read this file to get started
 <br> Use below link for documentation reference
@@ -18,136 +18,119 @@ This will be our official website. <br>Before contributing to this repo you must
   - [Font Awesome](https://fontawesome.com/)
   - [Bootstrap](https://getbootstrap.com/)
 
-## How to run
+<h1>How to run</h1>
 
-<br>
-
-- **Run your code for development**
+<b>Run your code for development</b>
 
 ```
-npm start
+npm install && npm start
 ```
 
-- **Building your code**
+* **Building your code**
 
 ```
 npm run build
 ```
 
-- **Run production code**
+* **Run production code**
 
 ```
 npm run production
 ```
 
-- **Clean dist folder**
+* **Clean dist folder**
 
 ```
 npm run clean
 ```
+<br>
+<h1>Basic Commands</h1>
 
-## Contribution Guide
-
-- Fork the repo
-- Clone the forked repo (From your profile)
-
-  > Use **npm** to install the dependency
-
-- Since task will be assign in issue . So It is suggested to create a branch of that issue number and put all codes for the fulfillment of that task in that branch
-
-  > For example i am assigned to create a sign in page in issue#1
-
-  - First create a branch `git checkout -b issue#1`
-  - Added Sign in page and update this to github by following commands
-  - `git add .`
-  - `git commit -m "Added Sign in Page"`
-    Note:- Always add relevant commit message that define your work
-  - `git push -u origin issue#1`
-
-- Now create a Pull Request to dev branch (It will pop on github site)
-  - Note: Don't create PR in master branch . May be it create conflicts
-
-> Note: After merging your code into master branch you can delete your branch related to that issue and before working on next issue you must fetch all the code from original repo i.e (Upstream remote) command has been given below
-
-##### Basic commands
-
-- Cloning Command
+* Clone a repo
 
 ```
 git clone <repo link>
 ```
 
-- For creating new branch
+* Create a new branch
 
+```
+git branch <branch name>
+```
+* Create a new branch and switch to that branch
 ```
 git checkout -b <branch name>
 ```
 
-- Keeping main repo to upto date from your repo
-  - First add a remote of this repo to your local named upstream
-    ```
-    git remote add upstream https://github.com/Navprayas-A-group-of-Innovative-thought/Website.git
-    ```
-- Once added you can pull all the commits from main repo using below commands
+* Update local master from remote master(ensuring currently in master branch)
 
-  - Note: Make sure currently you are in master branch of your local repo
+```
+git pull
+```
 
-  ```
-  git fetch upstream master
+* Check remote
+`git remote -v`
 
-  git merge upstream/master
-  ```
+*Check all branches
 
-- To check remote
-  `git remote -v`
-  > Generally origin is remote name associated to repo from your profile
-  > and upstream is remote name associated to main repo
+```
+git branch -a
+```
+*Check remote branches
+
+```
+git branch -r
+```
+* Check local branches
+
+```
+git branch
+```
+* Push you files
+
+```
+git push origin <branch-name>
+``` 
+
+
 
 I think these commands are enough but still you forgot some commands you can take help from [here](https://github.com/kmrakash/practice/blob/master/GithubCommands.md)
+<br>
+<br>
+<h1>Contribution Guide</h1>
 
-**Note: If you don't have idea how to work please read these instructions carefully**
-
-### Example
-
-- Open your github profile
-- Fork Navprayas-Frontend repo
-- come to your profile and you will see you have a copy of that repo i.e Navprayas-Frontend in your profile
-- Copy `clone url` and open terminal
-- Url will be
+* Clone Navprayas Frontend Repo
 
 ```
-https://github.com/<your-username>/Backend.git
+git clone https://github.com/Navprayas-A-group-of-Innovative-thought/Navprayas-Frontend.git
 ```
 
-- Paste `git clone <url>`
-- You will see a Navprayas-Frontend folder
-- `cd Navprayas-Frontend`
-- To check your current branch `git branch`
-- **Do not write any changes in master.**
-- Now you are assigned to issue#1. So to create local branch for it from your local master branch on your local computer. First be in master branch.
-- \<repeat from here for issue 2 or later otherwise ignore>
-- open terminal and ensure you are in master branch and paste `git checkout -b issue#1`
-  - **Note: Here issue#1 is the issue number assigned to you**
-- Now work on your issue
-- Now check status of your files changed
-- `git status`
-- To add those changes in your branch `git add .`
-- Now commit your changes `git commit -m "commit message"`
-- Now it is time to push your changes to your remote branch not in upstream(Navprayas Backend)
-- `git push origin issue#1`
-  - **Note: Here issue#1 represents current working branch**
-- Now it is time to push your work to navprayas Frontend which can be done by creating a Pull request of your work
-- Open you github profile and select branch issue#1 (Current working branch)
-- Now create a pull request to Navprayas Frontend repo
-- Then Admin will merge your request to master accordingly.
-  - Note:- After Merging you can delete your issue branch
-- For another issue(assigned task), first go to master branch.
-- `git checkout master`
-- Get changes from Navprayas main repo i.e upstream. So to update you will have to fetch code from navprayas master branch.
-- `git fetch upstream master`
-  `git merge upstream/master`
-  - **These commands will bring all commits from this repo to your forked repo**
-- Now repeat steps indicated above.
+* <span class="highlight" style="background-color:inherit"><span class="colour" style="color:var(--vscode-markdown-wysList)">You will see a Navprayas-Frontend folder</span></span>
+* `cd Navprayas-Frontend`
+* Install all dependencies
+* `npm install`
+* To check your current branch - `git branch`
+* Now you have been assigned issue#1. 
+* Update your master branch from origin master - `git checkout master`
+  
+   **Repeat Point : commands to be reused**
+* `git checkout master` to switch to master branch
+* `git pull` to get changes from remote master branch to your local master branch
+* Now create a local branch named issue#1 for your work.
+* `git checkout -b issue#1`
+* Now you are in issue#1 branch and now do your work.Then add your changes.
+* `git add .`
+* Then commit your changes.
+* `git commit -m "your message"`
+* Your commit should answer what this commit will do. Answer should be This commit will "your message".
+* Now push your branch work to Navprayas frontend repo.
+* `git push origin issue#1`
+*  Now it is time to push your work to navprayas frontend but note you have to push changes to devlopment branch, process is also known as creating a pull request.
+* Open your github and select branch issue#1
+* Now create a pull request to development branch
+* Then Admin will merge your request to master accordingly.
+* For another issue, first go to **Repeat point**.
+
 
 <br>
 
