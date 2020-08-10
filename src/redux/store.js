@@ -1,0 +1,3 @@
+/*
+ Stores will be configured here
+*/
