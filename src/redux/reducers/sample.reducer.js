@@ -1,4 +1,4 @@
-// import you constants from constant folder
+// import your constants from constant folder
 import {
   USER_SIGNIN_REQUEST,
   USER_SIGNIN_SUCCESS,
@@ -8,7 +8,7 @@ import {
 /* 
 action may contain these fields
 type : | type of action you want to do
-payload : any | data that is passwd
+payload : any | data that is passed
 loading : boolean |it may take time for loading
 error : error 
 */
