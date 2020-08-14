@@ -1,0 +1,65 @@
+.boardTitle{
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 40px;
+}
+
+
+
+.line1{
+	height: 4px;
+	background: #000;
+	margin: 7px 0px 3px 0px;
+	width:100px;
+	background:#EB5310;
+}
+.line2{
+	height: 4px;
+	background: #000;
+	margin-bottom: 20px;
+	width:130px;
+	background: #EB5310;
+}
+
+CardBody,li{
+	list-style: none;
+	font-weight: 500;
+}
+
+CardBody,li,a:hover{
+	color:black;
+	text-decoration: none;
+}
+
+CardBody,li,a{
+	color:black;
+}
+
+CardBody,li,i{
+	height: 100%;
+}
+
+.publishedDate{
+	font-size: 10px;
+	margin-top: 4px;
+}
+
+.announcementSeperator{
+	background:#F79729;
+}
+
+.announcementButton{
+	margin-top:25px;
+	background-color: #F79729;
+	border-radius:13px;
+}
+
+.announcementButton:hover{
+	background-color: orangered;
+}
+
+.icon{
+	height: 100%;
+}
+
+.publish{}
