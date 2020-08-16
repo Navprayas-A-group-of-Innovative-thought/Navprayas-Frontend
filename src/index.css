@@ -1,0 +1,12 @@
+#Carousel{
+    background-color:#808080;
+    background-image: url("https://user-images.githubusercontent.com/48627031/90132130-dfe87400-dd8a-11ea-9ab5-7fdb5d79ada8.jpg");
+    color:#ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5rem;
+    height:50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
