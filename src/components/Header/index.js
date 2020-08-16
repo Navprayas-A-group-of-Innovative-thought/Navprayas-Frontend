@@ -18,13 +18,9 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-import { Link } from "react-router-dom";
-import logo from "../../assets/namedLogo.png";
-
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/navprayasLogo.svg";
 import "./Header.css";
-
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,12 +28,8 @@ const Header = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-
-      <Navbar color="light" light expand="md">
-
+    <>
       <Navbar light expand="md">
-
         <div className="container">
           <NavbarBrand href="/">
             <img
@@ -53,30 +45,6 @@ const Header = (props) => {
             <Nav className="mr-auto"></Nav>
             <Nav className="d-flex justify-content-end" navbar>
               <NavItem>
-
-                <Link className="nav-link" activeClassName="active" to={"/"}>
-                  Home
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link className="nav-link" to="#">
-                  Examination
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link
-                  className="nav-link"
-                  activeClassName="active"
-                  to={"/events"}
-                >
-                  Events
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link className="nav-link" activeClassName="active" to={"/#"}>
-                  Gallery
-                </Link>
-
                 <NavLink
                   className="nav-link"
                   exact
@@ -108,7 +76,6 @@ const Header = (props) => {
                 >
                   Gallery
                 </NavLink>
-
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
@@ -120,17 +87,6 @@ const Header = (props) => {
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-
-                <Link className="nav-link" to="#">
-                  Sign Up
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link className="nav-link" to="#">
-                  {" "}
-                  Login{" "}
-                </Link>
-
                 <NavLink className="nav-link" to="/signUp">
                   Sign Up
                 </NavLink>
@@ -139,13 +95,12 @@ const Header = (props) => {
                 <NavLink className="nav-link" to="/login">
                   Login
                 </NavLink>
- 
               </NavItem>
             </Nav>
           </Collapse>
         </div>
       </Navbar>
-    </div>
+    </>
   );
 };
 
