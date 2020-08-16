@@ -1,5 +1,5 @@
 import React from 'react'
-import './quick.css'
+import './quicklinks.css'
 import pic from '../../assets/send_24px_outlined.png'
 
 const Quicklinks = () => {

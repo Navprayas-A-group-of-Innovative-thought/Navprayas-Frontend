@@ -3,7 +3,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/home";
 import Event from "./pages/Event";
 import Header from "./components/Header";
-import Quicklinks from "./components/Quicklinks";
+import Quicklinks from "./components/Quicklinks/quicklinks.component";
 
 function App() {
   return (
