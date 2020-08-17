@@ -2,7 +2,7 @@ import React from "react";
 import "./Boards.Announcement.css";
 import BoardsAnnouncementLinks from "./Boards.Announcement.Links";
 
-import { Card, Button, CardBody, Container, Col } from "reactstrap";
+import { Card, Button, CardBody } from "reactstrap";
 
 //Sample Announcement Object
 const announcemets = [
@@ -26,21 +26,19 @@ const announcemets = [
 //Boards Announcement Start-------
 const BoardsAnnouncement = (props) => {
   return (
-    <Container fluid>
-      <Col xs="12" md="4">
-        <h3 className="boardTitle">ANNOUNCEMENTS</h3>
-        <div className="line1"></div>
-        <div className="line2"></div>
-        <Card>
-          <CardBody>
-            <BoardsAnnouncementLinks announcement={announcemets} />
-            <Button className="announcementButton pull-right">
-              VIEW ALL ANNOUNCEMENTS
-            </Button>
-          </CardBody>
-        </Card>
-      </Col>
-    </Container>
+    <>
+      <h3 className="boardTitle">ANNOUNCEMENTS</h3>
+      <div className="line1"></div>
+      <div className="line2"></div>
+      <Card>
+        <CardBody>
+          <BoardsAnnouncementLinks announcement={announcemets} />
+          <Button className="announcementButton pull-right">
+            VIEW ALL ANNOUNCEMENTS
+          </Button>
+        </CardBody>
+      </Card>
+    </>
   );
 };
 

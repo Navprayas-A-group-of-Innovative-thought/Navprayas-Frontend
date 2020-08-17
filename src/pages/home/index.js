@@ -3,23 +3,15 @@
 */
 
 import React from "react";
-import Sample from "../../components/sampleComponent/sample.component";
-import RecentActivity from "../../components/recentActivityComponent/recentActivity.component";
 import Carousel from "../../components/Carousel/Carousel.component";
-
-import Quicklinks from "../../components/Quicklinks/quicklinks.component";
-
-import BoardsAnnouncement from "../.././components/boardsAnnouncement/Boards.Announcement";
-
+import Announcements from "../../components/Announcements";
+import RecentActivity from "../../components/recentActivityComponent/recentActivity.component";
 const Home = () => {
   return (
     <>
-      Home Page
       <Carousel />
-      <Sample />
+      <Announcements />
       <RecentActivity />
-      <Quicklinks />
-      <BoardsAnnouncement />
     </>
   );
 };
