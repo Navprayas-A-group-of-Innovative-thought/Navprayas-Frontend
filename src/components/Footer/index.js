@@ -6,9 +6,58 @@
 */
 
 import React from "react";
-
+import "./footer.css";
 const Footer = () => {
-  return <h3>Footer Component</h3>;
+  return <>
+    <footer class="footer-distributed ">
+
+      <div class="footer-left ">
+        {/* <img src="./logo.svg"></img> */}
+        <h3>Navprayas</h3>
+
+        <p class="footer-links ">
+          <a href="# " class="link-1 ">ABOUT US</a>
+
+          <a href="# ">OUR TEAM</a>
+        </p>
+      </div>
+
+      <div class="footer-center ">
+
+        <div>
+          <i class="fa fa-map-marker "></i>
+          <p><span>1st floor Durga Asthan Market</span>Manpur Patwatoli, Gaya PIN-823003<span>Bihar, India</span></p>
+        </div>
+        <div>
+          <i class="fa fa-envelope "></i>
+          <p><a href="mailto:support@company.com ">navprayas.np2000@gmail.com</a></p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone "></i>
+          <p>9876543210</p>
+        </div>
+
+
+
+      </div>
+
+      <div class="footer-right ">
+
+        <div class="footer-icons ">
+
+          <a href="https://www.facebook.com/navprayas.np "><i class="fa fa-facebook "></i></a>
+          <a href="https://www.instagram.com/navprayas.np "><i class="fa fa-instagram "></i></a>
+          <a href="https://www.linkedin.com/company/navprayas "><i class="fa fa-linkedin "></i></a>
+          <a href="# "><i class="fa fa-youtube "></i></a>
+
+        </div>
+
+      </div>
+
+    </footer>
+    <p>© 2020 ALL RIGHTS RESERVED.</p>
+  </>
 };
 
 export default Footer;
