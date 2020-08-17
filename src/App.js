@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Event from "./pages/Event";
 import Header from "./components/Header";
 
+
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/events" component={Event} />
         </Switch>
       </BrowserRouter>
+      
     </>
   );
 }
