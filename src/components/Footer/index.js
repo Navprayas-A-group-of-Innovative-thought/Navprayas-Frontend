@@ -10,7 +10,7 @@ import "./footer.css";
 import logo from "../../assets/logo.svg"
 
 const Footer = () => {
-  return <>
+  return <section>
     <footer class="footer-distributed ">
 
       <div class="footer-left ">
@@ -65,8 +65,8 @@ const Footer = () => {
       </div>
 
     </footer>
-    <p>© 2020 ALL RIGHTS RESERVED.</p>
-  </>
+    <p className="footer-bottom">© 2020 ALL RIGHTS RESERVED.</p>
+  </section>
 };
 
 export default Footer;
