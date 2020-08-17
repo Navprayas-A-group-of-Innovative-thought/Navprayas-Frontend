@@ -7,13 +7,22 @@
 
 import React from "react";
 import "./footer.css";
+import logo from "../../assets/logo.svg"
+
 const Footer = () => {
   return <>
     <footer class="footer-distributed ">
 
       <div class="footer-left ">
-        {/* <img src="./logo.svg"></img> */}
-        <h3>Navprayas</h3>
+        <h3>
+          <img
+            src={logo}
+            width="250"
+            height="auto"
+            className="d-inline-block align-top"
+            alt="Logo"
+          />
+        </h3>
 
         <p class="footer-links ">
           <a href="# " class="link-1 ">ABOUT US</a>
