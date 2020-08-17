@@ -4,17 +4,21 @@
 
 import React from "react";
 import Sample from "../../components/sampleComponent/sample.component";
-import Layout from "../Layout";
 import Carousel from "../../components/Carousel/Carousel.component";
 
+import Quicklinks from "../../components/Quicklinks/quicklinks.component";
+
+import BoardsAnnouncement from "../.././components/boardsAnnouncement/Boards.Announcement";
 
 const Home = () => {
   return (
-    <Layout>
+    <>
       Home Page
       <Carousel />
       <Sample />
-    </Layout>
+      <Quicklinks />
+      <BoardsAnnouncement />
+    </>
   );
 };
 
