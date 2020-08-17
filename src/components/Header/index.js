@@ -17,6 +17,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
+
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/navprayasLogo.svg";
 import "./Header.css";
@@ -27,7 +28,7 @@ const Header = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <>
       <Navbar light expand="md">
         <div className="container">
           <NavbarBrand href="/">
@@ -99,7 +100,7 @@ const Header = (props) => {
           </Collapse>
         </div>
       </Navbar>
-    </div>
+    </>
   );
 };
 
