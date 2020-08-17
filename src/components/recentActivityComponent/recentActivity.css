@@ -1,3 +1,21 @@
+.card-deck {
+	display: flex;
+	flex-direction: row;
+	margin-left: 25px;
+	margin-top: 15px;
+}
+
+.card {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	flex: 1 0 0%;
+	margin-bottom: 0;
+	margin-left: 25px;
+	margin-top: 15px;
+	display: inline-block;
+}
+
 .activityTitle{
 	text-align: center;
 	margin:20px 0;
@@ -9,19 +27,20 @@
 }
 
 .activityCardBody{
-	padding-left: 30px;
-	padding-top: 35px;
+	padding-left: 15px;
+	padding-top: 15px;
 	background-color: #FFFAF4;
+	flex: 1 1 auto;
 }
 
 .activityCardTitle{
-	font-size:30px;
+	font-size:20px;
 	font-weight:bold;
 	margin-top: 
 }
 
 .activityCardSubtitle{
-	margin-bottom: 10px; 
+	margin-bottom: 8px; 
 	color:#AEADAD;
 	font-weight: 700;
 }
@@ -33,8 +52,8 @@
 
 .activityButton {
   background-color: #f79729;
-  border-radius: 40px;
-  width:140px;
+  border-radius: 25px;
+  width:120px;
   border-color: #f79729
 }
 
