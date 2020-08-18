@@ -8,7 +8,7 @@ const Announcements = () => {
       style={{
         margin: "15px auto",
         padding: "10px",
-        backgroundColor: "#ffe6ff",
+        backgroundColor: "#fffaf4",
         height: "auto",
       }}
     >

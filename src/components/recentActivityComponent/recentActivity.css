@@ -16,47 +16,48 @@
 	display: inline-block;
 }
 
-.activityTitle{
+.activityTitle {
 	text-align: center;
-	margin:20px 0;
+	margin: 20px 0;
 }
 
-.activityLine{
-	height:7px;
+.activityLine {
+	height: 7px;
 	background-color: orange;
 }
 
-.activityCardBody{
+.activityCardBody {
+	text-align: left;
 	padding-left: 15px;
 	padding-top: 15px;
 	background-color: #FFFAF4;
 	flex: 1 1 auto;
 }
 
-.activityCardTitle{
-	font-size:20px;
-	font-weight:bold;
-	margin-top: 
+.activityCardTitle {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top:
 }
 
-.activityCardSubtitle{
-	margin-bottom: 8px; 
-	color:#AEADAD;
+.activityCardSubtitle {
+	margin-bottom: 8px;
+	color: #AEADAD;
 	font-weight: 700;
 }
 
-.activityCardText{
-	color:#AEADAD;
+.activityCardText {
+	color: #AEADAD;
 	font-weight: 600;
 }
 
 .activityButton {
-  background-color: #f79729;
-  border-radius: 25px;
-  width:120px;
-  border-color: #f79729
+	background-color: #f79729;
+	border-radius: 25px;
+	width: 120px;
+	border-color: #f79729
 }
 
 .activityButton:hover {
-  background-color: orangered;
+	background-color: orangered;
 }

@@ -9,9 +9,9 @@ import {
   Button,
 } from "reactstrap";
 import "./recentActivity.css";
-import pic from "../../assets/react.svg";
 
 const RecentActivityCard = (props) => {
+  const pic = "http://navprayas.in/static/img/a3.png";
   return (
     <Card className="card">
       <CardImg top width="100%" src={pic} alt="Card image cap" />
