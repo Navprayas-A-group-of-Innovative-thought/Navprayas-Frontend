@@ -6,6 +6,7 @@ import {
   CarouselIndicators,
   CarouselCaption,
 } from "reactstrap";
+import "./Carousel.css";
 
 const items = [
   {
@@ -26,6 +27,7 @@ const items = [
     caption: "Slide 3",
   },
 ];
+
 
 const Carousell = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -55,7 +57,7 @@ const Carousell = (props) => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
+        <img className="carouselImage" src={item.src} alt={item.altText} />
         <CarouselCaption
           captionText={item.caption}
           captionHeader={item.caption}
@@ -66,7 +68,7 @@ const Carousell = (props) => {
 
   return (
     <>
-      <section style={{ height: "auto" }}>
+      <section className="carouselPosition">
         <Carousel activeIndex={activeIndex} next={next} previous={previous}>
           <CarouselIndicators
             items={items}

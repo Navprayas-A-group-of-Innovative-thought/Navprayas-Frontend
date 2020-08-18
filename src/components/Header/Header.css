@@ -1,6 +1,11 @@
+nav{
+	z-index: 1;
+}
+
 .Navbar {
   background-color: transparent;
 }
+
 
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .nav-link.active,
@@ -10,6 +15,10 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: black;
+  color: white;
   font-weight: 600;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+	color:orangered;
 }

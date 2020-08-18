@@ -5,7 +5,7 @@ const BoardAnnouncemetLinks = ({ announcement }) => {
   const linkComponent = announcement.map((a, i) => {
     return (
       <li>
-        <i className="fas fa-angle-double-right"></i>
+        <i className="fa fa-angle-double-right"></i>
         <Link to={"#"}>{a.announce}</Link>
         <p className="publishedDate">{a.publish}</p>
         <hr className="announcementSeperator"></hr>
