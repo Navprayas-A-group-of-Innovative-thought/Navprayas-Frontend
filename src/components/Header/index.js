@@ -19,17 +19,29 @@ import {
 } from "reactstrap";
 
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/navprayasLogo.svg";
+import logo from "../../assets/logo.svg";
 import "./Header.css";
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [navbar, setNavbar] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const changeBackground = () => {
+    if(window.scrollY >= 430) {
+      setNavbar(true);
+    }
+    else {
+      setNavbar(false);
+    }
+  };
+
+  window.addEventListener('scroll', changeBackground);
+
   return (
     <>
-      <Navbar light expand="md">
+      <Navbar light expand="md" className={navbar ? 'fixed-top scrolled' : 'fixed-top'}>
         <div className="container">
           <NavbarBrand href="/">
             <img
@@ -40,7 +52,7 @@ const Header = (props) => {
               alt="Logo"
             />
           </NavbarBrand>
-          <NavbarToggler onClick={toggle} />
+          <NavbarToggler className="custom-toggler" onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto"></Nav>
             <Nav className="d-flex justify-content-end" navbar>
