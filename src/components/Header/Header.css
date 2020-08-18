@@ -2,6 +2,15 @@ nav{
 	z-index: 1;
 }
 
+.custom-toggler .navbar-toggler-icon { 
+    background-image: url( 
+		"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+} 
+
+.navbar-toggler{
+	background-color: #2F3742;
+}
+
 .Navbar {
   background-color: transparent;
 }
@@ -21,4 +30,19 @@ nav{
 
 .navbar-light .navbar-nav .nav-link:hover{
 	color:orangered;
+}
+
+.scrolled{
+	background-color: #252F36;
+	transition: 0.5s;
+}
+
+.fixed-top{
+	transition: 0.5s;
+}
+
+@media only screen and (max-width: 767px){
+	nav{
+		background-color: #252F36;
+	}
 }
