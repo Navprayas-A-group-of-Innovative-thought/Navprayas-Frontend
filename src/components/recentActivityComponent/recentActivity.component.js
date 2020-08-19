@@ -9,7 +9,7 @@ const RecentActivity = () => {
       <Container>
         <Row>
           <Col className="text-center">
-            <h3>Recent Activities</h3>
+            <h3 className="title">Recent Activities</h3>
           </Col>
         </Row>
         <Row>

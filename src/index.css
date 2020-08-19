@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed&display=swap');
+
+*:not(#icon){
+	font-family: poppins;
+}
+
+.title{
+	font-family: roboto condensed !important;
+}

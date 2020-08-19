@@ -28,7 +28,7 @@ const BoardsAnnouncement = (props) => {
   return (
     <>
     <div className="announcementTitle">
-      <h3 className="boardTitle">ANNOUNCEMENTS</h3>
+      <h3 className="boardTitle title">ANNOUNCEMENTS</h3>
       <div className="line1"></div>
       <div className="line2"></div>
     </div>

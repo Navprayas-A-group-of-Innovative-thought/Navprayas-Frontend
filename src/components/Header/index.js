@@ -29,7 +29,7 @@ const Header = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   const changeBackground = () => {
-    if(window.scrollY >= 430) {
+    if(window.scrollY >= 80) {
       setNavbar(true);
     }
     else {
