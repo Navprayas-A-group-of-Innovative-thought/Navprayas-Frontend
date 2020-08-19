@@ -8,7 +8,8 @@ nav{
 } 
 
 .navbar-toggler{
-	background-color: #2F3742;
+	background-color: #F69925;
+	font-size: 15px;
 }
 
 .Navbar {
@@ -20,7 +21,7 @@ nav{
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show > .nav-link {
-  color: orange;
+  color: #F69925;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -33,16 +34,10 @@ nav{
 }
 
 .scrolled{
-	background-color: #252F36;
+	background-color: #262F36;
 	transition: 0.5s;
 }
 
 .fixed-top{
 	transition: 0.5s;
-}
-
-@media only screen and (max-width: 767px){
-	nav{
-		background-color: #252F36;
-	}
 }

@@ -6,9 +6,8 @@
 
 
 .boardTitle {
-  font-family: sans-serif;
   font-weight: bold;
-  font-size: 3vw;
+  font-size: 24px;
 }
 
 @media only screen and (max-width: 768px){
@@ -32,7 +31,7 @@
 .line2 {
   height: 4px;
   background: #000;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   width: 130px;
   background: #eb5310;
 }
@@ -41,6 +40,7 @@ CardBody,
 li {
   list-style: none;
   font-weight: 500;
+  font-size: 16px;
 }
 
 CardBody,
