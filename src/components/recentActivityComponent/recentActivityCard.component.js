@@ -13,8 +13,8 @@ import pic from "../../assets/react.svg";
 
 const RecentActivityCard = (props) => {
   return (
-    <Card className="card">
-      <CardImg top width="100%" src={pic} alt="Card image cap" />
+    <Card className="card abc">
+      <CardImg top width="100%" src="https://user-images.githubusercontent.com/48627031/90132130-dfe87400-dd8a-11ea-9ab5-7fdb5d79ada8.jpg" alt="Card image cap" />
       <div className="activityLine"></div>
       <CardBody className="activityCardBody">
         <CardTitle className="activityCardTitle">Rangotsav</CardTitle>

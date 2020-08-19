@@ -117,7 +117,6 @@ section {
 .footer-distributed .footer-center p a {
     color: #fff;
     text-decoration: none;
-    ;
 }
 
 .footer-distributed .footer-links a:before {
@@ -193,7 +192,7 @@ section {
 }
 
 .footer-bottom {
-
+    margin-bottom: 0;
     background-color: #2f3742;
     height: 74px;
     color: #fff;
