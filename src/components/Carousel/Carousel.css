@@ -1,0 +1,25 @@
+.carouselImage{
+	width: 100% !important;
+	object-fit: cover;
+	height:50vh;
+}
+
+
+@media only screen and (min-width: 992px){
+	.carouselPosition{
+		height: 100vh !important;
+	}
+
+}
+
+@media only screen and (min-width:768px){
+	.carouselPosition{
+		z-index: 2;
+		height: 100vh;
+	}
+	.carousel-item > img{
+		height: 100vh !important;
+	}
+}
+
+

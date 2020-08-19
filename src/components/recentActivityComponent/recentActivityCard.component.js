@@ -14,7 +14,7 @@ const RecentActivityCard = (props) => {
   const pic = "http://navprayas.in/static/img/a3.png";
   return (
     <Card className="card">
-      <CardImg top width="100%" src={pic} alt="Card image cap" />
+      <CardImg top width="100%" height="100%" src={pic} />
       <div className="activityLine"></div>
       <CardBody className="activityCardBody">
         <CardTitle className="activityCardTitle">Rangotsav</CardTitle>
