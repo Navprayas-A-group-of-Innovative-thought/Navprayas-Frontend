@@ -1,8 +1,9 @@
-.card-deck {
-	display: flex;
-	flex-direction: row;
-	margin-left: 25px;
-	margin-top: 15px;
+.activity-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  padding: 10px;
 }
 
 .card {
@@ -29,7 +30,7 @@
 .activityCardBody{
 	padding-left: 15px;
 	padding-top: 15px;
-	background-color: #FFFAF4;
+	background-color: white;
 	flex: 1 1 auto;
 }
 
@@ -42,12 +43,16 @@
 .activityCardSubtitle{
 	margin-bottom: 8px; 
 	color:#AEADAD;
+	font-size:20px;
 	font-weight: 700;
+	text-transform: uppercase;
 }
 
 .activityCardText{
-	color:#AEADAD;
-	font-weight: 600;
+	color:#9c9c9c;
+	font-weight: 500;
+	font-size:14px;
+	line-height: 26px;
 }
 
 .activityButton {

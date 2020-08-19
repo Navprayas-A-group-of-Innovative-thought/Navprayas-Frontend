@@ -10,11 +10,12 @@ import {
 } from "reactstrap";
 import "./recentActivity.css";
 import pic from "../../assets/react.svg";
+import pic1 from "./532650.jpg";
 
 const RecentActivityCard = (props) => {
   return (
     <Card className="card">
-      <CardImg top width="100%" src={pic} alt="Card image cap" />
+      <CardImg top width="100%" height="100%" src={pic1} />
       <div className="activityLine"></div>
       <CardBody className="activityCardBody">
         <CardTitle className="activityCardTitle">Rangotsav</CardTitle>

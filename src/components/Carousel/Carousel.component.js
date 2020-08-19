@@ -6,6 +6,7 @@ import {
   CarouselIndicators,
   CarouselCaption,
 } from "reactstrap";
+import "./Carousel.css";
 
 const items = [
   {
@@ -16,16 +17,18 @@ const items = [
   },
   {
     src:
-      "https://upload.wikimedia.org/wikipedia/commons/e/e0/Rectangle_example.svg",
+      "https://user-images.githubusercontent.com/48627031/90132130-dfe87400-dd8a-11ea-9ab5-7fdb5d79ada8.jpg",
     altText: "Slide 2",
     caption: "Slide 2",
   },
   {
-    src: "https://maxwelldemon.files.wordpress.com/2012/03/2x1-rectangle.png",
+    src:
+      "https://user-images.githubusercontent.com/48627031/90132130-dfe87400-dd8a-11ea-9ab5-7fdb5d79ada8.jpg",
     altText: "Slide 3",
     caption: "Slide 3",
   },
 ];
+
 
 const Carousell = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -55,7 +58,7 @@ const Carousell = (props) => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
+        <img className="carouselImage" src={item.src} alt={item.altText} />
         <CarouselCaption
           captionText={item.caption}
           captionHeader={item.caption}
@@ -66,8 +69,8 @@ const Carousell = (props) => {
 
   return (
     <>
-      <section style={{ height: "auto" }}>
-        <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+      <section className="carouselPosition">
+        <Carousel activeIndex={activeIndex} next={next} previous={previous} data-pause="hover">
           <CarouselIndicators
             items={items}
             activeIndex={activeIndex}

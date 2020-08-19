@@ -1,7 +1,24 @@
+.announcementTitle{
+  margin-top:5px;
+  width:100%;
+  margin-left: 25px;
+}
+
+
 .boardTitle {
-  font-family: sans-serif;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 24px;
+}
+
+@media only screen and (max-width: 768px){
+  .announcementTitle{
+    margin-left: 25px;
+  }
+
+  .boardTitle {
+    font-size: 35px;
+  }
+
 }
 
 .line1 {
@@ -14,7 +31,7 @@
 .line2 {
   height: 4px;
   background: #000;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   width: 130px;
   background: #eb5310;
 }
@@ -23,7 +40,9 @@ CardBody,
 li {
   list-style: none;
   font-weight: 500;
+  font-size: 16px;
 }
+
 
 CardBody,
 li,
@@ -57,14 +76,12 @@ i {
   margin-top: 25px;
   background-color: #f79729;
   border-radius: 13px;
+  margin-bottom: 15px;
 }
 
 .announcementButton:hover {
   background-color: orangered;
 }
 
-/* .icon {
-  height: 100%;
-} */
-/* 
-.publish{} */
+
+
