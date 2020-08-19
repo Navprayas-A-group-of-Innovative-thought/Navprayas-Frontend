@@ -1,3 +1,11 @@
+.activity-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  padding: 10px;
+}
+
 .card {
 	display: flex;
 	position: relative;
@@ -8,7 +16,6 @@
 	margin-top: 15px;
 	display: inline-block;
 }
-
 
 .activityTitle{
 	text-align: center;
@@ -23,7 +30,7 @@
 .activityCardBody{
 	padding-left: 15px;
 	padding-top: 15px;
-	background-color: #FFFAF4;
+	background-color: white;
 	flex: 1 1 auto;
 }
 

@@ -2,16 +2,16 @@
     font-family: Open Sans;
 }
 
-section {
+/*section {
     width: 100%;
     display: inline-block;
-    /* background: #333; */
+    /* background: #333; 
     height: 50vh;
     text-align: center;
     font-size: 22px;
     font-weight: 700;
     text-decoration: underline;
-}
+} */
 
 .footer-distributed {
     background: #252f36;
@@ -163,12 +163,12 @@ section {
     height: 35px;
     cursor: pointer;
     background-color: #33383b;
-    border-radius: 2px;
+    border-radius: 20px;
     font-size: 20px;
     color: #ffffff;
     text-align: center;
     line-height: 35px;
-    margin-right: 3px;
+    margin-right: 7px;
     margin-bottom: 5px;
 }
 
@@ -192,8 +192,10 @@ section {
 }
 
 .footer-bottom {
-    margin-bottom: 0;
-    background-color: #2f3742;
-    height: 74px;
-    color: #fff;
+  margin-bottom: 0;
+  background-color: #2f3742;
+  font-size: 12px;
+  text-align-last: center;
+  height: 1rem;
+  color: #fff;
 }

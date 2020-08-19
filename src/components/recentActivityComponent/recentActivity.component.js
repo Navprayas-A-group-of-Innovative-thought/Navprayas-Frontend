@@ -5,8 +5,8 @@ import RecentActivityCard from "./recentActivityCard.component";
 
 const RecentActivity = () => {
   return (
-    <section style={{ height: "auto", padding: "10px" }}>
-      <Container>
+    <section className="activity-section" style={{ height: "100vh", padding: "10px" }}>
+      <Container >
         <Row>
           <Col className="text-center">
             <h3 className="title">Recent Activities</h3>
