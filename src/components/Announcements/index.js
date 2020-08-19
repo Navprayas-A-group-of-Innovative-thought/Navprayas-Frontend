@@ -6,10 +6,10 @@ const Announcements = () => {
   return (
     <section
       style={{
-        margin: "15px auto",
         padding: "10px",
-        backgroundColor: "#fffaf4",
+        backgroundColor: "#f6f4f2",
         height: "auto",
+        textAlign: "left",
       }}
     >
       <Container fluid>
