@@ -27,9 +27,11 @@ const announcemets = [
 const BoardsAnnouncement = (props) => {
   return (
     <>
-      <h3 className="boardTitle">ANNOUNCEMENTS</h3>
+    <div className="announcementTitle">
+      <h3 className="boardTitle title">ANNOUNCEMENTS</h3>
       <div className="line1"></div>
       <div className="line2"></div>
+    </div>
       <Card>
         <CardBody>
           <BoardsAnnouncementLinks announcement={announcemets} />
