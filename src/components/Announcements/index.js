@@ -12,7 +12,7 @@ const Announcements = () => {
         textAlign: "left",
       }}
     >
-      <Container fluid>
+      <Container>
         <Row>
           <Col xs="12" md="4">
             <BoardsAnnouncement />

@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
 import "bootstrap-social/bootstrap-social.css";
+import "glider-js/glider.min.css";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom";
 import "./index.css";
