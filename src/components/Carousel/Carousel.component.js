@@ -29,7 +29,6 @@ const items = [
   },
 ];
 
-
 const Carousell = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
@@ -51,12 +50,12 @@ const Carousell = (props) => {
     setActiveIndex(newIndex);
   };
 
-  const slides = items.map((item) => {
+  const slides = items.map((item, i) => {
     return (
       <CarouselItem
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
-        key={item.src}
+        key={i}
       >
         <img className="carouselImage" src={item.src} alt={item.altText} />
         <CarouselCaption
@@ -70,7 +69,12 @@ const Carousell = (props) => {
   return (
     <>
       <section className="carouselPosition">
-        <Carousel activeIndex={activeIndex} next={next} previous={previous} data-pause="hover">
+        <Carousel
+          activeIndex={activeIndex}
+          next={next}
+          previous={previous}
+          data-pause="hover"
+        >
           <CarouselIndicators
             items={items}
             activeIndex={activeIndex}

@@ -5,11 +5,11 @@ import RecentActivityCard from "./recentActivityCard.component";
 
 const RecentActivity = () => {
   return (
-    <section className="activity-section" style={{ height: "100vh", padding: "10px" }}>
-      <Container >
+    <section className="activity-section">
+      <Container>
         <Row>
           <Col className="text-center">
-            <h3 className="title">Recent Activities</h3>
+            <h4>Recent Activity</h4>
           </Col>
         </Row>
         <Row>
