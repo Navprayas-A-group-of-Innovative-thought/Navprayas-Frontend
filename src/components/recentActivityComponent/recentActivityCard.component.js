@@ -6,11 +6,9 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button,
 } from "reactstrap";
 import "./recentActivity.css";
-import pic from "../../assets/react.svg";
-import pic1 from "./532650.jpg";
+import pic1 from "../../assets/react.svg";
 import CustomButton from "../Button";
 
 const RecentActivityCard = (props) => {

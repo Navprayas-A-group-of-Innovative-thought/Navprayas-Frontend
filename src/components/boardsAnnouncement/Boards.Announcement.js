@@ -2,7 +2,7 @@ import React from "react";
 import "./Boards.Announcement.css";
 import BoardsAnnouncementLinks from "./Boards.Announcement.Links";
 
-import { Card, Button, CardBody } from "reactstrap";
+import { Card, CardBody } from "reactstrap";
 
 import CustomButton from "../Button/index";
 
