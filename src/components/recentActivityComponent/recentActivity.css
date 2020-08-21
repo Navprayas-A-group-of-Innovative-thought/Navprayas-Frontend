@@ -1,9 +1,9 @@
 .activity-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70vh;
-  padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 70vh;
+	padding: 10px;
 }
 
 .card {
@@ -37,11 +37,11 @@
 .activityCardTitle{
 	font-size:20px;
 	font-weight:bold;
-	margin-top: 
+	margin-top:
 }
 
 .activityCardSubtitle{
-	margin-bottom: 8px; 
+	margin-bottom: 8px;
 	color:#AEADAD;
 	font-size:20px;
 	font-weight: 700;
@@ -53,15 +53,4 @@
 	font-weight: 500;
 	font-size:14px;
 	line-height: 26px;
-}
-
-.activityButton {
-  background-color: #f79729;
-  border-radius: 25px;
-  width:120px;
-  border-color: #f79729
-}
-
-.activityButton:hover {
-  background-color: orangered;
 }

@@ -1,6 +1,6 @@
-/*
-    Footer main file
-    Task Todo 
+/* 
+Footer main file
+    Task Todo
         complete this component
         add Footer.css in this folder if any custom css is required
 */

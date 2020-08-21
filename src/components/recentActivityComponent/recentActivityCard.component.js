@@ -11,6 +11,7 @@ import {
 import "./recentActivity.css";
 import pic from "../../assets/react.svg";
 import pic1 from "./532650.jpg";
+import CustomButton from "../Button";
 
 const RecentActivityCard = (props) => {
   return (
@@ -26,7 +27,7 @@ const RecentActivityCard = (props) => {
           Lorem Ispum is dummy text for testing <br></br>text data. It is used
           globally to fill space where <br></br>some text can be replaced.
         </CardText>
-        <Button className="activityButton">Learn More</Button>
+        <CustomButton buttonStyle="curved">Learn More</CustomButton>
       </CardBody>
     </Card>
   );

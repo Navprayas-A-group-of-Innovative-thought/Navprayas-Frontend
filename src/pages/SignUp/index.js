@@ -6,6 +6,7 @@ import { Col, Row, Button,
 from 'reactstrap';
 import './SignUp.css';
 import { Link } from 'react-router-dom';
+import CustomButton from '../../components/Button';
 
 
 const SignUp = () => {
@@ -61,7 +62,7 @@ const SignUp = () => {
                     <Label  className="signUpCheckText" for="signUpCheck" check>By clicking here, you accept the terms & conditions</Label>
                 </FormGroup>
                 <div className="signUpButtonDiv">
-                    <Button className="signUpButton">REGISTER</Button>
+                        <CustomButton className="signUpButton" buttonStyle="large curved">REGISTER</CustomButton>
                 </div>
 
                 <FormGroup>
