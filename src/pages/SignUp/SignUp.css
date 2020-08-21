@@ -74,14 +74,9 @@
 
 .signUpButton{
     margin:0 auto 20px auto;
-    background-color:#f69925;
     font-size:25px;
     font-weight: 600;
     letter-spacing: 3px;
-    width:100%;
-    border: none;
-    border-radius:25px;
-
 }
 
 .signUpLink{
@@ -114,6 +109,4 @@
     .signUpForm{
         padding:0;
     }
-
-
 }

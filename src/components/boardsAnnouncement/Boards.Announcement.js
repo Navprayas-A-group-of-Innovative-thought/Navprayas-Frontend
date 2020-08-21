@@ -4,6 +4,8 @@ import BoardsAnnouncementLinks from "./Boards.Announcement.Links";
 
 import { Card, Button, CardBody } from "reactstrap";
 
+import CustomButton from "../Button/index";
+
 //Sample Announcement Object
 const announcemets = [
   {
@@ -35,9 +37,9 @@ const BoardsAnnouncement = (props) => {
       <Card>
         <CardBody>
           <BoardsAnnouncementLinks announcement={announcemets} />
-          <Button className="announcementButton pull-right">
+          <CustomButton type="button" buttonStyle="pull-right">
             VIEW ALL ANNOUNCEMENTS
-          </Button>
+          </CustomButton>
         </CardBody>
       </Card>
     </>
