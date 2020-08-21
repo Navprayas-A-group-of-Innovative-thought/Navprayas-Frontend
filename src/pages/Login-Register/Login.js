@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-    Form, FormGroup,
-    Input
+    Form, FormGroup
 }
     from 'reactstrap';
-import { Link } from 'react-router-dom';
+import CustomInput from '../../components/Input'
 import CustomButton from '../../components/Button';
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -13,10 +13,10 @@ const Login = () => {
     <>
         <Form className="signUpForm">
             <FormGroup>
-                <Input className="signUpInput" type="email" name="email" id="email" placeholder="Email" />
+                <CustomInput type="email" name="email" id="email" label="Email"/>
             </FormGroup>
             <FormGroup>
-                <Input className="signUpInput" type="password" name="password" id="password" placeholder="Password" />
+                <CustomInput type="password" name="password" id="password" label="Password"/>
             </FormGroup>
             <div className="signUpButtonDiv">
                 <CustomButton className="signUpButton" buttonStyle="large curved">LOGIN</CustomButton>
