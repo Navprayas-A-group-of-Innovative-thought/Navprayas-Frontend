@@ -1,10 +1,8 @@
 import React from 'react';
-import { Col, Row, Button,
+import { Col, Row,
         Form, FormGroup, Label,
-        Input,
-        Container}
+        Input}
 from 'reactstrap';
-import './SignUp.css';
 import { Link } from 'react-router-dom';
 import CustomButton from '../../components/Button';
 
@@ -12,10 +10,6 @@ import CustomButton from '../../components/Button';
 const SignUp = () => {
     return(
         <>
-        <Container className="signUpContainer">
-            <h1 className="signUpTitle title">Create new account</h1>
-            <div className="signUpline1"></div>
-            <div className="signUpline2"></div>
             <Form className="signUpForm">
                 <Row form>
                     <Col md={6}>
@@ -69,7 +63,6 @@ const SignUp = () => {
                     <p>Already have an account ? <Link className="signUpLink" to="/login">LOGIN</Link></p>
                 </FormGroup>
             </Form>
-            </Container>
         </>
 
     );
