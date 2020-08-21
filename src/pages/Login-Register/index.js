@@ -5,6 +5,7 @@ import Login from './Login';
 import './LoginRegister.css';
 
 
+
 const LoginRegister = ({ title, formType }) => {
     return(
         <>

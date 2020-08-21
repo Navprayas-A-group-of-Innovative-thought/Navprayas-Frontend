@@ -1,10 +1,12 @@
 import React from 'react';
 import { Col, Row,
         Form, FormGroup, Label,
-        Input}
+        Input
+    }
 from 'reactstrap';
 import { Link } from 'react-router-dom';
 import CustomButton from '../../components/Button';
+import CustomInput from '../../components/Input'
 
 
 const SignUp = () => {
@@ -14,29 +16,29 @@ const SignUp = () => {
                 <Row form>
                     <Col md={6}>
                     <FormGroup>
-                        <Input className="signUpInput" type="text" name="firstName" id="firstName" placeholder="First Name" />
+                        <CustomInput type="text" name="firstName" id="firstName" label="First Name" />
                     </FormGroup>
                     </Col>
                     <Col md={6}>
                     <FormGroup>
-                        <Input className="signUpInput" type="text" name="lastName" id="lastName" placeholder="Last Name" />
+                        <CustomInput type="text" name="lastName" id="lastName" label="Last Name" />
                     </FormGroup>
                     </Col>
                 </Row>
                 <FormGroup>
-                    <Input className="signUpInput" type="email" name="email" id="email" placeholder="Email"/>
+                    <CustomInput type="email" name="email" id="email" label="Email"/>
                 </FormGroup>
                 <FormGroup>
-                    <Input className="signUpInput" type="password" name="password" id="password" placeholder="Password"/>
+                    <CustomInput type="password" name="password" id="password" label="Password"/>
                 </FormGroup>
                 <FormGroup>
-                    <Input className="signUpInput" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" />
+                    <CustomInput type="password" name="confirmPassword" id="confirmPassword" label="Confirm Password" />
                 </FormGroup>
                 <div className="last">
                     <Row form>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Input className="signUpInput" type="date" name="DOB" id="DOB" placeholder="DOB" onfocus="(this.type='date')"/>
+                                    <Input className="signUpInput" type="date" name="DOB" id="DOB" />
                                 </FormGroup>
                             </Col>
                         <Col md={6}>
