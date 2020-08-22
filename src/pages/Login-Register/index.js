@@ -7,6 +7,7 @@ import './LoginRegister.css';
 
 
 const LoginRegister = ({ title, formType }) => {
+
     return(
         <>
             <Container className="signUpContainer">
