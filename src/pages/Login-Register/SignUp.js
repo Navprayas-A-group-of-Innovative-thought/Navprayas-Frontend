@@ -1,47 +1,44 @@
 import React from 'react';
-import { Col, Row, Button,
+import { Col, Row,
         Form, FormGroup, Label,
-        Input,
-        Container}
+        Input
+    }
 from 'reactstrap';
-import './SignUp.css';
 import { Link } from 'react-router-dom';
+import CustomButton from '../../components/Button';
+import CustomInput from '../../components/Input'
 
 
 const SignUp = () => {
     return(
         <>
-        <Container className="signUpContainer">
-            <h1 className="signUpTitle title">Create new account</h1>
-            <div className="signUpline1"></div>
-            <div className="signUpline2"></div>
             <Form className="signUpForm">
                 <Row form>
                     <Col md={6}>
                     <FormGroup>
-                        <Input className="signUpInput" type="text" name="firstName" id="firstName" placeholder="First Name" />
+                        <CustomInput type="text" name="firstName" id="firstName" label="First Name" />
                     </FormGroup>
                     </Col>
                     <Col md={6}>
                     <FormGroup>
-                        <Input className="signUpInput" type="text" name="lastName" id="lastName" placeholder="Last Name" />
+                        <CustomInput type="text" name="lastName" id="lastName" label="Last Name" />
                     </FormGroup>
                     </Col>
                 </Row>
                 <FormGroup>
-                    <Input className="signUpInput" type="email" name="email" id="email" placeholder="Email"/>
+                    <CustomInput type="email" name="email" id="email" label="Email"/>
                 </FormGroup>
                 <FormGroup>
-                    <Input className="signUpInput" type="password" name="password" id="password" placeholder="Password"/>
+                    <CustomInput type="password" name="password" id="password" label="Password"/>
                 </FormGroup>
                 <FormGroup>
-                    <Input className="signUpInput" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" />
+                    <CustomInput type="password" name="confirmPassword" id="confirmPassword" label="Confirm Password" />
                 </FormGroup>
                 <div className="last">
                     <Row form>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Input className="signUpInput" type="date" name="DOB" id="DOB" placeholder="DOB" onfocus="(this.type='date')"/>
+                                    <Input className="signUpInput" type="date" name="DOB" id="DOB" />
                                 </FormGroup>
                             </Col>
                         <Col md={6}>
@@ -61,14 +58,13 @@ const SignUp = () => {
                     <Label  className="signUpCheckText" for="signUpCheck" check>By clicking here, you accept the terms & conditions</Label>
                 </FormGroup>
                 <div className="signUpButtonDiv">
-                    <Button className="signUpButton">REGISTER</Button>
+                        <CustomButton className="signUpButton" buttonStyle="large curved">REGISTER</CustomButton>
                 </div>
 
                 <FormGroup>
                     <p>Already have an account ? <Link className="signUpLink" to="/login">LOGIN</Link></p>
                 </FormGroup>
             </Form>
-            </Container>
         </>
 
     );

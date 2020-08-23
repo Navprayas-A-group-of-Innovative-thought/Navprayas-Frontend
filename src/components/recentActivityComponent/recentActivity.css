@@ -54,14 +54,3 @@
   font-size: 14px;
   line-height: 26px;
 }
-
-.activityButton {
-  background-color: #f79729;
-  border-radius: 25px;
-  width: 120px;
-  border-color: #f79729;
-}
-
-.activityButton:hover {
-  background-color: orangered;
-}

@@ -6,9 +6,10 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button,
 } from "reactstrap";
 import "./recentActivity.css";
+
+import CustomButton from "../Button";
 
 const RecentActivityCard = (props) => {
   const pic = "http://navprayas.in/static/img/a3.png";
@@ -25,7 +26,7 @@ const RecentActivityCard = (props) => {
           Lorem Ispum is dummy text for testing <br></br>text data. It is used
           globally to fill space where <br></br>some text can be replaced.
         </CardText>
-        <Button className="activityButton">Learn More</Button>
+        <CustomButton buttonStyle="curved">Learn More</CustomButton>
       </CardBody>
     </Card>
   );
