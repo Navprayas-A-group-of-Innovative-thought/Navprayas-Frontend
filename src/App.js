@@ -1,8 +1,8 @@
 import React from "react";
 import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
 import Home from "./pages/home";
-import Event from "./pages/Event";
-import LoginRegister from "./pages/Login-Register";
+// import Event from "./pages/Event";
+import Auth from "./pages/Auth";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -19,13 +19,13 @@ function App() {
           <Route
             exact
             path="/login"
-            component={() => <LoginRegister title="Login" formType="login" />}
+            component={() => <Auth title="Login" formType="login" />}
           />
           <Route
             exact
             path="/signup"
             component={() => (
-              <LoginRegister title="Create New Account" formType="signup" />
+              <Auth title="Create New Account" formType="signup" />
             )}
           />
           <Redirect to="/" />
