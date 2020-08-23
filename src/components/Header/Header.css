@@ -2,10 +2,10 @@ nav{
 	z-index: 1;
 }
 
-.custom-toggler .navbar-toggler-icon { 
-    background-image: url( 
-		"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
-} 
+.custom-toggler .navbar-toggler-icon {
+    background-image: url(
+		"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
 
 .navbar-toggler{
 	background-color: #F69925;
@@ -13,7 +13,7 @@ nav{
 }
 
 .Navbar {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 
@@ -21,12 +21,12 @@ nav{
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link.show,
 .navbar-light .navbar-nav .show > .nav-link {
-  color: #F69925;
+	color: #F69925;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: white;
-  font-weight: 600;
+	color: white;
+	font-weight: 600;
 }
 
 .navbar-light .navbar-nav .nav-link:hover{
@@ -34,7 +34,7 @@ nav{
 }
 
 .scrolled{
-	background-color: #262F36;
+	background-color: #262F36 !important;
 	transition: 0.5s;
 }
 
