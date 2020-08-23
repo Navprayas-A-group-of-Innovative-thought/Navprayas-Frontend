@@ -1,46 +1,47 @@
-import React, { useState, Component } from 'react';
-import './input.css';
+import React, { Component } from "react";
+import "./input.css";
 
-class CustomInput extends Component{
-    constructor({ name, id, required, type, label }){
-        super();
-        this.name = name;
-        this.id = id;
-        this.required = required;
-        this.type = type;
-        this.label = label;
-        this.state = {
-            inputfield : '',
-            content: false,
+const CustomInput = ({ ...props }) => {
+  // constructor({ name, id, required, type, label }) {
+  //   super();
+  //   this.name = name;
+  //   this.id = id;
+  //   this.required = required;
+  //   this.type = type;
+  //   this.label = label;
+  //   this.state = {
+  //     inputfield: "",
+  //     content: false,
+  //   };
+  // }
+
+  // checkContent = (event) => {
+  //   if (event.target.value === "") {
+  //     this.setState({ content: false });
+  //   } else {
+  //     this.setState({ content: true });
+  //   }
+  // };
+
+  return (
+    <div className="input">
+      <input
+        name={props.name}
+        id={props.id}
+        required={props.required}
+        type={props.type}
+        className={
+          props.type === "date"
+            ? `form-control CustomInput date`
+            : `form-control CustomInput`
         }
-    }
-
-    checkContent = (event) => {
-        if(event.target.value === ''){
-            this.setState({ content: false })
-        }
-        else {
-            this.setState({ content: true })
-        }
-    }
-
-
-    render(){
-        return(
-            <div className="input">
-                <input name={this.name}
-                        id={this.id}
-                        required={this.required}
-                        type={this.type}
-                        className={this.type === 'date' ?`form-control CustomInput date` : `form-control CustomInput`}
-                        onChange={this.checkContent}
-                >
-                </input>
-                <label className={this.state.content ? 'label labelAlways' : 'label'}>{this.label}</label>
-            </div>
-        );
-    }
-
+        onChange={props.onChange}
+      ></input>
+      <label className={props.content ? "label labelAlways" : "label"}>
+        {props.label}
+      </label>
+    </div>
+  );
 };
 
 export default CustomInput;
