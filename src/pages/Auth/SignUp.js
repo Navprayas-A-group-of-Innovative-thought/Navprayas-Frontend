@@ -47,32 +47,24 @@ const SignUp = () => {
     if (all) {
       if (confirmPassword === password) {
         setFormData({ ...formData, textChange: "Submitting" });
-        // const config = {
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        // };
+        const config = {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
 
-        // //Request Body
-        // const body = JSON.stringify({
-        //   firstName,
-        //   lastName,
-        //   email,
-        //   password,
-        //   confirmPassword,
-        //   dob,
-        //   gender,
-        // });
+        //Request Body
+        const body = JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          password,
+          confirmPassword,
+          dob,
+          gender,
+        });
         axios
-          .post(`${url}/signup`, {
-            firstName,
-            lastName,
-            email,
-            password,
-            confirmPassword,
-            dob,
-            gender,
-          })
+          .post(`${url}/signup`, body, config)
           .then((res) => {
             setFormData({
               ...formData,
@@ -85,12 +77,12 @@ const SignUp = () => {
               gender: "",
               textChange: "Submitted",
             });
-            console.log(res.data.message);
+            console.log(res.data);
           })
           .catch((err) => {
             setFormData({
               ...formData,
-              firstname: "",
+              firstName: "",
               lastName: "",
               email: "",
               password: "",
@@ -99,7 +91,7 @@ const SignUp = () => {
               gender: "",
               textChange: "Sign Up",
             });
-            console.log(err.response.data.errors);
+            console.log(err.response);
           });
       } else {
         console.error("Passwords don't match");
@@ -192,13 +184,12 @@ const SignUp = () => {
                   className="signUpInput"
                   type="select"
                   name="gender"
-                  id="gender"
-                  value={dob}
+                  value={gender}
                   onChange={handlechange("gender")}
                 >
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="others">Others</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Others">Others</option>
                 </select>
               </FormGroup>
             </Col>
