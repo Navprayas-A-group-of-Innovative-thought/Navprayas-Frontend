@@ -1,1 +1,1 @@
-export const url = "https://navprayas-backend.herokuapp.com";
+export const url = "http://localhost:5000";

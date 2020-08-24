@@ -1,10 +1,10 @@
 import * as ActionsTypes from "../constants/constant";
 
 const initialState = {
-  token: localStorage.getItem("token"),
   isAuthenticated: null,
   isLoading: false,
   user: null,
+  message: "",
 };
 
 export default function (state = initialState, action) {

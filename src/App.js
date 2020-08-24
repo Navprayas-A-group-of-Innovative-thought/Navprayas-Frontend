@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import Auth from "./pages/Auth";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Activate from "./pages/Auth/Activate";
 
 function App() {
   return (
@@ -18,6 +19,11 @@ function App() {
           }
           <Route
             exact
+            path="/users/activate/:token"
+            component={(props) => <Activate {...props} />}
+          />
+          <Route
+            exact
             path="/login"
             component={() => <Auth title="Login" formType="login" />}
           />
@@ -28,7 +34,7 @@ function App() {
               <Auth title="Create New Account" formType="signup" />
             )}
           />
-          <Redirect to="/" />
+          <Redirect to={"/"} />
         </Switch>
         <Footer />
       </BrowserRouter>
