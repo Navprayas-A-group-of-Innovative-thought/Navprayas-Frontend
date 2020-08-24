@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import Auth from "./pages/Auth";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import forgotPassword from "./pages/Auth/ResetPassword";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Auth title="Create New Account" formType="signup" />
             )}
           />
+          <Route exact path="/reset" component={forgotPassword} />
           <Redirect to="/" />
         </Switch>
         <Footer />
