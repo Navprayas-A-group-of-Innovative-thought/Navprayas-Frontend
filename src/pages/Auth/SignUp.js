@@ -116,6 +116,7 @@ const SignUp = () => {
           <Col md={6}>
             <FormGroup>
               <Input
+                className="signUpInput"
                 type="text"
                 name="firstName"
                 id="firstName"
@@ -129,6 +130,7 @@ const SignUp = () => {
           <Col md={6}>
             <FormGroup>
               <Input
+              className="signUpInput"
                 type="text"
                 name="lastName"
                 id="lastName"
@@ -142,6 +144,7 @@ const SignUp = () => {
         </Row>
         <FormGroup>
           <Input
+            className="signUpInput"
             type="email"
             name="email"
             id="email"
@@ -153,6 +156,7 @@ const SignUp = () => {
         </FormGroup>
         <FormGroup>
           <Input
+            className="signUpInput"
             type="password"
             name="password"
             id="password"
@@ -164,6 +168,7 @@ const SignUp = () => {
         </FormGroup>
         <FormGroup>
           <Input
+            className="signUpInput"
             type="password"
             name="confirmPassword"
             id="confirmPassword"

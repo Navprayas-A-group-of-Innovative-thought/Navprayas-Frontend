@@ -22,7 +22,7 @@ const Login = () => {
                 <CustomButton className="signUpButton" buttonStyle="large curved">LOGIN</CustomButton>
             </div>
             <FormGroup>
-                <Link className="signUpLink">Forgot Password?</Link>
+                <Link className="signUpLink" to={"/reset"}>Forgot Password?</Link>
             </FormGroup>
             <FormGroup>
                 <p>Don't have an account ? <Link className="signUpLink" to="/signup">REGISTER HERE</Link></p>
