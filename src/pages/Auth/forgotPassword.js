@@ -1,9 +1,9 @@
 import React from 'react'
 import {
-    Form, FormGroup, Container
+    Form, FormGroup, Container, Input
 }
     from 'reactstrap';
-import CustomInput from '../../components/Input'
+
 import CustomButton from '../../components/Button';
 import { Link } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ const forgotPassword = () => {
                 <Form className="signUpForm">
                     <p>Enter your email address below and we'll send you a link to reset your password.</p>
                     <FormGroup>
-                        <CustomInput type="email" name="email" id="email" label="Email" />
+                        <Input className="signUpInput" type="email" name="email" id="email" placeholder="Email"/>
                     </FormGroup>
                     <div className="signUpButtonDiv">
                         <CustomButton className="signUpButton mt-4" buttonStyle="large curved">Reset Password</CustomButton>
