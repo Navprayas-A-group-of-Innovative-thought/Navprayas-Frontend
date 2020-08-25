@@ -7,18 +7,6 @@ import { Container, Row, Col, Alert } from "reactstrap";
 import CustomButton from "../../components/Button";
 import AlertModal from "../../components/Alert.component";
 
-// const ShowDetails = ({ User, otherDetails }) => {
-//   if (User) {
-//     return (
-//       <>
-//         <h1>Welcome {User.firstName}</h1>
-//         <h1>{User.email}</h1>
-//         <h1>{otherDetails.isMember}</h1>
-//       </>
-//     );
-//   }
-// };
-
 const Activate = ({ match }) => {
   const [formData, setFormData] = useState({
     token: "",
