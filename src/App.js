@@ -9,6 +9,7 @@ import forgotPassword from "./pages/Auth/forgotPassword";
 import Activate from "./pages/Auth/Activate";
 
 function App() {
+  console.log(process.env.REACT_APP_API_URL);
   return (
     <>
       <BrowserRouter>
@@ -37,7 +38,6 @@ function App() {
           />
           <Route exact path="/reset" component={forgotPassword} />
           <Redirect to="/" />
-          <Redirect to={"/"} />
         </Switch>
         <Footer />
       </BrowserRouter>
