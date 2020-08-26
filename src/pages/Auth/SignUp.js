@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import CustomButton from "../../components/Button";
 import axios from "axios";
 import { url } from "../../redux/api";
-// import Input from "../../components/Input";
+import AlertModal from "../../components/Alert.component";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -14,8 +14,13 @@ const SignUp = () => {
     password: "",
     confirmPassword: "",
     dob: "",
-    gender: "",
+    gender: "Male",
     textChange: "Sign Up",
+  });
+  const [alertMsg, setAlertMsg] = useState({
+    show: false,
+    color: "",
+    msg: "",
   });
   const [terms, setTerms] = useState(false);
 
@@ -34,6 +39,7 @@ const SignUp = () => {
     gender,
   } = formData;
 
+  const { show, color, msg } = alertMsg;
   const handleSubmit = (e) => {
     e.preventDefault();
     const all =
@@ -68,7 +74,7 @@ const SignUp = () => {
           .then((res) => {
             setFormData({
               ...formData,
-              firstname: "",
+              firstName: "",
               lastName: "",
               email: "",
               password: "",
@@ -76,6 +82,12 @@ const SignUp = () => {
               dob: "",
               gender: "",
               textChange: "Submitted",
+            });
+            setAlertMsg({
+              ...alertMsg,
+              show: true,
+              msg: res.data.responseData,
+              color: "success",
             });
             console.log(res.data);
           })
@@ -91,23 +103,47 @@ const SignUp = () => {
               gender: "",
               textChange: "Sign Up",
             });
+            setAlertMsg({
+              ...alertMsg,
+              show: true,
+              msg: err.response.data.errorDetails,
+              color: "danger",
+            });
             console.log(err.response);
           });
       } else {
-        console.error("Passwords don't match");
+        setAlertMsg({
+          ...alertMsg,
+          show: true,
+          msg: "Password did not match",
+          color: "danger",
+        });
       }
     } else {
-      console.error("Please fill all fields");
+      setAlertMsg({
+        ...alertMsg,
+        show: true,
+        msg: "All Fields are required",
+        color: "danger",
+      });
     }
   };
 
   return (
     <>
       <Form className="signUpForm">
+        <AlertModal
+          color={color}
+          isOpen={show}
+          toggle={() => setAlertMsg({ ...alertMsg, show: !show })}
+        >
+          {msg}
+        </AlertModal>
         <Row form>
           <Col md={6}>
             <FormGroup>
               <Input
+                className="signUpInput"
                 type="text"
                 name="firstName"
                 id="firstName"
@@ -121,6 +157,7 @@ const SignUp = () => {
           <Col md={6}>
             <FormGroup>
               <Input
+                className="signUpInput"
                 type="text"
                 name="lastName"
                 id="lastName"
@@ -134,6 +171,7 @@ const SignUp = () => {
         </Row>
         <FormGroup>
           <Input
+            className="signUpInput"
             type="email"
             name="email"
             id="email"
@@ -145,6 +183,7 @@ const SignUp = () => {
         </FormGroup>
         <FormGroup>
           <Input
+            className="signUpInput"
             type="password"
             name="password"
             id="password"
@@ -156,6 +195,7 @@ const SignUp = () => {
         </FormGroup>
         <FormGroup>
           <Input
+            className="signUpInput"
             type="password"
             name="confirmPassword"
             id="confirmPassword"
