@@ -6,6 +6,7 @@ import Auth from "./pages/Auth";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Activate from "./pages/Auth/Activate";
+import Gallery from "./pages/Gallery"
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Auth title="Create New Account" formType="signup" />
             )}
           />
+          <Route exact path="/gallery" component={Gallery} />
           <Redirect to={"/"} />
         </Switch>
         <Footer />
