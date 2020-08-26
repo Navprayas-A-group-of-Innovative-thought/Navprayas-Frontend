@@ -5,10 +5,12 @@ import Home from "./pages/home";
 import Auth from "./pages/Auth";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ForgotPassword from "./pages/Auth/forgotPassword";
 import Activate from "./pages/Auth/Activate";
 import Gallery from "./pages/Gallery"
 
 function App() {
+  console.log(process.env.REACT_APP_API_URL);
   return (
     <>
       <BrowserRouter>
@@ -37,6 +39,8 @@ function App() {
           />
           <Route exact path="/gallery" component={Gallery} />
           <Redirect to={"/"} />
+          <Route exact path="/reset" component={ForgotPassword} />
+          <Redirect to="/" />
         </Switch>
         <Footer />
       </BrowserRouter>
