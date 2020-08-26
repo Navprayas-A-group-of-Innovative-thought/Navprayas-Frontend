@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import forgotPassword from "./pages/Auth/forgotPassword";
 import Activate from "./pages/Auth/Activate";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -36,7 +37,8 @@ function App() {
             )}
           />
           <Route exact path="/reset" component={forgotPassword} />
-          <Redirect to="/" />
+          <Route exact path="/user/profile" component={Profile} />
+          <Redirect to={"/"}/>
           <Redirect to={"/"} />
         </Switch>
         <Footer />
