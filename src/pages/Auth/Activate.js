@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import jwt from "jsonwebtoken";
 import { Link, Redirect } from "react-router-dom";
-import { url } from "../../redux/api";
+// import { url } from "../../redux/api";
 import CustomButton from "../../components/Button";
 import AlertModal from "../../components/Alert.component";
+
+const url = process.env.REACT_APP_API_URL;
 
 const Activate = ({ match }) => {
   const [formData, setFormData] = useState({
@@ -45,7 +47,7 @@ const Activate = ({ match }) => {
           ...alertMsg,
           show: true,
           color: "success",
-          msg: res.data.errorDetails,
+          msg: res.data.responseData,
         });
         setFormData({
           ...formData,
