@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Row, Form, FormGroup, Label, Input } from "reactstrap";
+import { Form, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
 import CustomButton from "../../components/Button";
 import axios from "axios";
@@ -141,7 +141,7 @@ const SignUp = () => {
         </AlertModal>
         <div className="row">
           <div className="col-md-6">
-            <FormGroup>
+            <div className="form-group">
               <Input
                 className="signUpInput"
                 type="text"
@@ -152,10 +152,10 @@ const SignUp = () => {
                 value={firstName}
                 onChange={handlechange("firstName")}
               />
-            </FormGroup>
+            </div>
           </div>
           <div className="col-md-6">
-            <FormGroup>
+            <div className="form-group">
               <Input
                 className="signUpInput"
                 type="text"
@@ -166,10 +166,10 @@ const SignUp = () => {
                 value={lastName}
                 onChange={handlechange("lastName")}
               />
-            </FormGroup>
+            </div>
           </div>
         </div>
-        <FormGroup>
+        <div className="form-group">
           <Input
             className="signUpInput"
             type="email"
@@ -180,8 +180,8 @@ const SignUp = () => {
             onChange={handlechange("email")}
             label="Email"
           />
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div className="form-group">
           <Input
             className="signUpInput"
             type="password"
@@ -192,8 +192,8 @@ const SignUp = () => {
             onChange={handlechange("password")}
             placeholder="Password"
           />
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div className="form-group">
           <Input
             className="signUpInput"
             type="password"
@@ -204,24 +204,25 @@ const SignUp = () => {
             onChange={handlechange("confirmPassword")}
             placeholder="Confirm Password"
           />
-        </FormGroup>
+        </div>
         <div className="last">
           <div className="row">
             <div className="col-md-6">
-              <FormGroup>
+              <div className="form-group">
                 <Input
                   className="signUpInput"
                   type="date"
                   name="dob"
                   value={dob}
+                  placeholder="DOB"
                   onChange={handlechange("dob")}
                 />
-              </FormGroup>
+              </div>
             </div>
             <div className="col-md-6">
-              <FormGroup>
+              <div className="form-group">
                 <select
-                  className="signUpInput"
+                  className="signUpInput signUpGender"
                   type="select"
                   name="gender"
                   value={gender}
@@ -231,11 +232,11 @@ const SignUp = () => {
                   <option value="Female">Female</option>
                   <option value="Others">Others</option>
                 </select>
-              </FormGroup>
+              </div>
             </div>
           </div>
         </div>
-        <FormGroup className="signUpTerms" check>
+        <div className="signUpTerms form-group form-check">
           <Input
             className="signUpCheckBox"
             type="checkbox"
@@ -245,7 +246,7 @@ const SignUp = () => {
           <Label className="signUpCheckText" for="signUpCheck" check>
             By clicking here, you accept the terms & conditions
           </Label>
-        </FormGroup>
+        </div>
         <div className="signUpButtonDiv">
           <CustomButton
             className="signUpButton"
@@ -257,14 +258,14 @@ const SignUp = () => {
           </CustomButton>
         </div>
 
-        <FormGroup>
+        <div className="form-group">
           <p>
             Already have an account ?{" "}
             <Link className="signUpLink" to="/login">
               LOGIN
             </Link>
           </p>
-        </FormGroup>
+        </div>
       </Form>
     </>
   );

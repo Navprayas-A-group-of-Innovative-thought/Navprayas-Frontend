@@ -25,29 +25,29 @@ import "./Header.css";
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [navbar, setNavbar] = useState(false);
-  const [color, setColor] = useState("transparent");
+  //const [color, setColor] = useState("transparent");
 
 
   const toggle = () => setIsOpen(!isOpen);
 
-  const changeBackground = () => {
-    if(window.scrollY >= 80) {
-      setNavbar(true);
-    }
-    else {
-      setNavbar(false);
-    }
-  };
+  // const changeBackground = () => {
+  //   if(window.scrollY >= 80) {
+  //     setNavbar(true);
+  //   }
+  //   else {
+  //     setNavbar(false);
+  //   }
+  // };
 
-  const changeColor = (color) => {
-    setColor(color);
-  }
+  // const changeColor = (color) => {
+  //   setColor(color);
+  // }
 
-  window.addEventListener('scroll', changeBackground);
+ // window.addEventListener('scroll', changeBackground);
 
   return (
     <>
-      <Navbar style={{background:`${color}`}} light expand="md" className={navbar ? 'fixed-top scrolled' : 'fixed-top'}>
+      <Navbar style={{background:"#262F36"}} light expand="md" className='fixed-top'>
         <div className="container">
           <NavbarBrand href="/">
             <img
@@ -68,13 +68,12 @@ const Header = (props) => {
                   exact
                   activeStyle={{ color: "orange" }}
                   to={"/"}
-                  onClick={() => changeColor("transparent")}
                 >
                   Home
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link" to="/user/profile" onClick={() => changeColor("#262F36")}>
+                <NavLink className="nav-link" to="/user/profile">
                   Examination
                 </NavLink>
               </NavItem>
@@ -83,7 +82,7 @@ const Header = (props) => {
                   className="nav-link"
                   activeStyle={{ color: "orange" }}
                   to={"/events"}
-                  onClick={() => changeColor("#262F36")}
+
                 >
                   Events
                 </NavLink>
@@ -93,7 +92,7 @@ const Header = (props) => {
                   className="nav-link"
                   activeStyle={{ color: "orange" }}
                   to={"/gallery"}
-                  onClick={() => changeColor("#262F36")}
+
                 >
                   Gallery
                 </NavLink>
@@ -108,12 +107,12 @@ const Header = (props) => {
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-                <NavLink className="nav-link" to="/signUp" onClick={() => changeColor("#262F36")}>
+                <NavLink className="nav-link" to="/signUp">
                   Sign Up
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link" to="/login" onClick={() => changeColor("#262F36")}>
+                <NavLink className="nav-link" to="/login">
                   Login
                 </NavLink>
               </NavItem>

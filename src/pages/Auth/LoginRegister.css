@@ -36,17 +36,26 @@
 
 .signUpInput {
     background-color: #fffaf4;
-    border-color: #f69925;
+    border:none;
     color: black;
     border-radius: 10px;
     font-size: 18px;
     margin-bottom: 30px;
     padding: 8px 0px 8px 25px;
-    height: 55px;
+    height: 55px !important;
+}
+
+.signUpGender:focus{
+    outline:none !important;
 }
 
 .signUpInput::placeholder {
     color: black;
+}
+
+.signUpInput:focus{
+    box-shadow: 0 0 0 0.2rem rgba(246, 152, 37, 0.428);
+    background: rgb(253, 240, 223)
 }
 
 .last {

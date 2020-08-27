@@ -1,19 +1,12 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import pic1 from './Pics/1.jpg'
-import pic2 from './Pics/2.jpg'
-import pic3 from './Pics/3.jpg'
-import pic4 from './Pics/4.jpg'
-import pic5 from './Pics/5.jpg'
-import pic6 from './Pics/6.png'
-import pic7 from './Pics/7.jpg'
-import pic8 from './Pics/8.jpg'
-import pic9 from './Pics/9.jpg'
-import pic10 from './Pics/10.jpg'
-import pic11 from './Pics/11.jpg'
-import pic12 from './Pics/12.jpg'
-import pic13 from './Pics/13.jpg'
-import pic14 from './Pics/14.png'
+import pic1 from './Pics/1.JPG'
+import pic2 from './Pics/2.JPG'
+import pic3 from './Pics/3.JPG'
+import pic4 from './Pics/4.JPG'
+import pic5 from './Pics/5.JPG'
+import pic6 from './Pics/6.JPG'
+import pic7 from './Pics/7.JPG'
 import Image from './image'
 import './Gallery.css'
 
@@ -27,40 +20,40 @@ const Gallery = () => {
                 <div className="Galleryline2"></div>
                 <Row>
                     <Col lg="4" md="6">
-                        <Image pic1={pic1}/>
+                        <Image pic={pic1}/>
                     </Col>
                     <Col lg="4" md="6">
-                        <Image pic1={pic2}/>
+                        <Image pic={pic2}/>
                     </Col>
                     <Col lg="4" md="6">
-                        <Image pic1={pic3}/>
+                        <Image pic={pic3}/>
                     </Col>
                     <Col lg="4" md="6">
-                        <Image pic1={pic4}/>
+                        <Image pic={pic4}/>
                     </Col>
                     <Col lg="4" md="6">
-                        <Image pic1={pic5}/>
+                        <Image pic={pic5}/>
                     </Col>
                     <Col lg="4" md="6">
-                        <Image pic1={pic6}/>
+                        <Image pic={pic6}/>
                     </Col>
                     <Col lg="4" md="6">
-                        <Image pic1={pic7} />
+                        <Image pic={pic7} />
                     </Col>
                     <Col lg="4" md="6">
-                        <Image pic1={pic8} />
+                        <Image pic={pic1} />
                     </Col>
                     <Col lg="4" md="6">
-                        <Image pic1={pic9} />
+                        <Image pic={pic2} />
                     </Col>
                     <Col lg="4" md="6">
-                        <Image pic1={pic10} />
+                        <Image pic={pic3} />
                     </Col>
                     <Col lg="4" md="6">
-                        <Image pic1={pic11} />
+                        <Image pic={pic4} />
                     </Col>
                     <Col lg="4" md="6">
-                        <Image pic1={pic12} />
+                        <Image pic={pic5} />
                     </Col>
                 </Row>
             </Container>
