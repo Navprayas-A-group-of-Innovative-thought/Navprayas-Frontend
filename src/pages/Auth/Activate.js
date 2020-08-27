@@ -29,7 +29,7 @@ const Activate = ({ match }) => {
     }
 
     console.log(token);
-  }, []);
+  }, [token]);
 
   const { token, name, email } = formData;
   const { show, msg, color } = alertMsg;

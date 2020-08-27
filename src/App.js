@@ -5,7 +5,8 @@ import Event from "./pages/Event";
 import Auth from "./pages/Auth";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ForgotPassword from "./pages/Auth/forgotPassword";
+import ForgotPassword from "./pages/Auth/ForgotPassword";
+import NewPassword from "./pages/Auth/NewPassword";
 import Activate from "./pages/Auth/Activate";
 import Gallery from "./pages/Gallery";
 import Profile from "./pages/Profile";
@@ -25,6 +26,11 @@ function App() {
             exact
             path="/users/activate/:token"
             component={(props) => <Activate {...props} />}
+          />
+          <Route
+            exact
+            path="/users/password/reset/:token"
+            component={(props) => <NewPassword {...props} />}
           />
           <Route
             exact
