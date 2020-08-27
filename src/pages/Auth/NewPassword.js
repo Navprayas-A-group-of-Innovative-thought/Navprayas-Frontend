@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import AlertModal from "../../components/Alert.component";
 import axios from "axios";
-import { url } from "../../redux/api";
+// import { url } from "../../redux/api";
+
+const url = process.env.REACT_APP_API_URL;
 
 const NewPassword = ({ match }) => {
   const [data, setData] = useState({

@@ -3,8 +3,10 @@ import { Col, Row, Form, FormGroup, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
 import CustomButton from "../../components/Button";
 import axios from "axios";
-import { url } from "../../redux/api";
+// import { url } from "../../redux/api";
 import AlertModal from "../../components/Alert.component";
+
+const url = process.env.REACT_APP_API_URL;
 
 const SignUp = () => {
   const [formData, setFormData] = useState({

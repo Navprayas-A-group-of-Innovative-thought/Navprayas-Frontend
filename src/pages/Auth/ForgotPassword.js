@@ -3,7 +3,9 @@ import { Form, FormGroup, Container, Input, Row, Col } from "reactstrap";
 import CustomButton from "../../components/Button";
 import AlertModal from "../../components/Alert.component";
 import axios from "axios";
-import { url } from "../../redux/api";
+// import { url } from "../../redux/api";
+
+const url = process.env.REACT_APP_API_URL;
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
