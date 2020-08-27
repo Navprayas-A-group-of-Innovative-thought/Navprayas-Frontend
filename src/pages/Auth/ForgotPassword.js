@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Form, Input } from "reactstrap";
 import CustomButton from "../../components/Button";
-import { Link } from "react-router-dom";
 import AlertModal from "../../components/Alert.component";
 import axios from "axios";
-import { url } from "../../redux/api";
+// import { url } from "../../redux/api";
+
+const url = process.env.REACT_APP_API_URL;
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -17,17 +18,40 @@ const ForgotPassword = () => {
   const { show, color, msg } = alertMsg;
 
   const handleSubmit = (e) => {
+    console.log(email);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const body = JSON.stringify({
+      email,
+    });
+
     axios
-      .put(url + "/forgotpassword", email)
+      .put(url + "/forgotpassword", body, config)
       .then((res) => {
-        console.log(res.data);
+        setAlertMsg({
+          ...alertMsg,
+          color: "success",
+          show: true,
+          msg: res.data.responseData,
+        });
       })
       .catch((err) => {
         console.log(err.response.data);
+        setAlertMsg({
+          ...alertMsg,
+          color: "danger",
+          show: true,
+          msg: err.response.data.errorDetails,
+        });
       });
 
     e.preventDefault();
   };
+  
 
   return (
     <>
@@ -37,7 +61,13 @@ const ForgotPassword = () => {
         <div className="signUpline2"></div>
         <div className="row">
           <div className="col-6 offset-3">
-            <AlertModal color="success">Yepp</AlertModal>
+            <AlertModal
+              color={color}
+              isOpen={show}
+              toggle={() => setAlertMsg({ ...alertMsg, show: !show })}
+            >
+              {msg}
+            </AlertModal>
           </div>
         </div>
 
@@ -62,15 +92,6 @@ const ForgotPassword = () => {
             >
               Reset Password
             </CustomButton>
-          </div>
-          <div className="form-group text-center mt-4 mb-4">
-            <Link className="signUpLink" to={"/login"}>
-              Login
-            </Link>{" "}
-            or{" "}
-            <Link className="signUpLink" to={"/signup"}>
-              Sign Up
-            </Link>
           </div>
         </Form>
       </div>
