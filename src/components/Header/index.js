@@ -74,7 +74,7 @@ const Header = (props) => {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link" to="/exam" onClick={() => changeColor("#262F36")}>
+                <NavLink className="nav-link" to="/user/profile" onClick={() => changeColor("#262F36")}>
                   Examination
                 </NavLink>
               </NavItem>

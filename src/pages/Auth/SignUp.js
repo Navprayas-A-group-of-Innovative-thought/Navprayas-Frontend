@@ -139,8 +139,8 @@ const SignUp = () => {
         >
           {msg}
         </AlertModal>
-        <Row form>
-          <Col md={6}>
+        <div className="row">
+          <div className="col-md-6">
             <FormGroup>
               <Input
                 className="signUpInput"
@@ -153,8 +153,8 @@ const SignUp = () => {
                 onChange={handlechange("firstName")}
               />
             </FormGroup>
-          </Col>
-          <Col md={6}>
+          </div>
+          <div className="col-md-6">
             <FormGroup>
               <Input
                 className="signUpInput"
@@ -167,8 +167,8 @@ const SignUp = () => {
                 onChange={handlechange("lastName")}
               />
             </FormGroup>
-          </Col>
-        </Row>
+          </div>
+        </div>
         <FormGroup>
           <Input
             className="signUpInput"
@@ -206,8 +206,8 @@ const SignUp = () => {
           />
         </FormGroup>
         <div className="last">
-          <Row form>
-            <Col md={6}>
+          <div className="row">
+            <div className="col-md-6">
               <FormGroup>
                 <Input
                   className="signUpInput"
@@ -217,8 +217,8 @@ const SignUp = () => {
                   onChange={handlechange("dob")}
                 />
               </FormGroup>
-            </Col>
-            <Col md={6}>
+            </div>
+            <div className="col-md-6">
               <FormGroup>
                 <select
                   className="signUpInput"
@@ -232,8 +232,8 @@ const SignUp = () => {
                   <option value="Others">Others</option>
                 </select>
               </FormGroup>
-            </Col>
-          </Row>
+            </div>
+          </div>
         </div>
         <FormGroup className="signUpTerms" check>
           <Input
