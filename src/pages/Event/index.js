@@ -14,9 +14,9 @@ const Event = () => {
   console.log(webinars);
 
   return (
-    <section style={{ height: "auto", marginTop: "80px" }}>
+    <section style={{ height: "auto", margin: "80px" }}>
       <div className="container">
-        <div className="row ">
+        <div className="row">
           <div className="col text-center">
             <h1>Our Events</h1>
             <p className="lead">
