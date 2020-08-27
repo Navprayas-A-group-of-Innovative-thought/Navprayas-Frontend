@@ -2,66 +2,55 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70vh;
+  height: auto;
   padding: 10px;
 }
 
 .card {
-	display: flex;
-	position: relative;
-	flex-direction: column;
-	flex: 1 0 0%;
-	margin-bottom: 0;
-	margin-left: 25px;
-	margin-top: 15px;
-	display: inline-block;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex: 1 0 0%;
+  margin-bottom: 0;
+  margin-left: 25px;
+  margin-top: 15px;
+  display: inline-block;
 }
 
-.activityTitle{
-	text-align: center;
-	margin:20px 0;
+.activityTitle {
+  text-align: center;
+  margin: 20px 0;
 }
 
-.activityLine{
-	height:7px;
-	background-color: orange;
+.activityLine {
+  height: 7px;
+  background-color: orange;
 }
 
-.activityCardBody{
-	padding-left: 15px;
-	padding-top: 15px;
-	background-color: white;
-	flex: 1 1 auto;
+.activityCardBody {
+  text-align: left;
+  padding-left: 15px;
+  padding-top: 15px;
+  background-color: white;
+  flex: 1 1 auto;
 }
 
-.activityCardTitle{
-	font-size:20px;
-	font-weight:bold;
-	margin-top: 
+.activityCardTitle {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.activityCardSubtitle{
-	margin-bottom: 8px; 
-	color:#AEADAD;
-	font-size:20px;
-	font-weight: 700;
-	text-transform: uppercase;
+.activityCardSubtitle {
+  margin-bottom: 8px;
+  color: #aeadad;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-.activityCardText{
-	color:#9c9c9c;
-	font-weight: 500;
-	font-size:14px;
-	line-height: 26px;
-}
-
-.activityButton {
-  background-color: #f79729;
-  border-radius: 25px;
-  width:120px;
-  border-color: #f79729
-}
-
-.activityButton:hover {
-  background-color: orangered;
+.activityCardText {
+  color: #9c9c9c;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 26px;
 }

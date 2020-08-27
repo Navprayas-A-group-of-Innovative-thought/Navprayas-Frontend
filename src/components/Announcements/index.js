@@ -9,10 +9,10 @@ const Announcements = () => {
         padding: "10px",
         backgroundColor: "#f6f4f2",
         height: "auto",
-        textAlign: "left"
+        textAlign: "left",
       }}
     >
-      <Container fluid>
+      <Container>
         <Row>
           <Col xs="12" md="4">
             <BoardsAnnouncement />

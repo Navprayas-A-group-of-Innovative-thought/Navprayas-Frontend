@@ -72,16 +72,6 @@ i {
   background: #f79729;
 }
 
-.announcementButton {
-  margin-top: 25px;
-  background-color: #f79729;
-  border-radius: 13px;
-  margin-bottom: 15px;
-}
-
-.announcementButton:hover {
-  background-color: orangered;
-}
 
 
 

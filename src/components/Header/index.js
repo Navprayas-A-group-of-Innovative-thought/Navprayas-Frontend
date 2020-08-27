@@ -25,6 +25,8 @@ import "./Header.css";
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [navbar, setNavbar] = useState(false);
+  const [color, setColor] = useState("transparent");
+
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -37,11 +39,15 @@ const Header = (props) => {
     }
   };
 
+  const changeColor = (color) => {
+    setColor(color);
+  }
+
   window.addEventListener('scroll', changeBackground);
 
   return (
     <>
-      <Navbar light expand="md" className={navbar ? 'fixed-top scrolled' : 'fixed-top'}>
+      <Navbar style={{background:`${color}`}} light expand="md" className={navbar ? 'fixed-top scrolled' : 'fixed-top'}>
         <div className="container">
           <NavbarBrand href="/">
             <img
@@ -62,12 +68,13 @@ const Header = (props) => {
                   exact
                   activeStyle={{ color: "orange" }}
                   to={"/"}
+                  onClick={() => changeColor("transparent")}
                 >
                   Home
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link" to="/exam">
+                <NavLink className="nav-link" to="/user/profile" onClick={() => changeColor("#262F36")}>
                   Examination
                 </NavLink>
               </NavItem>
@@ -76,6 +83,7 @@ const Header = (props) => {
                   className="nav-link"
                   activeStyle={{ color: "orange" }}
                   to={"/events"}
+                  onClick={() => changeColor("#262F36")}
                 >
                   Events
                 </NavLink>
@@ -85,6 +93,7 @@ const Header = (props) => {
                   className="nav-link"
                   activeStyle={{ color: "orange" }}
                   to={"/gallery"}
+                  onClick={() => changeColor("#262F36")}
                 >
                   Gallery
                 </NavLink>
@@ -99,12 +108,12 @@ const Header = (props) => {
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-                <NavLink className="nav-link" to="/signUp">
+                <NavLink className="nav-link" to="/signUp" onClick={() => changeColor("#262F36")}>
                   Sign Up
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link" to="/login">
+                <NavLink className="nav-link" to="/login" onClick={() => changeColor("#262F36")}>
                   Login
                 </NavLink>
               </NavItem>

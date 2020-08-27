@@ -1,0 +1,84 @@
+.profile-sidebar{
+    border-right: 2px solid #f69925;
+    min-width:225px;
+    padding:0;
+}
+
+.profile-picture{
+    margin-top:35px;
+    background: #f69925;
+    width: 13vw;
+    height: 13vw;
+    border-radius: 50%;
+    margin-bottom:20px;
+}
+
+.active-link{
+    background: orange !important;
+    color:white !important;
+}
+
+.button-section{
+    margin-top:60px;
+}
+
+.profile-link{
+    display:block;
+    font-weight: 500;
+    margin-top:20px;
+    margin-bottom:10px;
+    font-size:2em;
+    color:black;
+    background:transparent;
+    border-style:none;
+    min-height: 70px;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.profileContainer {
+    border-style: solid;
+    height:100%;
+    padding:30px 60px 60px 60px;
+    border-color: #f69925;
+    border-radius: 20px;
+    margin-left:20px
+}
+
+.signUpInput{
+    height:70px;
+}
+
+.profile-gender{
+    float: left;
+}
+
+.save-button{
+    width:150px;
+}
+
+.profile-section{
+    margin:30px auto 50px auto;
+    height:auto;
+    width:100%;
+}
+
+@media only screen and (max-width: 768px){
+    .profile-sidebar{
+        border:none;
+        width:100%;
+    }
+    .profileContainer{
+        margin-left: auto;
+    }
+}
+
+@media only screen and (max-width: 510px){
+    .signUpButton{
+        font-size:15px;
+        width:100px;
+    }
+    .save-button{
+        margin-right: 10px !important;
+    }
+}
