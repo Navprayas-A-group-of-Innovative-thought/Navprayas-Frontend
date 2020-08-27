@@ -1,5 +1,5 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
 import "bootstrap-social/bootstrap-social.css";
 import { Provider } from "react-redux";
