@@ -3,10 +3,13 @@ import { Form, FormGroup, Input } from "reactstrap";
 import CustomButton from "../../components/Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { url } from "../../redux/api";
+// import { url } from "../../redux/api";
 import AlertModal from "../../components/Alert.component";
 
+const url = process.env.REACT_APP_API_URL;
+
 const Login = () => {
+  console.log(url);
   const [data, setData] = useState({
     email: "",
     password: "",
