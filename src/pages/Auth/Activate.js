@@ -3,7 +3,6 @@ import axios from "axios";
 // import jwt from "jsonwebtoken";
 import { Link, Redirect } from "react-router-dom";
 import { url } from "../../redux/api";
-import { Container, Row, Col, Alert } from "reactstrap";
 import CustomButton from "../../components/Button";
 import AlertModal from "../../components/Alert.component";
 
@@ -74,9 +73,9 @@ const Activate = ({ match }) => {
         padding: "10px",
       }}
     >
-      <Container fluid>
-        <Row>
-          <Col xs="12" className="d-flex justify-content-center p-5">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-xs-12 d-flex justify-content-center p-5">
             <AlertModal
               color={color}
               isOpen={show}
@@ -84,22 +83,22 @@ const Activate = ({ match }) => {
             >
               {msg}
             </AlertModal>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs="12" className="text-center">
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-12 text-center">
             <h3>Welcome {name}</h3>
-          </Col>
-          <Col xs="12" className="d-flex justify-content-center p-3 ">
+          </div>
+          <div className="col-xs-12 d-flex justify-content-center p-3 ">
             <form onSubmit={handleSubmit}>
               <CustomButton type="submit">
                 Verify Your Email Address
               </CustomButton>
             </form>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs="12" className="d-flex text-center justify-content-center">
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-12 d-flex text-center justify-content-center">
             <h5>
               If You think this is not your email , please try{" "}
               <Link to="/signUp">
@@ -107,9 +106,9 @@ const Activate = ({ match }) => {
               </Link>{" "}
               again
             </h5>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

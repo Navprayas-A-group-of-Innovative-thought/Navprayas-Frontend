@@ -34,14 +34,14 @@ const BoardsAnnouncement = (props) => {
       <div className="line1"></div>
       <div className="line2"></div>
     </div>
-      <Card>
-        <CardBody>
+      <div className="card">
+        <div className="card-body">
           <BoardsAnnouncementLinks announcement={announcemets} />
           <CustomButton type="button" buttonStyle="pull-right">
             VIEW ALL ANNOUNCEMENTS
           </CustomButton>
-        </CardBody>
-      </Card>
+        </div>
+      </div>
     </>
   );
 };

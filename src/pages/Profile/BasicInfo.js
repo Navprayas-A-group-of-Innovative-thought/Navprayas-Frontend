@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 const BasicInfo = () => {
     return(
         <>
-            <Container className="profileContainer">
-                <Form>
-                    <Row>
-                        <Col md={6}>
-                            <FormGroup>
+            <div className="container profileContainer">
+                <div className="form" id="basicInfo" href="/basicInfo">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <div className="form-group">
                                 <Input
                                     className="signUpInput"
                                     type="text"
@@ -18,10 +18,10 @@ const BasicInfo = () => {
                                     id="firstName"
                                     placeholder="First Name"
                                 />
-                            </FormGroup>
-                        </Col>
-                        <Col md={6}>
-                            <FormGroup>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="form-group">
                                 <Input
                                     className="signUpInput"
                                     type="text"
@@ -29,10 +29,10 @@ const BasicInfo = () => {
                                     id="lastName"
                                     placeholder="Last Name"
                                 />
-                            </FormGroup>
-                        </Col>
-                    </Row>
-                    <FormGroup>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="form-group">
                         <Input
                             className="signUpInput"
                             type="email"
@@ -40,19 +40,20 @@ const BasicInfo = () => {
                             id="email"
                             placeholder="Email"
                         />
-                    </FormGroup>
-                            <Row form>
-                                <Col md={6}>
-                                    <FormGroup>
+                    </div>
+                            <div className="form-row">
+                                <div className="col-md-6">
+                                    <div className="form-group">
                                         <Input
                                             className="signUpInput"
                                             type="date"
                                             name="dob"
+                                            placeholder="DOB"
                                         />
-                                    </FormGroup>
-                                </Col>
-                                <Col md={6}>
-                                    <FormGroup>
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <div className="form-group">
                                         <select
                                             className="signUpInput profile-gender"
                                             type="select"
@@ -62,10 +63,10 @@ const BasicInfo = () => {
                                             <option value="Female">Female</option>
                                             <option value="Others">Others</option>
                                         </select>
-                                    </FormGroup>
-                                </Col>
-                            </Row>
-                    <FormGroup>
+                                    </div>
+                                </div>
+                            </div>
+                    <div className="form-group">
                         <Input
                             className="signUpInput"
                             type="text"
@@ -73,8 +74,8 @@ const BasicInfo = () => {
                             id="fatherName"
                             placeholder="Father's Name"
                         />
-                    </FormGroup>
-                    <FormGroup>
+                    </div>
+                    <div className="form-group">
                         <Input
                             className="signUpInput"
                             type="text"
@@ -82,8 +83,8 @@ const BasicInfo = () => {
                             id="motherName"
                             placeholder="Mother's Name"
                         />
-                    </FormGroup>
-                    <FormGroup>
+                    </div>
+                    <div className="form-group">
                         <Input
                             className="signUpInput"
                             type="number"
@@ -91,19 +92,19 @@ const BasicInfo = () => {
                             id="mobileNumber"
                             placeholder="Mobile Number"
                         />
-                    </FormGroup>
-                    <FormGroup>
+                    </div>
+                    <div className="form-group">
                         <CustomButton className="signUpButton save-button pull-left mr-5 " buttonStyle="curved">
                             SAVE
                         </CustomButton>
-                    </FormGroup>
-                    <FormGroup>
+                    </div>
+                    <div className="form-group">
                         <CustomButton className="signUpButton pull-left" buttonStyle="curved">
                             CANCEL
                         </CustomButton>
-                    </FormGroup>
-                </Form>
-            </Container>
+                    </div>
+                </div>
+            </div>
 
         </>
     );

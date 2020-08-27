@@ -8,33 +8,33 @@ import BasicInfo from './BasicInfo';
 const Profile = () => {
     return(
         <>
-            <Container style={{marginTop:"69px", textAlign:"center", padding:"0"}} fluid>
-                <Row style={{width:"100%", margin:"0"}}>
-                    <Col className="profile-sidebar" md={3}>
+            <div className="container-fluid" style={{marginTop:"69px", textAlign:"center", padding:"0"}}>
+                <div className="row" style={{width:"100%", margin:"0"}}>
+                    <div className="profile-sidebar col-md-3">
                             <div >
                             <img className="profile-picture" src={pic} alt="User-Profile"></img>
-                            <Nav className="d-flex flex-column">
-                                <NavItem>
+                            <ul className="d-flex flex-column nav">
+                                <li className="nav-item">
                                     <NavLink to="#" className="profile-link active-link">BASIC INFO</NavLink>
-                                </NavItem>
-                                <NavItem>
+                                </li>
+                                <li className = "nav-item" >
                                     <NavLink to="#" className="profile-link">EDUCATION</NavLink>
-                                </NavItem>
-                                <NavItem>
+                                </li>
+                                <li className = "nav-item" >
                                     <NavLink to="#" className="profile-link">ADDRESS</NavLink>
-                                </NavItem>
-                                <NavItem>
+                                </li>
+                                <li className = "nav-item" >
                                     <NavLink to="#" className="profile-link">SOCIAL INFO</NavLink>
-                                </NavItem>
-                            </Nav>
+                                </li>
+                            </ul>
                         </div>
-                    </Col>
+                    </div>
 
-                    <Col md={8} className="profile-section">
-                        <BasicInfo></BasicInfo>
-                    </Col>
-                </Row>
-            </Container>
+                    <div className="profile-section col-md-8">
+                        <BasicInfo />
+                    </div>
+                </div>
+            </div>
         </>
     );
 }

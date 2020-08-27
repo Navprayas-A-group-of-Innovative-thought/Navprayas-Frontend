@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Input } from "reactstrap";
+import { Form, Input } from "reactstrap";
 import CustomButton from "../../components/Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -93,7 +93,7 @@ const Login = () => {
         >
           {msg}
         </AlertModal>
-        <FormGroup>
+        <div className="form-group">
           <Input
             className="signUpInput"
             type="email"
@@ -102,8 +102,8 @@ const Login = () => {
             onChange={handleChange("email")}
             placeholder="Email"
           />
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div className="form-group">
           <Input
             className="signUpInput"
             type="password"
@@ -113,25 +113,25 @@ const Login = () => {
             placeholder="Password"
             label="Password"
           />
-        </FormGroup>
+        </div>
         <div className="signUpButtonDiv">
           <CustomButton className="signUpButton" buttonStyle="large curved">
             {textChange}
           </CustomButton>
         </div>
-        <FormGroup>
+        <div className="form-group">
           <Link className="signUpLink" to={"/reset"}>
             Forgot Password?
           </Link>
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div className="form-group">
           <p>
             Don't have an account ?{" "}
             <Link className="signUpLink" to="/signup">
               REGISTER HERE
             </Link>
           </p>
-        </FormGroup>
+        </div>
       </Form>
     </>
   );
