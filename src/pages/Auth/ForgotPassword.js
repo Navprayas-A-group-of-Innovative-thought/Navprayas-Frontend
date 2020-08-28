@@ -51,7 +51,7 @@ const ForgotPassword = () => {
 
     e.preventDefault();
   };
-  
+
 
   return (
     <>

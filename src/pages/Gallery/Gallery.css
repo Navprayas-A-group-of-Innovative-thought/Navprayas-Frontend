@@ -1,37 +1,18 @@
 .GalleryImageDiv{
     position: relative;
     transition: 0.5s ease-in-out;
-    width:100%;
-    height:100%;
-    filter: grayscale(0)
-}
-
-.GalleryImage{
-    width:100%;
-    height:100%;
-    padding:5px;
-    object-fit: cover;
-    cursor: pointer;
-    transition: 0.5s ease-in-out;
 }
 
 .details {
-    width: 70%;
-    height: 80%;
-    padding: 5% 8%;
     position: absolute;
-    content: "";
     top: 50%;
     left: 50%;
+    color:black;
     transform: translate(-50%, -50%) rotateY(90deg);
     transform-origin: 50%;
-    background: rgba(251, 153, 6, 0.9);
+    background: rgba(251, 153, 6, 0.598);
     opacity: 0;
     transition: all 0.4s ease-in;
-}
-
-.GalleryImage:hover{
-    filter:grayscale(100%)
 }
 
 .GalleryImageDiv:hover .details{
@@ -39,20 +20,32 @@
     opacity: 1;
 }
 
-
-.GalleryTitle{
-    font-size:100px;
-}
-
 .Galleryline1 , .Galleryline2{
     height: 3px;
     background: #000;
-    margin: 2px auto 0px auto;
-    width: 400px;
+    width: 25vw;
     background: #eb5310;
 }
 
-.Galleryline2{
-    margin-top: 3px;
-    margin-bottom:60px;
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    background: rgba(0,0,0,0.7);
+}
+
+.backdrop img{
+    max-height: 80%;
+    margin:90px auto;
+    box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
+    border: 3px solid white;
+}
+
+@media only screen and (max-width:992px){
+    .backdrop img{
+        margin-top:130px;
+        max-width: 70%;
+        max-height: 90%;
+    }
 }
