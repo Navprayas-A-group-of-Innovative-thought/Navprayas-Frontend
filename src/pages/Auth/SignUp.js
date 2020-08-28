@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Form, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
-import CustomButton from "../../components/Button";
 import axios from "axios";
 // import { url } from "../../redux/api";
 import AlertModal from "../../components/Alert.component";
@@ -17,13 +16,13 @@ const SignUp = () => {
     confirmPassword: "",
     dob: "",
     gender: "Male",
-    textChange: "Sign Up",
   });
   const [alertMsg, setAlertMsg] = useState({
     show: false,
     color: "",
     msg: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
   const [terms, setTerms] = useState(false);
 
   // HandleChange of each input
@@ -41,17 +40,20 @@ const SignUp = () => {
     gender,
   } = formData;
 
+  const all =
+    firstName &&
+    lastName &&
+    email &&
+    password &&
+    confirmPassword &&
+    dob &&
+    gender;
+
   const { show, color, msg } = alertMsg;
   const handleSubmit = (e) => {
     e.preventDefault();
-    const all =
-      firstName &&
-      lastName &&
-      email &&
-      password &&
-      confirmPassword &&
-      dob &&
-      gender;
+    setIsLoading(true);
+
     if (all) {
       if (confirmPassword === password) {
         setFormData({ ...formData, textChange: "Submitting" });
@@ -74,6 +76,7 @@ const SignUp = () => {
         axios
           .post(`${url}/signup`, body, config)
           .then((res) => {
+            setIsLoading(false);
             setFormData({
               ...formData,
               firstName: "",
@@ -83,7 +86,6 @@ const SignUp = () => {
               confirmPassword: "",
               dob: "",
               gender: "",
-              textChange: "Submitted",
             });
             setAlertMsg({
               ...alertMsg,
@@ -94,17 +96,11 @@ const SignUp = () => {
             console.log(res.data);
           })
           .catch((err) => {
-            setFormData({
-              ...formData,
-              firstName: "",
-              lastName: "",
-              email: "",
-              password: "",
-              confirmPassword: "",
-              dob: "",
-              gender: "",
-              textChange: "Sign Up",
-            });
+            setIsLoading(false);
+            // setFormData({
+            //   ...formData,
+            //   textChange: "Sign Up",
+            // });
             setAlertMsg({
               ...alertMsg,
               show: true,
@@ -142,131 +138,149 @@ const SignUp = () => {
           {msg}
         </AlertModal>
         <div className="row">
-          <div className="col-md-6">
-            <div className="form-group">
-              <Input
-                className="signUpInput"
-                type="text"
-                name="firstName"
-                id="firstName"
-                label="First Name"
-                placeholder="First Name"
-                value={firstName}
-                onChange={handlechange("firstName")}
-              />
-            </div>
+          <div className="col-12 col-md-4 offset-md-2">
+            <Input
+              className="form-control signUpInput"
+              type="text"
+              name="firstName"
+              id="firstName"
+              placeholder="First Name"
+              value={firstName}
+              onChange={handlechange("firstName")}
+              required
+            />
           </div>
-          <div className="col-md-6">
-            <div className="form-group">
-              <Input
-                className="signUpInput"
-                type="text"
-                name="lastName"
-                id="lastName"
-                label="Last Name"
-                placeholder="Last Name"
-                value={lastName}
-                onChange={handlechange("lastName")}
-              />
-            </div>
+
+          <div className="col-12 col-md-4">
+            <Input
+              className="form-control signUpInput"
+              type="text"
+              name="lastName"
+              id="lastName"
+              label="Last Name"
+              placeholder="Last Name"
+              value={lastName}
+              onChange={handlechange("lastName")}
+            />
           </div>
         </div>
-        <div className="form-group">
-          <Input
-            className="signUpInput"
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email"
-            value={email}
-            onChange={handlechange("email")}
-            label="Email"
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            className="signUpInput"
-            type="password"
-            name="password"
-            id="password"
-            label="Password"
-            value={password}
-            onChange={handlechange("password")}
-            placeholder="Password"
-          />
-        </div>
-        <div className="form-group">
-          <Input
-            className="signUpInput"
-            type="password"
-            name="confirmPassword"
-            id="confirmPassword"
-            label="Confirm Password"
-            value={confirmPassword}
-            onChange={handlechange("confirmPassword")}
-            placeholder="Confirm Password"
-          />
-        </div>
-        <div className="last">
-          <div className="row">
-            <div className="col-md-6">
-              <div className="form-group">
-                <Input
-                  className="signUpInput"
-                  type="date"
-                  name="dob"
-                  value={dob}
-                  placeholder="DOB"
-                  onChange={handlechange("dob")}
-                />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="form-group">
-                <select
-                  className="signUpInput signUpGender"
-                  type="select"
-                  name="gender"
-                  value={gender}
-                  onChange={handlechange("gender")}
-                >
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Others">Others</option>
-                </select>
-              </div>
-            </div>
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-2">
+            <Input
+              className="form-control signUpInput"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              value={email}
+              onChange={handlechange("email")}
+              label="Email"
+            />
           </div>
         </div>
-        <div className="signUpTerms form-group form-check">
-          <Input
-            className="signUpCheckBox"
-            type="checkbox"
-            name="check"
-            onChange={() => setTerms(!terms)}
-          />
-          <Label className="signUpCheckText" for="signUpCheck" check>
-            By clicking here, you accept the terms & conditions
-          </Label>
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-2">
+            <Input
+              className="form-control signUpInput"
+              type="password"
+              name="password"
+              id="password"
+              label="Password"
+              value={password}
+              onChange={handlechange("password")}
+              placeholder="Password"
+            />
+          </div>
         </div>
-        <div className="signUpButtonDiv">
-          <CustomButton
-            className="signUpButton"
-            disabled={!terms}
-            buttonStyle="large curved"
-            onClick={handleSubmit}
-          >
-            {formData.textChange}
-          </CustomButton>
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-2">
+            <Input
+              className="form-control signUpInput"
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              label="Confirm Password"
+              value={confirmPassword}
+              onChange={handlechange("confirmPassword")}
+              placeholder="Confirm Password"
+            />
+          </div>
         </div>
 
-        <div className="form-group">
-          <p>
-            Already have an account ?{" "}
-            <Link className="signUpLink" to="/login">
-              LOGIN
-            </Link>
-          </p>
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-2">
+            <Input
+              className="signUpInput"
+              type="date"
+              name="dob"
+              value={dob}
+              placeholder="DOB"
+              onChange={handlechange("dob")}
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-2">
+            <select
+              className="form-control signUpInput"
+              type="select"
+              name="gender"
+              value={gender}
+              onChange={handlechange("gender")}
+            >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="row mb-1">
+          <div className="col d-flex justify-content-center">
+            <Input
+              className="signUpCheckBox"
+              type="checkbox"
+              name="check"
+              onChange={() => setTerms(!terms)}
+            />
+            <Label className="signUpCheckText" for="signUpCheck" check>
+              By clicking here, you accept the terms & conditions
+            </Label>
+          </div>
+        </div>
+
+        <div className="row m-1">
+          <div className="col d-flex justify-content-center">
+            <button
+              className="btn signUpButton btn-lg"
+              type="submit"
+              disabled={isLoading}
+              onClick={handleSubmit}
+            >
+              {!isLoading ? (
+                <span>Sign Up</span>
+              ) : (
+                <span>
+                  <span
+                    className="spinner-border spinner-border-sm mr-3 p-2"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  Loading...
+                </span>
+              )}
+            </button>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col d-flex justify-content-center">
+            <p>
+              Already have an account ?{" "}
+              <Link className="signUpLink" to="/login">
+                LOGIN
+              </Link>
+            </p>
+          </div>
         </div>
       </Form>
     </>
