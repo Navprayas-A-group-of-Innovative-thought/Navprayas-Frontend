@@ -7,22 +7,19 @@ import {
   CarouselCaption,
 } from "reactstrap";
 import "./Carousel.css";
-import pic1 from './pics/1.JPG';
-import pic2 from './pics/2.JPG';
-import pic3 from './pics/3.JPG';
 const items = [
   {
-    src:pic1,
+    src: "/assets/carausel/1.JPG",
     altText: "Slide 1",
     caption: "Pratibha Milan",
   },
   {
-    src:pic2,
+    src: "/assets/carausel/2.JPG",
     altText: "Slide 2",
     caption: "Slide 2",
   },
   {
-    src:pic3,
+    src: "/assets/carausel/3.JPG",
     altText: "Slide 3",
     caption: "Slide 3",
   },
@@ -67,7 +64,7 @@ const Carousell = (props) => {
 
   return (
     <>
-      <section style={{marginTop:"60px"}} className="carouselPosition">
+      <section style={{ marginTop: "60px" }} className="carouselPosition">
         <Carousel
           activeIndex={activeIndex}
           next={next}
