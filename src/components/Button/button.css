@@ -3,22 +3,10 @@
 }
 
 .btn {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    vertical-align: middle;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    line-height: 1.5;
     background-color: #f69925;
-    border-radius: 13px;
     color: white;
     border:none;
     box-shadow:0px 5px 20px 5px rgba(255, 140, 0, .40);
-    transition: color 0.15s ease-in-out,
-        background-color 0.15s ease-in-out,
-        box-shadow 0.15s ease-in-out;
 }
 
 .btn:hover {
@@ -40,15 +28,7 @@
 }
 
 .large {
-    width: 100%;
-}
-
-.pull-right{
-    float:right;
-}
-
-.pull-left{
-    float:left;
+    width: fit-content;
 }
 
 @media only screen and (max-width: 510px){

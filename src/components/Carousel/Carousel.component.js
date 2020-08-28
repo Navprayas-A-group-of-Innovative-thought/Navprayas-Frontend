@@ -7,22 +7,19 @@ import {
   CarouselCaption,
 } from "reactstrap";
 import "./Carousel.css";
-import pic1 from './pics/1.JPG';
-import pic2 from './pics/2.JPG';
-import pic3 from './pics/3.JPG';
 const items = [
   {
-    src:pic1,
+    src: "/assets/carousel/1.jpg",
     altText: "Slide 1",
     caption: "Pratibha Milan",
   },
   {
-    src:pic2,
+    src: "/assets/carousel/2.jpg",
     altText: "Slide 2",
     caption: "Slide 2",
   },
   {
-    src:pic3,
+    src: "/assets/carousel/3.jpg",
     altText: "Slide 3",
     caption: "Slide 3",
   },
