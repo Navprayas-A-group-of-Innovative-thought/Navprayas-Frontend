@@ -70,8 +70,6 @@ const Login = () => {
         .catch((err) => {
           setData({
             ...data,
-            email: "",
-            password: "",
             textChange: "LOGIN",
           });
           setAlertMsg({
@@ -80,7 +78,7 @@ const Login = () => {
             color: "danger",
             msg: err.response.data.errorDetails,
           });
-          console.log("Login Error");
+
           console.log(err.response.data);
         });
     }
@@ -118,9 +116,9 @@ const Login = () => {
           />
         </div>
         <div className="signUpButtonDiv">
-          <CustomButton className="signUpButton" buttonStyle="large curved">
+          <button className="btn signUpButton btn-lg">
             {textChange}
-          </CustomButton>
+          </button>
         </div>
         <div className="form-group">
           <Link className="signUpLink" to={"/reset"}>

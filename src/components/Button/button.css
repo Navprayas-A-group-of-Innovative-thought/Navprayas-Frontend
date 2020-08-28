@@ -16,11 +16,9 @@
 
 .btn:focus {
     background-color: #ff8c00;
-    border-radius: 13px;
     color: white;
     box-shadow: 0 10px 10px 0 rgba(255, 140, 0, .40);
     outline: none;
-    border-radius: 25px;
 }
 
 .curved {

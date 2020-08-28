@@ -64,7 +64,7 @@ const Carousell = (props) => {
 
   return (
     <>
-      <section style={{marginTop:"60px"}} className="carouselPosition">
+      <section style={{ marginTop: "60px" }} className="carouselPosition">
         <Carousel
           activeIndex={activeIndex}
           next={next}
