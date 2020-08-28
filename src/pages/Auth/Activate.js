@@ -70,7 +70,7 @@ const Activate = ({ match }) => {
     <section
       style={{
         height: "60vh",
-        marginTop: "82px",
+        marginTop: "75px",
         backgroundColor: "#f6f4f2",
         padding: "10px",
       }}
@@ -89,7 +89,16 @@ const Activate = ({ match }) => {
         </div>
         <div className="row">
           <div className="col-xs-12 text-center">
-            <h3>Welcome {name}</h3>
+            {name && <h3>Welcome {name}</h3>}
+          </div>
+          <div className="row">
+            <div className="col text-center">
+              {email && (
+                <h4>
+                  <strong>{email} is now verified</strong>
+                </h4>
+              )}
+            </div>
           </div>
           <div className="col-xs-12 d-flex justify-content-center p-3 ">
             <form onSubmit={handleSubmit}>
@@ -99,7 +108,7 @@ const Activate = ({ match }) => {
             </form>
           </div>
         </div>
-        <div className="row">
+        <div className="row m-4">
           <div className="col-xs-12 d-flex text-center justify-content-center">
             <h5>
               If You think this is not your email , please try{" "}
