@@ -9,17 +9,17 @@ import {
 import "./Carousel.css";
 const items = [
   {
-    src: "/assets/carousel/1.jpg",
+    src: "/assets/Carousel/1.JPG",
     altText: "Slide 1",
     caption: "Pratibha Milan",
   },
   {
-    src: "/assets/carousel/2.jpg",
+    src: "/assets/Carousel/2.JPG",
     altText: "Slide 2",
     caption: "Slide 2",
   },
   {
-    src: "/assets/carousel/3.jpg",
+    src: "/assets/Carousel/3.JPG",
     altText: "Slide 3",
     caption: "Slide 3",
   },
