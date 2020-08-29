@@ -8,29 +8,29 @@ import BasicInfo from './BasicInfo';
 const Profile = () => {
     return(
         <>
-            <div className="container-fluid" style={{marginTop:"69px", textAlign:"center", padding:"0"}}>
-                <div className="row" style={{width:"100%", margin:"0"}}>
-                    <div className="profile-sidebar col-md-3">
-                            <div >
-                            <img className="profile-picture" src={pic} alt="User-Profile"></img>
+            <div className="container-fluid text-center p-0" style={{marginTop:"69px"}}>
+                <div className="row w-100 m-0">
+                    <div className="profile-sidebar col-md-3 mw-225 p-0">
+                        <div >
+                            <img className="profile-picture mt-5 rounded-circle mb-4" src={pic} alt="User-Profile"></img>
                             <ul className="d-flex flex-column nav">
                                 <li className="nav-item">
-                                    <NavLink to="#" className="profile-link active-link">BASIC INFO</NavLink>
+                                    <NavLink to="#" className="profile-link d-block mt-3 mb-3 w-100 pt-2 active-link">BASIC INFO</NavLink>
                                 </li>
                                 <li className = "nav-item" >
-                                    <NavLink to="#" className="profile-link">EDUCATION</NavLink>
+                                    <NavLink to="#" className="profile-link d-block mt-3 mb-3 w-100 pt-2 ">EDUCATION</NavLink>
                                 </li>
                                 <li className = "nav-item" >
-                                    <NavLink to="#" className="profile-link">ADDRESS</NavLink>
+                                    <NavLink to="#" className="profile-link d-block mt-3 mb-3 w-100 pt-2 ">ADDRESS</NavLink>
                                 </li>
                                 <li className = "nav-item" >
-                                    <NavLink to="#" className="profile-link">SOCIAL INFO</NavLink>
+                                    <NavLink to="#" className="profile-link d-block mt-3 mb-3 w-100 pt-2 ">SOCIAL INFO</NavLink>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div className="profile-section col-md-8">
+                    <div className="h-auto mt-5 mx-auto mb-5 col-md-8">
                         <BasicInfo />
                     </div>
                 </div>

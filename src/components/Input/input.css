@@ -24,7 +24,8 @@
 .CustomInput:focus {
     outline:0;
     border-color:#f69925;
-    box-shadow: 0 0 0 0.2rem rgba(246, 152, 37, 0.619)
+    box-shadow: 0 0 0 0.2rem rgba(246, 152, 37, 0.619);
+    padding-top: 20px;
 }
 
 .label{
@@ -35,10 +36,6 @@
     color:#9c9c9c;
     pointer-events: none;
     transition: .5s;
-}
-
-.CustomInput:focus{
-    padding-top: 20px;
 }
 
 .CustomInput:focus ~ .label
