@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const BasicInfo = () => {
     return(
         <>
-            <div className="container profileContainer">
+            <div className="container profileContainer h-100 ml-3">
                 <div className="form" id="basicInfo" href="/basicInfo">
                     <div className="row">
                         <div className="col-md-6">
@@ -41,8 +41,8 @@ const BasicInfo = () => {
                             placeholder="Email"
                         />
                     </div>
-                            <div className="form-row">
-                                <div className="col-md-6">
+                            <div className="row">
+                                < div className = "col-md-6" >
                                     <div className="form-group">
                                         <Input
                                             className="signUpInput"
@@ -52,10 +52,10 @@ const BasicInfo = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className="col-md-6">
+                                < div className = "col-md-6" >
                                     <div className="form-group">
                                         <select
-                                            className="signUpInput profile-gender"
+                                            className="signUpInput pull-left"
                                             type="select"
                                             name="gender"
                                         >
@@ -94,12 +94,12 @@ const BasicInfo = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <CustomButton className="signUpButton save-button pull-left mr-5 " buttonStyle="curved">
+                        <CustomButton className="btn btn-lg pull-left mr-5">
                             SAVE
                         </CustomButton>
                     </div>
                     <div className="form-group">
-                        <CustomButton className="signUpButton pull-left" buttonStyle="curved">
+                        <CustomButton className="btn btn-lg pull-left">
                             CANCEL
                         </CustomButton>
                     </div>

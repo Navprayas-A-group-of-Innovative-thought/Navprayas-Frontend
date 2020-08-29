@@ -6,8 +6,8 @@ const ImageGrid = ({ pics, setSelectedImg }) => {
             {
                 pics.map((p) => {
                     return (
-                        <div className="col-md-6 col-lg-4" >
-                            <div style={{ marginBottom: "20px" }}>
+                        <div className="col-md-6 col-lg-4 pr-0" >
+                            <div style={{ marginBottom: "10px" }}>
                                 <div className="GalleryImageDiv"
                                     onClick={() => setSelectedImg(p.pic)}>
                                     <img className="w-100" src={p.pic} alt="1" />

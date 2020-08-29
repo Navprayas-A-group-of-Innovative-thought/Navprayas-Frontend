@@ -116,7 +116,7 @@ const Login = () => {
           />
         </div>
         <div className="signUpButtonDiv">
-          <button className="btn signUpButton btn-lg">
+          <button className="cbtn signUpButton btn-lg">
             {textChange}
           </button>
         </div>

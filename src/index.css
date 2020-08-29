@@ -25,3 +25,9 @@ html{
 .title{
 	font-family: roboto condensed !important;
 }
+
+/*
+background-image: linear-gradient(to right top, #f69925, #f4891b, #f17814, #ee6710, #eb5310);
+background-image: linear-gradient(to left, #f69925, #f4891b, #f17814, #ee6710, #eb5310);
+background-image: linear-gradient(to bottom, #f69925, #f4891b, #f17814, #ee6710, #eb5310);
+*/

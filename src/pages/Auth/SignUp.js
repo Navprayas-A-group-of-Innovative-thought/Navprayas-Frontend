@@ -157,7 +157,6 @@ const SignUp = () => {
               type="text"
               name="lastName"
               id="lastName"
-              label="Last Name"
               placeholder="Last Name"
               value={lastName}
               onChange={handlechange("lastName")}
@@ -174,7 +173,6 @@ const SignUp = () => {
               placeholder="Email"
               value={email}
               onChange={handlechange("email")}
-              label="Email"
             />
           </div>
         </div>
@@ -185,7 +183,6 @@ const SignUp = () => {
               type="password"
               name="password"
               id="password"
-              label="Password"
               value={password}
               onChange={handlechange("password")}
               placeholder="Password"
@@ -199,7 +196,6 @@ const SignUp = () => {
               type="password"
               name="confirmPassword"
               id="confirmPassword"
-              label="Confirm Password"
               value={confirmPassword}
               onChange={handlechange("confirmPassword")}
               placeholder="Confirm Password"
@@ -251,9 +247,9 @@ const SignUp = () => {
         <div className="row m-1">
           <div className="col d-flex justify-content-center">
             <button
-              className="btn signUpButton btn-lg"
+              className="cbtn btn-lg"
               type="submit"
-              disabled={isLoading}
+              disabled={!terms}
               onClick={handleSubmit}
             >
               {!isLoading ? (

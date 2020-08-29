@@ -10,7 +10,7 @@ const CustomButton = ({
     buttonSize,
     className}) => {
     return (
-        <button className={`btn ${buttonSize} ${buttonStyle} ${className}`}
+        <button className={`cbtn ${buttonSize} ${buttonStyle} ${className}`}
         onClick={onClick}
         type={type}
         disabled={disabled}>
