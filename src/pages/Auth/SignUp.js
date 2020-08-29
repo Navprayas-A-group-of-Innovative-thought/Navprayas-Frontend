@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 // import { url } from "../../redux/api";
 import AlertModal from "../../components/Alert.component";
-
+import Spinner from "../../components/spinner.component";
 const url = process.env.REACT_APP_API_URL;
 
 const SignUp = () => {
@@ -25,11 +25,6 @@ const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [terms, setTerms] = useState(false);
 
-  // HandleChange of each input
-  const handlechange = (text) => (e) => {
-    setFormData({ ...formData, [text]: e.target.value });
-  };
-
   const {
     firstName,
     lastName,
@@ -49,11 +44,15 @@ const SignUp = () => {
     dob &&
     gender;
 
+  // HandleChange of each input
+  const handlechange = (text) => (e) => {
+    setFormData({ ...formData, [text]: e.target.value });
+  };
+
   const { show, color, msg } = alertMsg;
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-
     if (all) {
       if (confirmPassword === password) {
         setFormData({ ...formData, textChange: "Submitting" });
@@ -110,6 +109,7 @@ const SignUp = () => {
             console.log(err.response);
           });
       } else {
+        setIsLoading(false);
         setAlertMsg({
           ...alertMsg,
           show: true,
@@ -118,6 +118,7 @@ const SignUp = () => {
         });
       }
     } else {
+      setIsLoading(false);
       setAlertMsg({
         ...alertMsg,
         show: true,
@@ -130,13 +131,18 @@ const SignUp = () => {
   return (
     <>
       <Form className="signUpForm">
-        <AlertModal
-          color={color}
-          isOpen={show}
-          toggle={() => setAlertMsg({ ...alertMsg, show: !show })}
-        >
-          {msg}
-        </AlertModal>
+        <div className="row">
+          <div className="col-12 col-md-8 offset-md-2">
+            <AlertModal
+              color={color}
+              isOpen={show}
+              toggle={() => setAlertMsg({ ...alertMsg, show: !show })}
+            >
+              {msg}
+            </AlertModal>
+          </div>
+        </div>
+
         <div className="row">
           <div className="col-12 col-md-4 offset-md-2">
             <Input
@@ -222,6 +228,7 @@ const SignUp = () => {
               type="select"
               name="gender"
               value={gender}
+              placeholder="Gender"
               onChange={handlechange("gender")}
             >
               <option value="Male">Male</option>
@@ -255,14 +262,7 @@ const SignUp = () => {
               {!isLoading ? (
                 <span>Sign Up</span>
               ) : (
-                <span>
-                  <span
-                    className="spinner-border spinner-border-sm mr-3 p-2"
-                    role="status"
-                    aria-hidden="true"
-                  ></span>
-                  Loading...
-                </span>
+                <Spinner text="Loading..." />
               )}
             </button>
           </div>
