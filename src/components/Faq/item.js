@@ -5,7 +5,7 @@ const Item = ({ question, answer }) => (
     <div className="col-12 col-lg-5">
       <p>
         <span>
-          <i id="icon" class="fa far fa-question-circle"></i>
+          <i id="icon" className="fa far fa-question-circle"></i>
         </span>{" "}
         {question}
       </p>

@@ -18,15 +18,15 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import "./Header.css";
+import { isAuth, signout } from "../../_helpers/auth";
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [navbar, setNavbar] = useState(false);
   //const [color, setColor] = useState("transparent");
-
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -43,11 +43,16 @@ const Header = (props) => {
   //   setColor(color);
   // }
 
- // window.addEventListener('scroll', changeBackground);
+  // window.addEventListener('scroll', changeBackground);
 
   return (
     <>
-      <Navbar style={{background:"#262F36"}} light expand="md" className='fixed-top'>
+      <Navbar
+        style={{ background: "#262F36" }}
+        light
+        expand="md"
+        className="fixed-top"
+      >
         <div className="container">
           <NavbarBrand href="/">
             <img
@@ -82,7 +87,6 @@ const Header = (props) => {
                   className="nav-link"
                   activeStyle={{ color: "orange" }}
                   to={"/events"}
-
                 >
                   Events
                 </NavLink>
@@ -92,7 +96,6 @@ const Header = (props) => {
                   className="nav-link"
                   activeStyle={{ color: "orange" }}
                   to={"/gallery"}
-
                 >
                   Gallery
                 </NavLink>
@@ -106,20 +109,50 @@ const Header = (props) => {
                   <DropdownItem>Result</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-              <NavItem>
-                <NavLink className="nav-link" to="/signUp">
-                  Sign Up
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link" to="/login">
-                  Login
-                </NavLink>
-              </NavItem>
+              <AuthLink auth={isAuth()} />
             </Nav>
           </Collapse>
         </div>
       </Navbar>
+    </>
+  );
+};
+
+const AuthLink = ({ auth }) => {
+  return (
+    <>
+      {auth ? (
+        <>
+          <NavItem>
+            <NavLink className="nav-link" to="/profile">
+              Profile
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink className="nav-link" to="/">
+              <button
+                className="btn btn-outline-primary"
+                onClick={() => signout(() => {})}
+              >
+                Log Out
+              </button>
+            </NavLink>
+          </NavItem>
+        </>
+      ) : (
+        <>
+          <NavItem>
+            <NavLink className="nav-link" to="/signUp">
+              Sign Up
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink className="nav-link" to="/login">
+              Login
+            </NavLink>
+          </NavItem>
+        </>
+      )}
     </>
   );
 };
