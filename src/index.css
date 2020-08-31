@@ -1,9 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed&display=swap');
 
+html{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
 *{
 	margin:0;
 	padding:0;
 	box-sizing: border-box;
+}
+
+a{
+	text-decoration:none;
 }
 
 *:not(#icon){
@@ -13,3 +29,9 @@
 .title{
 	font-family: roboto condensed !important;
 }
+
+/*
+background-image: linear-gradient(to right top, #f69925, #f4891b, #f17814, #ee6710, #eb5310);
+background-image: linear-gradient(to left, #f69925, #f4891b, #f17814, #ee6710, #eb5310);
+background-image: linear-gradient(to bottom, #f69925, #f4891b, #f17814, #ee6710, #eb5310);
+*/

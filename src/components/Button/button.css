@@ -1,40 +1,29 @@
-.btn:not(:disabled) {
+.cbtn:not(:disabled) {
     cursor: pointer;
 }
 
-.btn {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    vertical-align: middle;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    line-height: 1.5;
+.cbtn {
     background-color: #f69925;
-    border-radius: 13px;
     color: white;
-    border-color: #f69925;
-    transition: color 0.15s ease-in-out,
-        background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out,
-        box-shadow 0.15s ease-in-out;
+    border:none;
+    box-shadow:0px 4px 12px rgba(255, 140, 0, .40);
 }
 
-.btn:hover {
-    border-color: #eb5310;
-    background-color: #eb5310;
+.cbtn:hover {
+    background-color: #ff8c00;
     color:white;
 }
 
-.btn:focus {
-    border: 1px solid transparent;
-    background-color: #eb5310;
-    border-radius: 13px;
+.cbtn:focus {
+    background-color: #ff8c00;
     color: white;
-    border-color: #eb5310;
+    box-shadow:0px 4px 12px rgba(255, 140, 0, .40);
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgb(246, 153, 37, .5);
+}
+
+.cbtn:disabled{
+    pointer-events: none;
+    opacity: .65;
 }
 
 .curved {
@@ -42,13 +31,11 @@
 }
 
 .large {
-    width: 100%;
+    width: fit-content;
 }
 
-.pull-right{
-    float:right;
-}
-
-.pull-left{
-    float:left;
+@media only screen and (max-width: 510px){
+    .btn{
+        width:fit-content !important;
+    }
 }
