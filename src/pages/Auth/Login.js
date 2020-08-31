@@ -128,7 +128,7 @@ const Login = () => {
           </div>
         </div>
         <div className="signUpButtonDiv">
-          <button className="btn signUpButton btn-lg">
+          <button className="cbtn signUpButton btn-lg">
             {!isLoading ? <span>Log in</span> : <Spinner text="Logging In" />}
           </button>
         </div>

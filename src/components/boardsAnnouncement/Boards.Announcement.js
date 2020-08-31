@@ -37,7 +37,7 @@ const BoardsAnnouncement = (props) => {
       <div className="card">
         <div className="card-body">
           <BoardsAnnouncementLinks announcement={announcemets} />
-          <CustomButton type="button" buttonStyle="pull-right">
+          <CustomButton className="btn">
             VIEW ALL ANNOUNCEMENTS
           </CustomButton>
         </div>
