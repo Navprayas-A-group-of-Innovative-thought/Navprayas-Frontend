@@ -18,6 +18,10 @@ html{
 	box-sizing: border-box;
 }
 
+a{
+	text-decoration:none;
+}
+
 *:not(#icon){
 	font-family: poppins;
 }

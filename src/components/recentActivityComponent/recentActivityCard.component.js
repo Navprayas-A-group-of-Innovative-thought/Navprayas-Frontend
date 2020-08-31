@@ -26,7 +26,7 @@ const RecentActivityCard = (props) => {
           Lorem Ispum is dummy text for testing <br></br>text data. It is used
           globally to fill space where <br></br>some text can be replaced.
         </CardText>
-        <CustomButton buttonStyle="curved">Learn More</CustomButton>
+        <CustomButton className="btn">Learn More</CustomButton>
       </CardBody>
     </Card>
   );
