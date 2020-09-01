@@ -1,0 +1,8 @@
+.faq {
+  height: auto;
+  background: url("/assets/images/bg21.jpg") top center;
+  background-attachment: fixed;
+  background-size: contain;
+  margin-bottom: 0;
+  color: #ffffff;
+}

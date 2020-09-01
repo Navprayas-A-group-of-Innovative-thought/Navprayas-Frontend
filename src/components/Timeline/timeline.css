@@ -1,0 +1,13 @@
+.timeline {
+  height: auto;
+  background: url("/assets/images/bg321.jpg") top center;
+  background-attachment: fixed;
+  background-size: contain;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #222222;
+}

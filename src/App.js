@@ -10,9 +10,11 @@ import NewPassword from "./pages/Auth/NewPassword";
 import Activate from "./pages/Auth/Activate";
 import Gallery from "./pages/Gallery";
 import Profile from "./pages/Profile";
+import { authenticate, isAuth } from "./_helpers/auth";
 
 function App() {
   console.log(process.env.REACT_APP_API_URL);
+  console.log(isAuth());
   return (
     <>
       <BrowserRouter>
