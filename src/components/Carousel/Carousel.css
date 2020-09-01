@@ -7,7 +7,7 @@
 
 @media only screen and (min-width: 992px){
 	.carouselPosition{
-		height: 100vh !important;
+		height: 92vh !important;
 	}
 
 }
@@ -18,7 +18,7 @@
 		height: 100vh;
 	}
 	.carousel-item > img{
-		height: 100vh !important;
+		height: 92vh !important;
 	}
 }
 

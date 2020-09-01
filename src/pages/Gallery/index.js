@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Modal from "./Modal.js";
-import ImageGrid from "./Image.grid";
+import Modal from "../../components/Gallery.imagegrid/Modal";
+import ImageGrid from "../../components/Gallery.imagegrid";
 import "./Gallery.css";
-import Team from "./team";
+import Team from "../../components/Gallery.team";
 
 const pics = [
   {

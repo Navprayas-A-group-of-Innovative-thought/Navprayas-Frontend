@@ -9,6 +9,7 @@
     max-height:300px;
     transform: scale(1);
     transition: 0.4s ease-in-out;
+    background:black;
 }
 
 .GalleryImageDiv:hover img{
@@ -65,24 +66,6 @@
 
 /* Our Team Section */
 
-.team-area{
-    padding-top: 5%;
-}
-
-.single-team{
-    background-color: #000;
-    margin-bottom: 10px;
-}
-
-.img-area{
-    overflow: hidden;
-    position: relative;
-}
-
-.img-area img{
-    width:100%;
-}
-
 .img-area:hover .social{
     cursor:pointer;
     opacity: 1;
@@ -105,10 +88,6 @@
 
 .img-area .social{
     background-color: rgba(251, 153, 6, 0.6);
-    position: absolute;
-    text-align:center;
-    height: 100%;
-    width:100%;
     left:0;
     top:0;
     opacity:0;
@@ -117,8 +96,6 @@
 }
 
 .img-area .social ul{
-    text-align: center;
-    position: relative;
     top:40%;
 }
 
@@ -144,20 +121,11 @@
     border: 1px solid transparent;
 }
 
-.img-text{
-    padding:25px;
-    color:#fff;
-    text-align: center;
-}
-
 .img-text h4{
-    margin:0 0 5px;
     font-size: 30px;
     letter-spacing:5px;
 }
 
 .img-text h5 {
     font-size: 17px;
-    text-transform: uppercase;
-    font-weight: bold;
 }
