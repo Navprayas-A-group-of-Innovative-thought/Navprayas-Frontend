@@ -14,6 +14,7 @@
     "jsonwebtoken": "^8.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-horizontal-timeline": "^1.5.3",
     "react-redux": "^7.2.1",
     "react-redux-form": "^1.16.14",
     "react-router-dom": "^5.2.0",

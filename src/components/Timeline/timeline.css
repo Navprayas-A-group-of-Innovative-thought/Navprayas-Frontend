@@ -1,4 +1,4 @@
-.timeline {
+/* .timeline {
   height: auto;
   background: url("/assets/images/bg321.jpg") top center;
   background-attachment: fixed;
@@ -10,4 +10,10 @@
   font-weight: bold;
   text-transform: uppercase;
   color: #222222;
+} */
+
+.dot-label{
+  padding-bottom:30px !important;
+  font-size: 13px;
+  color: #F69925;
 }
