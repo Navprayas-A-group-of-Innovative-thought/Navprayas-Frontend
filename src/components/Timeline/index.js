@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./timeline.css";
 import HorizontalTimeline from 'react-horizontal-timeline';
 import Content from './content';
-import timelineContent from './timelineContent';
+import timelineContent from '../../shared/timelineContent';
 
 const VALUES = timelineContent.VALUES;
 const Contents = timelineContent.Contents;
@@ -13,9 +13,9 @@ const Timeline = () => {
   const [previous, setprevious] = useState(0)
 
   return (
-    <section style={{height:"500px"}}>
+    <section style={{height:"600px"}}>
       <div className="container text-center">
-        <h1 className="pt-5">Event Schedule</h1>
+        <h1 className="pt-5 ">Event Schedule</h1>
         <div style={{ width: '70%', height: '100px', margin: '30px auto', fontSize: "14px" }}>
           <HorizontalTimeline
             minEventPadding="76"

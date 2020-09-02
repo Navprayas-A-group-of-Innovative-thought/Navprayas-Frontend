@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Content = ({ contents, values }) => {
+const Content = ({ contents, values, }) => {
     return (
         <div style={{ width: "70%" }} class="card text-center mx-auto mb-5 shadow-lg">
             <div class="card-body">

@@ -4,7 +4,7 @@
         - Header.css that contains all the css for this component and its children component
 */
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Collapse,
   Navbar,
@@ -25,10 +25,26 @@ import { isAuth, signout } from "../../_helpers/auth";
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [navbar, setNavbar] = useState(false);
-  //const [color, setColor] = useState("transparent");
+  // const [navbar, setNavbar] = useState(false);
+  // const [color, setColor] = useState("transparent");
 
   const toggle = () => setIsOpen(!isOpen);
+
+  let menuRef = useRef();
+
+  useEffect(() => {
+    let handler = (event) => {
+      if (!menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    }
+  });
 
   // const changeBackground = () => {
   //   if(window.scrollY >= 80) {
@@ -45,13 +61,19 @@ const Header = (props) => {
 
   // window.addEventListener('scroll', changeBackground);
 
+
+
+
   return (
+
     <>
+      <div ref = { menuRef }>
       <Navbar
         style={{ background: "#262F36" }}
         light
         expand="md"
         className="fixed-top"
+
       >
         <div className="container">
           <NavbarBrand href="/">
@@ -73,12 +95,13 @@ const Header = (props) => {
                   exact
                   activeStyle={{ color: "orange" }}
                   to={"/"}
+                  onClick={ toggle }
                 >
                   Home
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link" to="/user/profile">
+                <NavLink className="nav-link" to="/user/profile" onClick={ toggle }>
                   Examination
                 </NavLink>
               </NavItem>
@@ -87,6 +110,7 @@ const Header = (props) => {
                   className="nav-link"
                   activeStyle={{ color: "orange" }}
                   to={"/events"}
+                  onClick={ toggle }
                 >
                   Events
                 </NavLink>
@@ -96,6 +120,7 @@ const Header = (props) => {
                   className="nav-link"
                   activeStyle={{ color: "orange" }}
                   to={"/gallery"}
+                  onClick={toggle}
                 >
                   Gallery
                 </NavLink>
@@ -109,16 +134,17 @@ const Header = (props) => {
                   <DropdownItem>Result</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-              <AuthLink auth={isAuth()} />
+                <AuthLink auth={isAuth()} toggle={toggle}/>
             </Nav>
           </Collapse>
         </div>
       </Navbar>
+      </div>
     </>
   );
 };
 
-const AuthLink = ({ auth }) => {
+const AuthLink = ({ auth,  toggle}) => {
   return (
     <>
       {auth ? (
@@ -142,12 +168,12 @@ const AuthLink = ({ auth }) => {
       ) : (
         <>
           <NavItem>
-            <NavLink className="nav-link" to="/signUp">
+            <NavLink className="nav-link" to="/signUp" onClick={ toggle }>
               Sign Up
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink className="nav-link" to="/login">
+            <NavLink className="nav-link" to="/login" onClick={ toggle }>
               Login
             </NavLink>
           </NavItem>
@@ -155,6 +181,7 @@ const AuthLink = ({ auth }) => {
       )}
     </>
   );
+
 };
 
 export default Header;
