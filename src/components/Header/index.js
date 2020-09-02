@@ -4,7 +4,7 @@
         - Header.css that contains all the css for this component and its children component
 */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Collapse,
   Navbar,
@@ -13,11 +13,12 @@ import {
   Nav,
   NavItem,
 } from "reactstrap";
-
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink, useHistory, Redirect, withRouter } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import "./Header.css";
-import { signout } from "../../_helpers/auth";
+import { userActions } from "../../redux/actions/auth.actions";
+import { connect } from "react-redux";
+import { isAuth } from "../../_helpers/auth";
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +26,7 @@ const Header = (props) => {
   //const [color, setColor] = useState("transparent");
 
   const toggle = () => setIsOpen(!isOpen);
+  // const [loggedIn, setloggedIn] = useState(false);
 
   // const changeBackground = () => {
   //   if(window.scrollY >= 80) {
@@ -40,6 +42,17 @@ const Header = (props) => {
   // }
 
   // window.addEventListener('scroll', changeBackground);
+
+  // useEffect(() => {
+  //   console.log("running...");
+  //   if (isAuth()) {
+  //     setloggedIn(true);
+  //   } else {
+  //     setloggedIn(false);
+  //   }
+  //   return () => <Redirect to="/" />;
+  // }, []);
+
   console.log(props);
 
   return (
@@ -92,7 +105,7 @@ const Header = (props) => {
                   Gallery
                 </NavLink>
               </NavItem>
-              <AuthLink loggedIn={props.loggedIn} />
+              <AuthLink loggedIn={isAuth()} logout={props.logout} />
             </Nav>
           </Collapse>
         </div>
@@ -101,8 +114,14 @@ const Header = (props) => {
   );
 };
 
-const AuthLink = ({ loggedIn }) => {
+const AuthLink = ({ loggedIn, logout }) => {
   const history = useHistory();
+  const handleLogout = () => {
+    logout();
+    console.log("logged Out");
+    history.push("/");
+  };
+
   return (
     <>
       {loggedIn ? (
@@ -116,9 +135,7 @@ const AuthLink = ({ loggedIn }) => {
             <NavLink className="nav-link" to="/">
               <button
                 className="cbtn btn-outline-primary p-1"
-                onClick={() => {
-                  signout(() => history.push("/"));
-                }}
+                onClick={handleLogout}
               >
                 Log Out
               </button>
@@ -143,4 +160,8 @@ const AuthLink = ({ loggedIn }) => {
   );
 };
 
-export default Header;
+const mapDispatchToprops = (dispatch) => ({
+  logout: () => dispatch(userActions.logout),
+});
+
+export default withRouter(connect(null, mapDispatchToprops)(Header));

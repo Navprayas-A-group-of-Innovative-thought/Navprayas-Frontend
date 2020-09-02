@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
+import {
+  Switch,
+  Route,
+  BrowserRouter,
+  Redirect,
+  withRouter,
+} from "react-router-dom";
 import Home from "./pages/home";
 import Event from "./pages/Event";
 import Auth from "./pages/Auth";
@@ -10,18 +16,21 @@ import NewPassword from "./pages/Auth/NewPassword";
 import Activate from "./pages/Auth/Activate";
 import Gallery from "./pages/Gallery";
 import Profile from "./pages/Profile";
-// import { History } from "./_helpers/history";
+import ShowProfile from "./components/ProfileUI/ShowProfile";
+import { PrivateRoute } from "./components/PrivateRoute.component";
+import { getCookie, isAuth } from "./_helpers/auth";
+// import { userActions } from "./redux/actions/auth.actions";
+// import { connect } from "react-redux";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
+    console.log(localStorage.getItem("user"));
+    console.log("Token", getCookie("token"));
+    console.log("isAuth", isAuth());
     return (
       <>
         <BrowserRouter>
-          <Header loggedIn={false} />
+          <Header />
           <Switch>
             <Route exact path="/" component={Home} />
 
@@ -51,8 +60,8 @@ class App extends Component {
             />
             <Route exact path="/gallery" component={Gallery} />
 
-            <Route exact path="/profile" component={Profile} />
-
+            <PrivateRoute exact path="/profile" component={Profile} />
+            <PrivateRoute exact path="/profile/show" component={ShowProfile} />
             <Route exact path="/reset" component={ForgotPassword} />
             <Redirect to="/" />
           </Switch>
@@ -62,4 +71,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;

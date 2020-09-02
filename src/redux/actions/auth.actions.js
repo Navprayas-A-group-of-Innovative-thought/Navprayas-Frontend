@@ -2,12 +2,16 @@ import axios from "axios";
 import { userConstants } from "../constants/constant";
 import { url } from "../api";
 import { alertActions } from "./alert.actions";
-// import { History } from "../../_helpers/history";
+import { authenticate, signout, getCookie } from "../../_helpers/auth";
+import { authHeader } from "../../_helpers/auth-header";
+
+// import { history } from "../../_helpers/history";
 
 export const userActions = {
   login,
   logout,
   register,
+  getUser,
 };
 
 // Action creator for Login
@@ -34,6 +38,7 @@ function login(email, password) {
       .post(`${url}/login`, body, config)
       .then((res) => {
         console.log("Login action Creator", res);
+        authenticate(res);
         dispatch(success());
         dispatch(alertActions.success("Log in Success"));
       })
@@ -57,6 +62,7 @@ function login(email, password) {
 
 // logout function
 function logout() {
+  signout();
   return { type: userConstants.LOGOUT };
 }
 
@@ -114,5 +120,46 @@ function register(user) {
   }
   function failure() {
     return { type: userConstants.REGISTER_FAILURE };
+  }
+}
+
+// Get User Details
+function getUser() {
+  return (dispatch) => {
+    dispatch(request());
+
+    const token = getCookie("token");
+    console.log("token", token);
+
+    const config = {
+      header: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    console.log(authHeader());
+
+    axios
+      .get(`${url}/user/profile`, config)
+      .then((res) => {
+        console.log(res);
+        dispatch(success("Akash"));
+      })
+      .catch((err) => {
+        console.log(err);
+        dispatch(failure);
+      });
+  };
+
+  function request() {
+    return { type: userConstants.GETUSER_REQUEST };
+  }
+
+  function success(user) {
+    return { type: userConstants.GETUSER_SUCCESS, user };
+  }
+
+  function failure() {
+    return { type: userConstants.GETUSER_FAILURE };
   }
 }
