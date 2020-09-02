@@ -25,7 +25,7 @@ import { isAuth, signout } from "../../_helpers/auth";
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [navbar, setNavbar] = useState(false);
+  // const [navbar, setNavbar] = useState(false);
   //const [color, setColor] = useState("transparent");
 
   const toggle = () => setIsOpen(!isOpen);

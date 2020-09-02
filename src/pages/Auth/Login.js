@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Input } from "reactstrap";
-import CustomButton from "../../components/Button";
+// import CustomButton from "../../components/Button";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 // import { url } from "../../redux/api";
