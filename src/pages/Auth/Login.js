@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Input } from "reactstrap";
 // import CustomButton from "../../components/Button";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory, useLocation } from "react-router-dom";
 import axios from "axios";
 // import { url } from "../../redux/api";
 import AlertModal from "../../components/Alert.component";
@@ -35,6 +35,13 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { email, password } = data;
 
+  const history = useHistory();
+  const location = useLocation();
+
+  const { from } = location.state || { from: { pathname: "/" } };
+  console.log(history);
+  console.log(location);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -67,8 +74,9 @@ const Login = () => {
             color: "success",
             msg: "Logged in Successfully",
           });
-          console.log(res.data);
-          authenticate(res, isAuth());
+          authenticate(res, () => {
+            history.replace(from);
+          });
         })
         .catch((err) => {
           setIsLoading(false);
@@ -76,7 +84,7 @@ const Login = () => {
             ...alertMsg,
             show: true,
             color: "danger",
-            msg: "Auth Error",
+            msg: err.response.data.errorDetails,
           });
           console.log(err.response);
         });

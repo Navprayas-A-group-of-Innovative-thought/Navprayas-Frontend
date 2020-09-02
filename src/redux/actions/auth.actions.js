@@ -1,7 +1,12 @@
 import axios from "axio";
-
 import * as ActionTypes from "../constants/constant";
 import { url } from "../api";
+
+// Action creator for Login
+
+// export const login({email, password}) => {
+
+// }
 
 // Action for Register new user
 export const register = ({

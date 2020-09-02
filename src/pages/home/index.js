@@ -8,6 +8,7 @@ import Announcements from "../../components/Announcements";
 // import RecentActivity from "../../components/recentActivityComponent/recentActivity.component";
 import Timeline from "../../components/Timeline";
 import Faq from "../../components/Faq";
+// import Layout from "../Layout";
 const Home = () => {
   return (
     <>

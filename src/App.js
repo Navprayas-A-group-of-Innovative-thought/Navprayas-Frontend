@@ -14,11 +14,13 @@ import { isAuth } from "./_helpers/auth";
 
 function App() {
   console.log(process.env.REACT_APP_API_URL);
-  console.log(isAuth());
+
+  const loggedIn = isAuth();
+  console.log("logged in Status", loggedIn);
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <Header loggedIn={loggedIn} />
         <Switch>
           <Route exact path="/" component={Home} />
 
@@ -48,7 +50,7 @@ function App() {
           />
           <Route exact path="/gallery" component={Gallery} />
 
-          <Route exact path="/user/profile" component={Profile} />
+          <Route exact path="/profile" component={Profile} />
 
           <Route exact path="/reset" component={ForgotPassword} />
           <Redirect to="/" />

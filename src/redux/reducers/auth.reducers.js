@@ -4,11 +4,12 @@ const initialState = {
   isAuthenticated: null,
   isLoading: false,
   user: null,
-  message: "",
+  msg: "",
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
     case ActionsTypes.REGISTER_REQUEST:
+      return { ...state, isLoading: true, msg: action.payload };
   }
 }

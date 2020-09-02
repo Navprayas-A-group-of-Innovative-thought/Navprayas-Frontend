@@ -12,16 +12,12 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
 } from "reactstrap";
 
-import { NavLink, Redirect } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import "./Header.css";
-import { isAuth, signout } from "../../_helpers/auth";
+import { signout } from "../../_helpers/auth";
 
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +40,7 @@ const Header = (props) => {
   // }
 
   // window.addEventListener('scroll', changeBackground);
+  console.log(props);
 
   return (
     <>
@@ -78,11 +75,6 @@ const Header = (props) => {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link" to="/user/profile">
-                  Examination
-                </NavLink>
-              </NavItem>
-              <NavItem>
                 <NavLink
                   className="nav-link"
                   activeStyle={{ color: "orange" }}
@@ -100,16 +92,7 @@ const Header = (props) => {
                   Gallery
                 </NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Downloads
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Sample Paper</DropdownItem>
-                  <DropdownItem>Result</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-              <AuthLink auth={isAuth()} />
+              <AuthLink loggedIn={props.loggedIn} />
             </Nav>
           </Collapse>
         </div>
@@ -118,10 +101,11 @@ const Header = (props) => {
   );
 };
 
-const AuthLink = ({ auth }) => {
+const AuthLink = ({ loggedIn }) => {
+  const history = useHistory();
   return (
     <>
-      {auth ? (
+      {loggedIn ? (
         <>
           <NavItem>
             <NavLink className="nav-link" to="/profile">
@@ -131,8 +115,10 @@ const AuthLink = ({ auth }) => {
           <NavItem>
             <NavLink className="nav-link" to="/">
               <button
-                className="btn btn-outline-primary"
-                onClick={() => signout(() => {})}
+                className="cbtn btn-outline-primary p-1"
+                onClick={() => {
+                  signout(() => history.push("/"));
+                }}
               >
                 Log Out
               </button>
