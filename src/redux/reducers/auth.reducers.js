@@ -1,3 +1,4 @@
+
 import { userConstants } from "../constants/constant";
 
 export function registration(state = { isLoading: false }, action) {
@@ -60,5 +61,6 @@ export function getUser(state = { isLoading: false, user: null }, action) {
       return { ...state, isLoading: false, user: null };
     default:
       return state;
+
   }
 }

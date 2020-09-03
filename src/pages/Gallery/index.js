@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import Modal from "../../components/Gallery Components/Modal";
 import ImageGrid from "../../components/Gallery Components/ImageGrid.component";
 import Team from "../../components/Gallery Components/team";
@@ -67,6 +68,7 @@ const teams = [
   },
 ];
 
+
 const Gallery = () => {
   const [selectedImg, setSelectedImg] = useState(null);
   const [checkWidth, setCheckWidth] = useState(true);
@@ -93,8 +95,9 @@ const Gallery = () => {
         )}
         <h1 className="display-1 mt-5">Our Team</h1>
         <div className="Galleryline1 mx-auto"></div>
-        <div className="Galleryline2 mt-1 mb-5 mx-auto"></div>
+
         <Team team={teams} />
+
       </div>
     </>
   );

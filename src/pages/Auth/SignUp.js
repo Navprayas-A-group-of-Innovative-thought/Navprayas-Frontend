@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
+
 import AlertModal from "../../components/Alert.component";
 import Spinner from "../../components/spinner.component";
 import { userActions } from "../../redux/actions/auth.actions";
@@ -8,6 +9,7 @@ import { alertActions } from "../../redux/actions/alert.actions";
 import { connect } from "react-redux";
 
 const SignUp = (props) => {
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -44,6 +46,7 @@ const SignUp = (props) => {
     setFormData({ ...formData, [text]: e.target.value });
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -79,6 +82,7 @@ const SignUp = (props) => {
               toggle={() => props.clear()}
             >
               {props.alert.message}
+
             </AlertModal>
           </div>
         </div>
@@ -223,6 +227,7 @@ const SignUp = (props) => {
   );
 };
 
+
 const mapStateToprops = (state) => {
   return {
     isLoading: state.registration,
@@ -237,3 +242,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToprops, mapDispatchToProps)(SignUp);
+

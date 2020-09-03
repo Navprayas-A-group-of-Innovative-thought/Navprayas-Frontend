@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const Content = ({ contents, values }) => {
@@ -19,3 +20,5 @@ const Content = ({ contents, values }) => {
 };
 
 export default Content;
+
+

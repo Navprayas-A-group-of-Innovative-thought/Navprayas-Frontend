@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { Form, Input } from "reactstrap";
+
 // import CustomButton from "../../components/Button";
+
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 // import { url } from "../../redux/api";
 import AlertModal from "../../components/Alert.component";
 import Spinner from "../../components/spinner.component";
+
 import { isAuth } from "../../_helpers/auth";
 import { userActions } from "../../redux/actions/auth.actions";
 import { alertActions } from "../../redux/actions/alert.actions";
@@ -14,10 +17,13 @@ import { connect } from "react-redux";
 const url = process.env.REACT_APP_API_URL;
 
 const Login = (props) => {
+
   const [data, setData] = useState({
     email: "",
     password: "",
   });
+
+
 
   const handleChange = (text) => (e) => {
     setData({
@@ -32,6 +38,7 @@ const Login = (props) => {
     e.preventDefault();
 
     if (email && password) {
+
       props.login(email, password);
     }
   };
@@ -44,10 +51,12 @@ const Login = (props) => {
   else {
     return (
       <>
+
         <Form className="signUpForm container" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-12 col-md-8 offset-md-2">
               <AlertModal
+
                 color={props.alert.type}
                 isOpen={props.alert.show}
                 toggle={() => props.clear()}
@@ -105,6 +114,7 @@ const Login = (props) => {
             </div>
           </div>
         </Form>
+
       </>
     );
   }
@@ -123,3 +133,5 @@ const mapDispatchToprops = (dispatch) => ({
 });
 
 export default connect(mapStateToprops, mapDispatchToprops)(Login);
+
+

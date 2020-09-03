@@ -4,7 +4,8 @@
         - Header.css that contains all the css for this component and its children component
 */
 
-import React, { useState, useEffect } from "react";
+=======
+import React, { useState, useEffect, useRef } from "react";
 import {
   Collapse,
   Navbar,
@@ -20,43 +21,48 @@ import { userActions } from "../../redux/actions/auth.actions";
 import { connect } from "react-redux";
 import { isAuth } from "../../_helpers/auth";
 
+
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   // const [navbar, setNavbar] = useState(false);
-  //const [color, setColor] = useState("transparent");
 
-  const toggle = () => setIsOpen(!isOpen);
-  // const [loggedIn, setloggedIn] = useState(false);
 
-  // const changeBackground = () => {
-  //   if(window.scrollY >= 80) {
-  //     setNavbar(true);
-  //   }
-  //   else {
-  //     setNavbar(false);
-  //   }
-  // };
+  // const [color, setColor] = useState("transparent");
 
-  // const changeColor = (color) => {
-  //   setColor(color);
-  // }
+  const toggle = (e) => {
+    if(window.innerWidth < 768)
+    {
+      setIsOpen(!isOpen);
+    }
 
-  // window.addEventListener('scroll', changeBackground);
+  }
 
-  // useEffect(() => {
-  //   console.log("running...");
-  //   if (isAuth()) {
-  //     setloggedIn(true);
-  //   } else {
-  //     setloggedIn(false);
-  //   }
-  //   return () => <Redirect to="/" />;
-  // }, []);
+  let menuRef = useRef();
+
+  useEffect(() => {
+    let handler = (event) => {
+      if (!menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    }
+  });
+
+
 
   console.log(props);
 
+
   return (
+
     <>
+      <div ref = { menuRef }>
+
       <Navbar
         style={{ background: "#262F36" }}
         light
@@ -83,6 +89,8 @@ const Header = (props) => {
                   exact
                   activeStyle={{ color: "orange" }}
                   to={"/"}
+
+                  onClick={ toggle }
                 >
                   Home
                 </NavLink>
@@ -92,6 +100,8 @@ const Header = (props) => {
                   className="nav-link"
                   activeStyle={{ color: "orange" }}
                   to={"/events"}
+
+                  onClick={ toggle }
                 >
                   Events
                 </NavLink>
@@ -101,18 +111,24 @@ const Header = (props) => {
                   className="nav-link"
                   activeStyle={{ color: "orange" }}
                   to={"/gallery"}
+
+                  onClick={toggle}
+
                 >
                   Gallery
                 </NavLink>
               </NavItem>
+
               <AuthLink loggedIn={isAuth()} logout={props.logout} />
             </Nav>
           </Collapse>
         </div>
       </Navbar>
+</div>
     </>
   );
 };
+
 
 const AuthLink = ({ loggedIn, logout }) => {
   const history = useHistory();
@@ -145,12 +161,15 @@ const AuthLink = ({ loggedIn, logout }) => {
       ) : (
         <>
           <NavItem>
-            <NavLink className="nav-link" to="/signUp">
+
+            <NavLink className="nav-link" to="/signUp" onClick={ toggle }>
+
               Sign Up
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink className="nav-link" to="/login">
+            <NavLink className="nav-link" to="/login" onClick={ toggle }>
+
               Login
             </NavLink>
           </NavItem>
@@ -158,6 +177,7 @@ const AuthLink = ({ loggedIn, logout }) => {
       )}
     </>
   );
+
 };
 
 const mapDispatchToprops = (dispatch) => ({
@@ -165,3 +185,9 @@ const mapDispatchToprops = (dispatch) => ({
 });
 
 export default withRouter(connect(null, mapDispatchToprops)(Header));
+
+
+
+
+
+

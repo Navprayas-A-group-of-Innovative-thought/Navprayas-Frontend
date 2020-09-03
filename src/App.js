@@ -1,11 +1,9 @@
+
 import React, { Component } from "react";
-import {
-  Switch,
-  Route,
-  BrowserRouter,
-  Redirect,
-  withRouter,
-} from "react-router-dom";
+
+
+import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
+
 import Home from "./pages/home";
 import Event from "./pages/Event";
 import Auth from "./pages/Auth";
@@ -16,6 +14,7 @@ import NewPassword from "./pages/Auth/NewPassword";
 import Activate from "./pages/Auth/Activate";
 import Gallery from "./pages/Gallery";
 import Profile from "./pages/Profile";
+
 import ShowProfile from "./components/ProfileUI/ShowProfile";
 import { PrivateRoute } from "./components/PrivateRoute.component";
 import { getCookie, isAuth } from "./_helpers/auth";
@@ -70,6 +69,8 @@ class App extends Component {
       </>
     );
   }
+
+
 }
 
 export default App;

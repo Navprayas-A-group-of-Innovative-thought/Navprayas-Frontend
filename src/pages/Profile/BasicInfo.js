@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Input } from "reactstrap";
 import CustomButton from "../../components/Button";
@@ -108,3 +109,4 @@ const BasicInfo = () => {
 };
 
 export default BasicInfo;
+

@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./profile.css";
 import pic from "../../assets/react.svg";
