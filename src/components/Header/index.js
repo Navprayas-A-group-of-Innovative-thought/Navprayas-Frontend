@@ -28,7 +28,13 @@ const Header = (props) => {
   // const [navbar, setNavbar] = useState(false);
   // const [color, setColor] = useState("transparent");
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggle = (e) => {
+    if(window.innerWidth < 768)
+    {
+      setIsOpen(!isOpen);
+    }
+
+  }
 
   let menuRef = useRef();
 
@@ -60,9 +66,6 @@ const Header = (props) => {
   // }
 
   // window.addEventListener('scroll', changeBackground);
-
-
-
 
   return (
 
