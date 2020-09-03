@@ -1,10 +1,3 @@
-/*
-    Header File
-    Task To-do
-        - Header.css that contains all the css for this component and its children component
-*/
-
-=======
 import React, { useState, useEffect, useRef } from "react";
 import {
   Collapse,
@@ -21,21 +14,17 @@ import { userActions } from "../../redux/actions/auth.actions";
 import { connect } from "react-redux";
 import { isAuth } from "../../_helpers/auth";
 
-
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   // const [navbar, setNavbar] = useState(false);
 
-
   // const [color, setColor] = useState("transparent");
 
   const toggle = (e) => {
-    if(window.innerWidth < 768)
-    {
+    if (window.innerWidth < 768) {
       setIsOpen(!isOpen);
     }
-
-  }
+  };
 
   let menuRef = useRef();
 
@@ -44,93 +33,87 @@ const Header = (props) => {
       if (!menuRef.current.contains(event.target)) {
         setIsOpen(false);
       }
-    }
+    };
 
     document.addEventListener("mousedown", handler);
 
     return () => {
       document.removeEventListener("mousedown", handler);
-    }
+    };
   });
-
-
 
   console.log(props);
 
-
   return (
-
     <>
-      <div ref = { menuRef }>
+      <div ref={menuRef}>
+        <Navbar
+          style={{ background: "#262F36" }}
+          light
+          expand="md"
+          className="fixed-top"
+        >
+          <div className="container">
+            <NavbarBrand href="/">
+              <img
+                src={logo}
+                width="250"
+                height="auto"
+                className="d-inline-block align-top"
+                alt="Logo"
+              />
+            </NavbarBrand>
+            <NavbarToggler className="custom-toggler" onClick={toggle} />
+            <Collapse isOpen={isOpen} navbar>
+              <Nav className="mr-auto"></Nav>
+              <Nav className="d-flex justify-content-end" navbar>
+                <NavItem>
+                  <NavLink
+                    className="nav-link"
+                    exact
+                    activeStyle={{ color: "orange" }}
+                    to={"/"}
+                    onClick={toggle}
+                  >
+                    Home
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    className="nav-link"
+                    activeStyle={{ color: "orange" }}
+                    to={"/events"}
+                    onClick={toggle}
+                  >
+                    Events
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    className="nav-link"
+                    activeStyle={{ color: "orange" }}
+                    to={"/gallery"}
+                    onClick={toggle}
+                  >
+                    Gallery
+                  </NavLink>
+                </NavItem>
 
-      <Navbar
-        style={{ background: "#262F36" }}
-        light
-        expand="md"
-        className="fixed-top"
-      >
-        <div className="container">
-          <NavbarBrand href="/">
-            <img
-              src={logo}
-              width="250"
-              height="auto"
-              className="d-inline-block align-top"
-              alt="Logo"
-            />
-          </NavbarBrand>
-          <NavbarToggler className="custom-toggler" onClick={toggle} />
-          <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto"></Nav>
-            <Nav className="d-flex justify-content-end" navbar>
-              <NavItem>
-                <NavLink
-                  className="nav-link"
-                  exact
-                  activeStyle={{ color: "orange" }}
-                  to={"/"}
-
-                  onClick={ toggle }
-                >
-                  Home
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  className="nav-link"
-                  activeStyle={{ color: "orange" }}
-                  to={"/events"}
-
-                  onClick={ toggle }
-                >
-                  Events
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  className="nav-link"
-                  activeStyle={{ color: "orange" }}
-                  to={"/gallery"}
-
-                  onClick={toggle}
-
-                >
-                  Gallery
-                </NavLink>
-              </NavItem>
-
-              <AuthLink loggedIn={isAuth()} logout={props.logout} />
-            </Nav>
-          </Collapse>
-        </div>
-      </Navbar>
-</div>
+                <AuthLink
+                  loggedIn={isAuth()}
+                  logout={props.logout}
+                  toggle={toggle}
+                />
+              </Nav>
+            </Collapse>
+          </div>
+        </Navbar>
+      </div>
     </>
   );
 };
 
-
-const AuthLink = ({ loggedIn, logout }) => {
+const AuthLink = ({ loggedIn, logout, toggle }) => {
   const history = useHistory();
   const handleLogout = () => {
     logout();
@@ -161,15 +144,12 @@ const AuthLink = ({ loggedIn, logout }) => {
       ) : (
         <>
           <NavItem>
-
-            <NavLink className="nav-link" to="/signUp" onClick={ toggle }>
-
+            <NavLink className="nav-link" to="/signUp" onClick={toggle}>
               Sign Up
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink className="nav-link" to="/login" onClick={ toggle }>
-
+            <NavLink className="nav-link" to="/login" onClick={toggle}>
               Login
             </NavLink>
           </NavItem>
@@ -177,7 +157,6 @@ const AuthLink = ({ loggedIn, logout }) => {
       )}
     </>
   );
-
 };
 
 const mapDispatchToprops = (dispatch) => ({
@@ -185,9 +164,3 @@ const mapDispatchToprops = (dispatch) => ({
 });
 
 export default withRouter(connect(null, mapDispatchToprops)(Header));
-
-
-
-
-
-

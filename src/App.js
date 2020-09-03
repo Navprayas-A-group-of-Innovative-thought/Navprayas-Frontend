@@ -1,6 +1,4 @@
-
 import React, { Component } from "react";
-
 
 import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
 
@@ -14,10 +12,10 @@ import NewPassword from "./pages/Auth/NewPassword";
 import Activate from "./pages/Auth/Activate";
 import Gallery from "./pages/Gallery";
 import Profile from "./pages/Profile";
-
 import ShowProfile from "./components/ProfileUI/ShowProfile";
 import { PrivateRoute } from "./components/PrivateRoute.component";
 import { getCookie, isAuth } from "./_helpers/auth";
+import Forms from "./pages/Forms";
 // import { userActions } from "./redux/actions/auth.actions";
 // import { connect } from "react-redux";
 
@@ -58,7 +56,7 @@ class App extends Component {
               )}
             />
             <Route exact path="/gallery" component={Gallery} />
-
+            <Route exact path="/forms" component={Forms} />
             <PrivateRoute exact path="/profile" component={Profile} />
             <PrivateRoute exact path="/profile/show" component={ShowProfile} />
             <Route exact path="/reset" component={ForgotPassword} />
@@ -69,8 +67,6 @@ class App extends Component {
       </>
     );
   }
-
-
 }
 
 export default App;

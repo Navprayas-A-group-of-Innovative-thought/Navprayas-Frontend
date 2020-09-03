@@ -48,12 +48,10 @@ export const authenticate = (response) => {
   setCookie("token", response.data.token);
   setLocalStorage("user", response.data.user);
   // next();
-
 };
 
 // Access user info from localstorage
 export const isAuth = () => {
-
   const cookieChecked = getCookie("token");
   if (cookieChecked) {
     if (localStorage.getItem("user")) {
@@ -64,12 +62,9 @@ export const isAuth = () => {
   } else return false;
 };
 
-
-export const signout = (next) => {
+export const signout = () => {
   removeCookie("token");
   removeLocalStorage("user");
-  next();
-
 };
 
 export const updateUser = (response, next) => {

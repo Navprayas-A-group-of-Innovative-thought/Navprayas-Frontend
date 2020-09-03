@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-
 import { Link } from "react-router-dom";
-=======
-// import jwt from "jsonwebtoken";
 
+// import jwt from "jsonwebtoken";
 
 // import { url } from "../../redux/api";
 import CustomButton from "../../components/Button";
@@ -144,7 +142,6 @@ const Activate = ({ match }) => {
             </div>
           </>
         )}
-
       </div>
     </section>
   );
