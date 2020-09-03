@@ -8,17 +8,16 @@ import EventCard from "../../components/EventsCard/EventCard.component";
 import WebinarTable from "../../components/EventsCard/WebinarTable.component";
 import { events } from "../../shared/event";
 import { webinars } from "../../shared/webinar";
+import "./Event.css";
 
 const Event = () => {
-  console.log(events);
-  console.log(webinars);
 
   return (
-    <section style={{ height: "auto", margin: "80px" }}>
-      <div className="container">
+    <section className="event" style={{ height: "auto", margin: "80px" }}>
+      <div className="container text-center">
         <div className="row">
-          <div className="col text-center">
-            <h1>Our Events</h1>
+          <div className="col">
+            <h1 className="display-1">Our Events</h1>
             <p className="lead">
               We think together in better way for spreading the light of
               education, matching the present scenario and other

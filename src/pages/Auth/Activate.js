@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
+import { Link } from "react-router-dom";
+
 // import jwt from "jsonwebtoken";
-import { Link, Redirect } from "react-router-dom";
+
 // import { url } from "../../redux/api";
-import { Container, Row, Col, Alert } from "reactstrap";
 import CustomButton from "../../components/Button";
 import AlertModal from "../../components/Alert.component";
 
@@ -71,14 +73,14 @@ const Activate = ({ match }) => {
     <section
       style={{
         height: "60vh",
-        marginTop: "82px",
+        marginTop: "75px",
         backgroundColor: "#f6f4f2",
         padding: "10px",
       }}
     >
-      <Container fluid>
-        <Row>
-          <Col xs="12" className="d-flex justify-content-center p-5">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-xs-12 d-flex justify-content-center p-5">
             <AlertModal
               color={color}
               isOpen={show}
@@ -86,32 +88,61 @@ const Activate = ({ match }) => {
             >
               {msg}
             </AlertModal>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs="12" className="text-center">
-            <h3>Welcome {name}</h3>
-          </Col>
-          <Col xs="12" className="d-flex justify-content-center p-3 ">
-            <form onSubmit={handleSubmit}>
-              <CustomButton type="submit">
-                Verify Your Email Address
-              </CustomButton>
-            </form>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs="12" className="d-flex text-center justify-content-center">
-            <h5>
-              If You think this is not your email , please try{" "}
-              <Link to="/signUp">
-                <span style={{ color: "#F69925" }}>sign up</span>
-              </Link>{" "}
-              again
-            </h5>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+
+        {name ? (
+          <>
+            <div className="row">
+              <div className="col-xs-12 text-center">
+                <h3>Welcome {name}</h3>
+              </div>
+              <div className="row m-2">
+                <div className="col text-center">
+                  <h4>
+                    <strong style={{ color: "green" }}>
+                      {email} is now verified
+                    </strong>
+                  </h4>
+                </div>
+              </div>
+              <div className="row m-4">
+                <div className="col-xs-12 d-flex text-center justify-content-center">
+                  <h5>
+                    Now you can{" "}
+                    <Link to="/login">
+                      <span style={{ color: "#F69925" }}>Login</span>
+                    </Link>{" "}
+                    with your credentials
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="col-xs-12 d-flex justify-content-center p-3 ">
+              <form onSubmit={handleSubmit}>
+                <CustomButton className="btn-lg" type="submit">
+                  Verify Your Email Address
+                </CustomButton>
+              </form>
+            </div>
+
+            <div className="row m-4">
+              <div className="col-xs-12 d-flex text-center justify-content-center">
+                <h5>
+                  If You think this is not your email , please try{" "}
+                  <Link to="/signUp">
+                    <span style={{ color: "#F69925" }}>sign up</span>
+                  </Link>{" "}
+                  again
+                </h5>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
     </section>
   );
 };

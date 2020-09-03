@@ -1,0 +1,33 @@
+.btnColor{
+    background: #f69925;
+    color: white;
+    box-shadow:0px 4px 12px rgba(255, 140, 0, .40);
+}
+
+.btnColor:hover {
+    background: #ff8c00;
+}
+
+.btn a{
+    text-decoration:none;
+    color:white;
+}
+
+.btnOutColor{
+    border-color: #f69925;
+}
+
+.btnOutColor:hover{
+    background:#ff8c00;
+    box-shadow:0px 5px 20px 5px rgba(255, 140, 0, .40);
+}
+
+.btnOutColor a{
+    color:#f69925;
+    transition: 0.15s ease-in-out;
+}
+
+.btnOutColor:hover a{
+    color:white;
+}
+

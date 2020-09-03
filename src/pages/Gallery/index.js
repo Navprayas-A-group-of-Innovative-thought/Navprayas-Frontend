@@ -1,72 +1,106 @@
-import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import pic1 from './Pics/1.jpg'
-import pic2 from './Pics/2.jpg'
-import pic3 from './Pics/3.jpg'
-import pic4 from './Pics/4.jpg'
-import pic5 from './Pics/5.jpg'
-import pic6 from './Pics/6.png'
-import pic7 from './Pics/7.jpg'
-import pic8 from './Pics/8.jpg'
-import pic9 from './Pics/9.jpg'
-import pic10 from './Pics/10.jpg'
-import pic11 from './Pics/11.jpg'
-import pic12 from './Pics/12.jpg'
-import pic13 from './Pics/13.jpg'
-import pic14 from './Pics/14.png'
-import Image from './image'
-import './Gallery.css'
+import React, { useState } from "react";
+
+import Modal from "../../components/Gallery Components/Modal";
+import ImageGrid from "../../components/Gallery Components/ImageGrid.component";
+import Team from "../../components/Gallery Components/team";
+import "./Gallery.css";
+
+const pics = [
+  {
+    pic: "/assets/Gallery/1.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+  {
+    pic: "/assets/Gallery/2.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+  {
+    pic: "/assets/Gallery/3.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+  {
+    pic: "/assets/Gallery/4.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+  {
+    pic: "/assets/Gallery/5.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+  {
+    pic: "/assets/Gallery/6.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+  {
+    pic: "/assets/Gallery/7.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+];
+
+const teams = [
+  {
+    pic: "/assets/Gallery/1.JPG",
+    name: "Title",
+    designation: "Lorem ipsum dolor",
+  },
+  {
+    pic: "/assets/Gallery/2.JPG",
+    name: "Title",
+    designation: "Lorem ipsum dolor",
+  },
+  {
+    pic: "/assets/Gallery/3.JPG",
+    name: "Title",
+    designation: "Lorem ipsum dolor",
+  },
+];
+
 
 const Gallery = () => {
+  const [selectedImg, setSelectedImg] = useState(null);
+  const [checkWidth, setCheckWidth] = useState(true);
 
-    return(
-        <>
-            <Container className="text-center" style={{marginTop:'69px'}}>
-                <h1 className="GalleryTitle">GALLERY</h1>
-                <div className="Galleryline1"></div>
-                <div className="Galleryline2"></div>
-                <Row>
-                    <Col lg="4" md="6">
-                        <Image pic1={pic1}/>
-                    </Col>
-                    <Col lg="4" md="6">
-                        <Image pic1={pic2}/>
-                    </Col>
-                    <Col lg="4" md="6">
-                        <Image pic1={pic3}/>
-                    </Col>
-                    <Col lg="4" md="6">
-                        <Image pic1={pic4}/>
-                    </Col>
-                    <Col lg="4" md="6">
-                        <Image pic1={pic5}/>
-                    </Col>
-                    <Col lg="4" md="6">
-                        <Image pic1={pic6}/>
-                    </Col>
-                    <Col lg="4" md="6">
-                        <Image pic1={pic7} />
-                    </Col>
-                    <Col lg="4" md="6">
-                        <Image pic1={pic8} />
-                    </Col>
-                    <Col lg="4" md="6">
-                        <Image pic1={pic9} />
-                    </Col>
-                    <Col lg="4" md="6">
-                        <Image pic1={pic10} />
-                    </Col>
-                    <Col lg="4" md="6">
-                        <Image pic1={pic11} />
-                    </Col>
-                    <Col lg="4" md="6">
-                        <Image pic1={pic12} />
-                    </Col>
-                </Row>
-            </Container>
-        </>
-    );
+  const mobileWidth = (event) => {
+    if (window.innerWidth < 768) {
+      setCheckWidth(false);
+    } else {
+      setCheckWidth(true);
+    }
+  };
 
-}
+  window.addEventListener("resize", mobileWidth);
 
-export default Gallery
+  return (
+    <>
+      <div className="container text-center" style={{ marginTop: "69px" }}>
+        <h1 className="display-1">GALLERY</h1>
+        <div className="Galleryline1 mt-2 mx-auto"></div>
+        <div className="Galleryline2 mt-1 mb-5 mx-auto"></div>
+        <ImageGrid pics={pics} setSelectedImg={setSelectedImg} />
+        {selectedImg && checkWidth && (
+          <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+        )}
+        <h1 className="display-1 mt-5">Our Team</h1>
+        <div className="Galleryline1 mx-auto"></div>
+
+        <Team team={teams} />
+
+      </div>
+    </>
+  );
+};
+
+export default Gallery;
