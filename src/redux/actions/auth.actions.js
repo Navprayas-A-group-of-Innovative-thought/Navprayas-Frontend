@@ -132,8 +132,8 @@ function getUser() {
     console.log("token", token);
 
     const config = {
-      header: {
-        Authorization: `Bearer ${token}`,
+      headers: {
+        authorization: `Bearer ${token}`,
       },
     };
 
@@ -143,7 +143,7 @@ function getUser() {
       .get(`${url}/user/profile`, config)
       .then((res) => {
         console.log(res);
-        dispatch(success("Akash"));
+        dispatch(success(res.data));
       })
       .catch((err) => {
         console.log(err);

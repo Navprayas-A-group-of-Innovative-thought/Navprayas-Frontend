@@ -127,7 +127,7 @@ const AuthLink = ({ loggedIn, logout }) => {
       {loggedIn ? (
         <>
           <NavItem>
-            <NavLink className="nav-link" to="/profile">
+            <NavLink className="nav-link" to="/profile/show">
               Profile
             </NavLink>
           </NavItem>
