@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Form, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
-import axios from "axios";
-// import { url } from "../../redux/api";
+
 import AlertModal from "../../components/Alert.component";
 import Spinner from "../../components/spinner.component";
-const url = process.env.REACT_APP_API_URL;
+import { userActions } from "../../redux/actions/auth.actions";
+import { alertActions } from "../../redux/actions/alert.actions";
+import { connect } from "react-redux";
 
-const SignUp = () => {
+const SignUp = (props) => {
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -17,12 +19,7 @@ const SignUp = () => {
     dob: "",
     gender: "Male",
   });
-  const [alertMsg, setAlertMsg] = useState({
-    show: false,
-    color: "",
-    msg: "",
-  });
-  const [isLoading, setIsLoading] = useState(false);
+
   const [terms, setTerms] = useState(false);
 
   const {
@@ -49,96 +46,43 @@ const SignUp = () => {
     setFormData({ ...formData, [text]: e.target.value });
   };
 
-  const { show, color, msg } = alertMsg;
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsLoading(true);
+
     if (all) {
       if (confirmPassword === password) {
-        setFormData({ ...formData, textChange: "Submitting" });
-        const config = {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        };
-
-        //Request Body
-        const body = JSON.stringify({
-          firstName,
-          lastName,
-          email,
-          password,
-          confirmPassword,
-          dob,
-          gender,
-        });
-        axios
-          .post(`${url}/signup`, body, config)
-          .then((res) => {
-            setIsLoading(false);
-            setFormData({
-              ...formData,
-              firstName: "",
-              lastName: "",
-              email: "",
-              password: "",
-              confirmPassword: "",
-              dob: "",
-              gender: "",
-            });
-            setAlertMsg({
-              ...alertMsg,
-              show: true,
-              msg: res.data.responseData,
-              color: "success",
-            });
-            console.log(res.data);
-          })
-          .catch((err) => {
-            setIsLoading(false);
-            // setFormData({
-            //   ...formData,
-            //   textChange: "Sign Up",
-            // });
-            setAlertMsg({
-              ...alertMsg,
-              show: true,
-              msg: err.response.data.errorDetails,
-              color: "danger",
-            });
-            console.log(err.response);
-          });
-      } else {
-        setIsLoading(false);
-        setAlertMsg({
-          ...alertMsg,
-          show: true,
-          msg: "Password did not match",
-          color: "danger",
+        props.register(formData);
+        setFormData({
+          ...formData,
+          firstName: "",
+          lastName: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+          dob: "",
+          gender: "Male",
         });
       }
     } else {
-      setIsLoading(false);
-      setAlertMsg({
-        ...alertMsg,
-        show: true,
-        msg: "All Fields are required",
-        color: "danger",
-      });
+      props.error("All fields are required");
     }
   };
 
+  console.log("isLoading", props.isLoading);
+  const { isLoading } = props.isLoading;
   return (
     <>
-      <Form className="signUpForm">
+      <Form className="signUpForm" noValidate>
         <div className="row">
           <div className="col-12 col-md-8 offset-md-2">
             <AlertModal
-              color={color}
-              isOpen={show}
-              toggle={() => setAlertMsg({ ...alertMsg, show: !show })}
+              color={props.alert.type}
+              isOpen={props.alert.show}
+              toggle={() => props.clear()}
             >
-              {msg}
+              {props.alert.message}
+
             </AlertModal>
           </div>
         </div>
@@ -283,4 +227,19 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+
+const mapStateToprops = (state) => {
+  return {
+    isLoading: state.registration,
+    alert: state.alert,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  register: (user) => dispatch(userActions.register(user)),
+  error: (msg) => dispatch(alertActions.error(msg)),
+  clear: () => dispatch(alertActions.clear()),
+});
+
+export default connect(mapStateToprops, mapDispatchToProps)(SignUp);
+

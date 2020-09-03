@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Form, Input } from "reactstrap";
-import CustomButton from "../../components/Button";
+
+// import CustomButton from "../../components/Button";
+
 import AlertModal from "../../components/Alert.component";
 import axios from "axios";
 // import { url } from "../../redux/api";
@@ -99,7 +101,9 @@ const ForgotPassword = () => {
           <div className="row m-2">
             <div className="col d-flex justify-content-center">
               <button
-                className="btn signUpButton btn-lg"
+
+                className="cbtn signUpButton btn-lg"
+
                 disabled={email === ""}
               >
                 {!isLoading ? <span>Reset</span> : <Spinner text="Loading.." />}

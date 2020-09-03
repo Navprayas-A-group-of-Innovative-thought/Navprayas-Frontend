@@ -1,13 +1,72 @@
 import React, { useState } from "react";
-import Modal from "../../components/Gallery.imagegrid/Modal";
-import ImageGrid from "../../components/Gallery.imagegrid";
-import "./Gallery.css";
-import Team from "../../components/Gallery.team";
-import galleryImages from "../../shared/galleryImages";
 
-const pics = galleryImages.pics;
-const teams = galleryImages.teams;
-console.log(pics);
+import Modal from "../../components/Gallery Components/Modal";
+import ImageGrid from "../../components/Gallery Components/ImageGrid.component";
+import Team from "../../components/Gallery Components/team";
+import "./Gallery.css";
+
+const pics = [
+  {
+    pic: "/assets/Gallery/1.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+  {
+    pic: "/assets/Gallery/2.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+  {
+    pic: "/assets/Gallery/3.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+  {
+    pic: "/assets/Gallery/4.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+  {
+    pic: "/assets/Gallery/5.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+  {
+    pic: "/assets/Gallery/6.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+  {
+    pic: "/assets/Gallery/7.JPG",
+    title: "Title",
+    detail:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae tempore, ipsam",
+  },
+];
+
+const teams = [
+  {
+    pic: "/assets/Gallery/1.JPG",
+    name: "Title",
+    designation: "Lorem ipsum dolor",
+  },
+  {
+    pic: "/assets/Gallery/2.JPG",
+    name: "Title",
+    designation: "Lorem ipsum dolor",
+  },
+  {
+    pic: "/assets/Gallery/3.JPG",
+    name: "Title",
+    designation: "Lorem ipsum dolor",
+  },
+];
 
 
 const Gallery = () => {
@@ -36,8 +95,9 @@ const Gallery = () => {
         )}
         <h1 className="display-1 mt-5">Our Team</h1>
         <div className="Galleryline1 mx-auto"></div>
-        <div className="Galleryline2 mt-1 mb-5 mx-auto"></div>
-        <Team team={teams}/>
+
+        <Team team={teams} />
+
       </div>
     </>
   );

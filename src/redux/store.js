@@ -1,22 +1,20 @@
 /*
  Stores will be configured here
 */
-import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
 
-import { signInReducer } from "./reducers/sample.reducer";
+import { createStore, applyMiddleware, compose } from "redux";
+import thunkMiddleware from "redux-thunk";
+import { createLogger } from "redux-logger";
+import rootReducer from "./reducers";
 
-const reducer = combineReducers({
-  signIn: signInReducer,
-});
-
-const initialState = {};
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const loggerMiddleware = createLogger();
 
 const store = createStore(
-  reducer,
-  initialState,
-  composeEnhancer(applyMiddleware(thunk))
+  rootReducer,
+  composeEnhancer(applyMiddleware(thunkMiddleware, loggerMiddleware))
+
+
 );
 
 export default store;

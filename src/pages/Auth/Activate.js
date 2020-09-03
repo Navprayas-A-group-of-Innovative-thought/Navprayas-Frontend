@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
+
+import { Link } from "react-router-dom";
+=======
 // import jwt from "jsonwebtoken";
-import { Link, Redirect } from "react-router-dom";
+
+
 // import { url } from "../../redux/api";
 import CustomButton from "../../components/Button";
 import AlertModal from "../../components/Alert.component";
@@ -87,38 +92,59 @@ const Activate = ({ match }) => {
             </AlertModal>
           </div>
         </div>
-        <div className="row">
-          <div className="col-xs-12 text-center">
-            {name && <h3>Welcome {name}</h3>}
-          </div>
-          <div className="row">
-            <div className="col text-center">
-              {email && (
-                <h4>
-                  <strong>{email} is now verified</strong>
-                </h4>
-              )}
+
+        {name ? (
+          <>
+            <div className="row">
+              <div className="col-xs-12 text-center">
+                <h3>Welcome {name}</h3>
+              </div>
+              <div className="row m-2">
+                <div className="col text-center">
+                  <h4>
+                    <strong style={{ color: "green" }}>
+                      {email} is now verified
+                    </strong>
+                  </h4>
+                </div>
+              </div>
+              <div className="row m-4">
+                <div className="col-xs-12 d-flex text-center justify-content-center">
+                  <h5>
+                    Now you can{" "}
+                    <Link to="/login">
+                      <span style={{ color: "#F69925" }}>Login</span>
+                    </Link>{" "}
+                    with your credentials
+                  </h5>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="col-xs-12 d-flex justify-content-center p-3 ">
-            <form onSubmit={handleSubmit}>
-              <CustomButton type="submit">
-                Verify Your Email Address
-              </CustomButton>
-            </form>
-          </div>
-        </div>
-        <div className="row m-4">
-          <div className="col-xs-12 d-flex text-center justify-content-center">
-            <h5>
-              If You think this is not your email , please try{" "}
-              <Link to="/signUp">
-                <span style={{ color: "#F69925" }}>sign up</span>
-              </Link>{" "}
-              again
-            </h5>
-          </div>
-        </div>
+          </>
+        ) : (
+          <>
+            <div className="col-xs-12 d-flex justify-content-center p-3 ">
+              <form onSubmit={handleSubmit}>
+                <CustomButton className="btn-lg" type="submit">
+                  Verify Your Email Address
+                </CustomButton>
+              </form>
+            </div>
+
+            <div className="row m-4">
+              <div className="col-xs-12 d-flex text-center justify-content-center">
+                <h5>
+                  If You think this is not your email , please try{" "}
+                  <Link to="/signUp">
+                    <span style={{ color: "#F69925" }}>sign up</span>
+                  </Link>{" "}
+                  again
+                </h5>
+              </div>
+            </div>
+          </>
+        )}
+
       </div>
     </section>
   );
