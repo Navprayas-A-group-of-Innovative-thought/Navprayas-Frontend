@@ -1,9 +1,9 @@
-import cookie from "js-cookie";
+import Cookies from "js-cookie";
 
 // Set in Cookie
 export const setCookie = (key, value) => {
   if (window !== "undefiend") {
-    cookie.set(key, value, {
+    Cookies.set(key, value, {
       // 1 Day
       expires: 1,
     });
@@ -13,7 +13,7 @@ export const setCookie = (key, value) => {
 // remove from cookie
 export const removeCookie = (key) => {
   if (window !== "undefined") {
-    cookie.remove(key, {
+    Cookies.remove(key, {
       expires: 1,
     });
   }
@@ -23,7 +23,7 @@ export const removeCookie = (key) => {
 // Will be useful when we need to make request to server with token
 export const getCookie = (key) => {
   if (window !== "undefined") {
-    return cookie.get(key);
+    return Cookies.get(key);
   }
 };
 
@@ -41,7 +41,7 @@ export const removeLocalStorage = (key) => {
   }
 };
 
-// Auth enticate user by passing data to cookie and localstorage during signin
+// Authenticate user by passing data to cookie and localstorage during signin
 export const authenticate = (response, next) => {
   console.log("AUTHENTICATE HELPER ON SIGNIN RESPONSE", response);
   setCookie("token", response.data.token);
@@ -59,7 +59,7 @@ export const isAuth = () => {
       } else {
         return false;
       }
-    }
+    } else return false;
   }
 };
 
