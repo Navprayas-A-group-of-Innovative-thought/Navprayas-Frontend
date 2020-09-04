@@ -10,7 +10,7 @@ const Contents = timelineContent.Contents;
 
 const Timeline = () => {
 
- 
+
 
 
   const [value, setvalue] = useState(0);
@@ -26,6 +26,7 @@ const Timeline = () => {
             minEventPadding="76"
             maxEventPadding="76"
             LabelWidth="100"
+            styles={{ background: '#fff', foreground: '#F69925', outline: '#dfdfdf' }}
             fillingMotion={{ stiffness: "150", damping: "25" }}
             slidingMotion={{ stiffness: "150", damping: "25" }}
             index={value}

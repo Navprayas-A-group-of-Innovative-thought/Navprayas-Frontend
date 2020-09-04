@@ -50,7 +50,7 @@
 }
 
 .signUpInput::placeholder {
-  color: black;
+  color: grey;
 }
 
 .signUpInput:focus {
