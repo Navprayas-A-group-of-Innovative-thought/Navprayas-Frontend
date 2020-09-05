@@ -1,9 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { userActions } from "../../redux/actions/auth.actions";
 import { connect } from "react-redux";
 import Spinner from "../spinner.component";
+import Profile from './Profile';
+import FormEdit from '../FormUI/profile.formEdit';
+import { initialValues } from './exampleUser';
+import validationSchema from '../../util/validationSchema'
 
 const ShowProfile = (props) => {
+
+  const onSubmit = (initialvalues, onSubmitProps) => {
+    console.log('Form data', initialvalues);
+    onSubmitProps.setSubmitting(false);
+    setIsEdit(false);
+  }
+
+  const [isEdit, setIsEdit] = useState(false)
+  const toggle = (e) => {
+    setIsEdit(!isEdit)
+  }
+
   useEffect(() => {
     props.getUser();
   }, []);
@@ -23,26 +39,17 @@ const ShowProfile = (props) => {
     );
   } else if (user) {
     return (
-      <section style={{ height: "50vh", marginTop: "80px" }}>
-        <h1 className="text-center"> Profile Page </h1>
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              {
-                <>
-                  <h1>
-                    Name: {user.firstName} {user.lastName}
-                  </h1>
-                  <h1>email: {user.email}</h1>
-                  <h1>dob:{user.dob}</h1>
-                  <h1>country : {user.country}</h1>
-                  <h1> gender : {user.gender}</h1>
-                </>
-              }
-            </div>
-          </div>
-        </div>
-      </section>
+      <>
+        {
+          isEdit ?
+            <FormEdit
+              initialValues={initialValues}
+              validationSchema={validationSchema}
+              onSubmit={onSubmit}
+            /> :
+            <Profile toggle={toggle} />
+        }
+      </>
     );
   }
 };

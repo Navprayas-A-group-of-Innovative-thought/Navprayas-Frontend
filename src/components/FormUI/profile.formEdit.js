@@ -191,8 +191,9 @@ const FormEdit = ({initialValues, validationSchema, onSubmit}) => {
                                     className="cbtn btn-lg"
                                     type='submit'
                                     disabled={!formik.isValid || formik.isSubmitting}
+
                                 >
-                                    Submit
+                                    Save
                                 </button>
                             </div>
                         </Form>

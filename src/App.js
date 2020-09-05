@@ -13,7 +13,6 @@ import Activate from "./pages/Auth/Activate";
 import Gallery from "./pages/Gallery";
 import Profile from "./pages/Profile";
 import ShowProfile from "./components/ProfileUI/ShowProfile";
-import ProfileEdit from "./components/FormUI/profileEdit";
 import { PrivateRoute } from "./components/PrivateRoute.component";
 import { getCookie, isAuth } from "./_helpers/auth";
 import Forms from "./pages/Forms";
@@ -60,7 +59,6 @@ class App extends Component {
             <Route exact path="/forms" component={Forms} />
             <PrivateRoute exact path="/profile" component={Profile} />
             <PrivateRoute exact path="/profile/show" component={ShowProfile} />
-            <PrivateRoute exact path="/profile/edit" component={ProfileEdit} />
             <Route exact path="/reset" component={ForgotPassword} />
             <Redirect to="/" />
           </Switch>
