@@ -13,21 +13,21 @@ const ShowProfile = (props) => {
     props.getUser();
   }, []);
 
-  // const { user } = props.user;
-  // console.log("profile USer", user);
+  const { user } = props.user;
+  console.log("profile USer", user);
 
-  // if (props.user.isLoading || user === null) {
-  //   return (
-  //     <section style={{ height: "50vh", marginTop: "80px" }}>
-  //       <div className="container">
-  //         <Skeleton>
-  //           <div className="border rounded-circle ">&nbsp;</div>
-  //           <div className="border m-5 rounded-pill">&nbsp;</div>
-  //         </Skeleton>
-  //       </div>
-  //     </section>
-  //   );
-  // } else if (user) {
+  if (props.user.isLoading || user === null) {
+    return (
+      <section style={{ height: "50vh", marginTop: "80px" }}>
+        <div className="container">
+          <Skeleton>
+            <div className="border rounded-circle ">&nbsp;</div>
+            <div className="border m-5 rounded-pill">&nbsp;</div>
+          </Skeleton>
+        </div>
+      </section>
+    );
+  } else if (user) {
     return (
       <section style={{height:"auto", marginTop:"100px"}}>
         <div className="container w-75 userProfile">
@@ -166,7 +166,7 @@ const ShowProfile = (props) => {
       </section>
 
     );
-  //}
+  }
 };
 
 const mapStateToProps = (state) => {

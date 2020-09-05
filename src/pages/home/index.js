@@ -8,7 +8,6 @@ import Announcements from "../../components/Announcements";
 // import RecentActivity from "../../components/recentActivityComponent/recentActivity.component";
 import Timeline from "../../components/Timeline";
 import Faq from "../../components/Faq";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -17,7 +16,6 @@ const Home = () => {
       <Announcements />
       <Timeline />
       <Faq />
-      < Link to = "/profile/show">profile</Link>
     </>
   );
 };
