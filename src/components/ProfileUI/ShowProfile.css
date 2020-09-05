@@ -1,3 +1,7 @@
+.userProfile{
+    margin-top: 100px;
+}
+
 .profileLabel{
     width:230px
 }
@@ -26,6 +30,10 @@
 
 .profileDiv {
     padding:8px 0;
+}
+
+.profileSocial{
+    margin-bottom:40px;
 }
 
 .icon{
