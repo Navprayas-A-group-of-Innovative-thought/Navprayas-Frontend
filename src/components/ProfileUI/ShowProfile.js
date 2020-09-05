@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { userActions } from "../../redux/actions/auth.actions";
 import { connect } from "react-redux";
-import Spinner from "../spinner.component";
+import Skeleton from "../SkeletonLoading/SkeletonLoading";
+import { Link } from "react-router-dom";
 
 const ShowProfile = (props) => {
   useEffect(() => {
@@ -15,17 +16,28 @@ const ShowProfile = (props) => {
     return (
       <section style={{ height: "50vh", marginTop: "80px" }}>
         <div className="container">
-          <div className="row d-flex justify-content-center">
-            <Spinner text="Loading..." />
-          </div>
+          <Skeleton>
+            <div className="border rounded-circle ">&nbsp;</div>
+            <div className="border m-5 rounded-pill">&nbsp;</div>
+          </Skeleton>
         </div>
       </section>
     );
   } else if (user) {
     return (
       <section style={{ height: "50vh", marginTop: "80px" }}>
-        <h1 className="text-center"> Profile Page </h1>
         <div className="container">
+          <div className="row">
+            <div className="col-sm-8">
+              <h1 className="text-center"> Profile Page </h1>
+            </div>
+            <div className="col">
+              <Link to="/profile/edit" className="cbtn btn-lg">
+                Edit
+              </Link>
+            </div>
+          </div>
+
           <div className="row">
             <div className="col">
               {
