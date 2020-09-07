@@ -11,13 +11,11 @@ import ForgotPassword from "./pages/Auth/ForgotPassword";
 import NewPassword from "./pages/Auth/NewPassword";
 import Activate from "./pages/Auth/Activate";
 import Gallery from "./pages/Gallery";
-import ShowProfile from "./components/ProfileUI/ShowProfile";
-import ProfileEdit from "./components/FormUI/profileEdit";
 import { PrivateRoute } from "./components/PrivateRoute.component";
 import { getCookie, isAuth } from "./_helpers/auth";
 import Forms from "./pages/Forms";
-// import { userActions } from "./redux/actions/auth.actions";
-// import { connect } from "react-redux";
+
+import Profile from "./pages/Profile";
 
 class App extends Component {
   render() {
@@ -56,9 +54,8 @@ class App extends Component {
               )}
             />
             <Route exact path="/gallery" component={Gallery} />
-            <Route exact path="/forms" component={Forms} />
-            <PrivateRoute exact path="/profile/show" component={ShowProfile} />
-            <PrivateRoute exact path="/profile/edit" component={ProfileEdit} />
+            <Route path="/forms" component={Forms} />
+            <Route path="/profile" component={Profile} />
             <Route exact path="/reset" component={ForgotPassword} />
             <Redirect to="/" />
           </Switch>

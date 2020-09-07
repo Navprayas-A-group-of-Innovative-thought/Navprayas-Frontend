@@ -3,7 +3,7 @@
 }
 
 .profileLabel{
-    width:230px
+    width:30%;
 }
 
 .profileSpan{
@@ -65,10 +65,6 @@
 
 @media (max-width:615px){
     label{
-        width:150px;
-        font-size:15px;
-    }
-    span{
-        font-size:15px;
+        width:40%;
     }
 }

@@ -1,69 +1,49 @@
+import React, { Component, useEffect } from "react";
+import { useRouteMatch, Switch, Route, withRouter } from "react-router-dom";
+import ShowProfile from "../../components/ProfileUI/ShowProfile";
+import ProfileEdit from "../../components/FormUI/profileEdit";
+import { PrivateRoute } from "../../components/PrivateRoute.component";
+import { connect } from "react-redux";
+import { userActions } from "../../redux/actions/auth.actions";
 
-import React from "react";
-import "./profile.css";
-import pic from "../../assets/react.svg";
-import { NavLink } from "react-router-dom";
-import BasicInfo from "./BasicInfo";
+const Profile = (props) => {
+  useEffect(() => {
+    console.log("rendering users");
+    props.getUser();
+  }, []);
 
-const Profile = () => {
+  console.log("Profile page", props.user.user);
+  const ShowFun = () => <ShowProfile user={props.user} alert={props.alert} />;
+
+  const EditFun = () => (
+    <ProfileEdit
+      initialValues={props.user.user}
+      updateProfile={props.updateProfile}
+    />
+  );
+
   return (
     <>
-      <div
-        className="container-fluid text-center p-0"
-        style={{ marginTop: "69px" }}
-      >
-        <div className="row w-100 m-0">
-          <div className="profile-sidebar col-md-3 mw-225 p-0">
-            <div>
-              <img
-                className="profile-picture mt-5 rounded-circle mb-4"
-                src={pic}
-                alt="User-Profile"
-              ></img>
-              <ul className="d-flex flex-column nav">
-                <li className="nav-item">
-                  <NavLink
-                    to="#"
-                    className="profile-link d-block mt-3 mb-3 w-100 pt-2 active-link"
-                  >
-                    BASIC INFO
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    to="#"
-                    className="profile-link d-block mt-3 mb-3 w-100 pt-2 "
-                  >
-                    EDUCATION
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    to="#"
-                    className="profile-link d-block mt-3 mb-3 w-100 pt-2 "
-                  >
-                    ADDRESS
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    to="#"
-                    className="profile-link d-block mt-3 mb-3 w-100 pt-2 "
-                  >
-                    SOCIAL INFO
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="h-auto mt-5 mx-auto mb-5 col-md-8">
-            <BasicInfo />
-          </div>
-        </div>
-      </div>
+      <Switch>
+        <PrivateRoute exact path={`/profile/show`} component={ShowFun} />
+        <PrivateRoute exact path={`/profile/edit`} component={EditFun} />
+      </Switch>
     </>
   );
 };
 
-export default Profile;
+const mapStateToProps = (state) => {
+  return {
+    user: state.getUser,
+    alert: state.alert,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  getUser: () => dispatch(userActions.getUser()),
+  updateProfile: (user) => dispatch(userActions.updateProfile(user)),
+});
+
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(Profile)
+);

@@ -1,13 +1,13 @@
-export const initialValues = {
-  firstName: "Akash",
-  lastName: "Kumar",
-  email: "aksh.kmr.135@gmail.com",
+export const profileSchema = {
+  firstName: "",
+  lastName: "",
+  email: "",
   dob: "",
   gender: "",
   fatherName: "",
   motherName: "",
   contact: "",
-  class: "",
+  grade: "",
   year: "",
   schoolOrUniv: "",
   board: "",
