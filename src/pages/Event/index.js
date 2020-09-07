@@ -11,12 +11,11 @@ import { webinars } from "../../shared/webinar";
 import "./Event.css";
 
 const Event = () => {
-
   return (
-    <section className="event" style={{ height: "auto", margin: "80px" }}>
-      <div className="container text-center">
+    <>
+      <div className="container text-center" style={{ marginTop: "69px" }}>
         <div className="row">
-          <div className="col">
+          <div className="col-12  ">
             <h1 className="display-1">Our Events</h1>
             <p className="lead">
               We think together in better way for spreading the light of
@@ -33,7 +32,7 @@ const Event = () => {
             </p>
           </div>
         </div>
-        <div className="row gx-5">
+        <div className="row">
           {events.map((event) => {
             return (
               <EventCard
@@ -47,10 +46,12 @@ const Event = () => {
           })}
         </div>
 
-        <div className="row">
-          <div className="col m-5">
-            <h3 className="p-5">Our Webinars and Professional Talks</h3>
-            <table className="table">
+        <div className="row row-content">
+          <div className="col">
+            <div className="display-3 m-2">
+              Our Webinars and Professional Talks
+            </div>
+            <table className="table table-striped">
               <thead>
                 <th scope="col">#</th>
                 <th scope="col">Date</th>
@@ -77,7 +78,7 @@ const Event = () => {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 };
 

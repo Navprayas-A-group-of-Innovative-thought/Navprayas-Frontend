@@ -5,7 +5,10 @@ export function authHeader() {
   const token = getCookie("token");
 
   if (token) {
-    return { Authorization: "Bearer " + token };
+    return {
+      authorization: "Bearer " + token,
+      "Content-Type": "application/json",
+    };
   } else {
     return {};
   }
