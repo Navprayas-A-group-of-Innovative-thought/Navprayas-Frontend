@@ -3,7 +3,7 @@ import TextError from "./TextError";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./profileEdit.css";
 import "../../pages/Auth/LoginRegister.css";
-import { initialValues } from '../../shared/mtse.initialValues';
+import { initialValues } from '../../shared/chess.initialValues';
 import validationSchema from '../../util/registrationForm.validationSchema';
 
 const onSubmit = (initialvalues, onSubmitProps) => {
