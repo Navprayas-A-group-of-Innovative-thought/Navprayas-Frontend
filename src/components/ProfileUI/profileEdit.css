@@ -1,0 +1,17 @@
+.error {
+  color: red;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.btnOutColor {
+  color: #f69925;
+}
+
+.btnOutColor:hover {
+  color: white;
+}
+
+.btnOutColor:focus {
+  box-shadow: none;
+}

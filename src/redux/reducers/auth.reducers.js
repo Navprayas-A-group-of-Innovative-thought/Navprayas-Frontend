@@ -1,4 +1,3 @@
-
 import { userConstants } from "../constants/constant";
 
 export function registration(state = { isLoading: false }, action) {
@@ -59,8 +58,13 @@ export function getUser(state = { isLoading: false, user: null }, action) {
       return { ...state, isLoading: false, user: action.user };
     case userConstants.GETUSER_FAILURE:
       return { ...state, isLoading: false, user: null };
+    case userConstants.PROFILE_UPDATE_REQUEST:
+      return { ...state, isLoading: true, user: null };
+    case userConstants.PROFILE_UPDATE_SUCCESS:
+      return { ...state, isLoading: true };
+    case userConstants.PROFILE_UPDATE_FAILURE:
+      return { ...state, isLoading: false };
     default:
       return state;
-
   }
 }

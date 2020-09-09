@@ -16,6 +16,7 @@ const Home = () => {
       <Announcements />
       <Timeline />
       <Faq />
+
     </>
   );
 };

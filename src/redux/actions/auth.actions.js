@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import { userConstants } from "../constants/constant";
 import { url } from "../api";
@@ -13,6 +12,7 @@ export const userActions = {
   logout,
   register,
   getUser,
+  updateProfile,
 };
 
 // Action creator for Login
@@ -44,9 +44,9 @@ function login(email, password) {
         dispatch(alertActions.success("Log in Success"));
       })
       .catch((err) => {
-        console.log("Login action Creator", err);
+        console.log("Login action Creator", err.response.data.errorDetails);
         dispatch(failure("Auth Error"));
-        dispatch(alertActions.error("Log in Error"));
+        dispatch(alertActions.error(err.response.data.errorDetails));
       });
   };
 
@@ -109,7 +109,7 @@ function register(user) {
         console.log("Register Action Creator");
         console.log(err);
         dispatch(failure());
-        dispatch(alertActions.error("Registeration Error"));
+        dispatch(alertActions.error(err.response.data.errorDetails));
       });
   };
 
@@ -129,16 +129,9 @@ function getUser() {
   return (dispatch) => {
     dispatch(request());
 
-    const token = getCookie("token");
-    console.log("token", token);
-
     const config = {
-      headers: {
-        authorization: `Bearer ${token}`,
-      },
+      headers: authHeader(),
     };
-
-    console.log(authHeader());
 
     axios
       .get(`${url}/user/profile`, config)
@@ -165,4 +158,92 @@ function getUser() {
   }
 }
 
+// Update Profile Details
+function updateProfile(user) {
+  return (dispatch) => {
+    dispatch(request());
 
+    const {
+      firstName,
+      lastName,
+      fatherName,
+      motherName,
+      contact,
+      grade,
+      instituteName,
+      schoolOrUniv,
+      year,
+      board,
+      houseNumber,
+      addressLine1,
+      addressLine2,
+      landmark,
+      district,
+      city,
+      pincode,
+      country,
+      facebookLink,
+      linkedinLink,
+      githubLink,
+    } = user;
+
+    console.log("USer Data updating");
+    console.table(user);
+
+    const body = JSON.stringify({
+      firstName,
+      lastName,
+      fatherName,
+      motherName,
+      contact,
+      instituteName,
+      year,
+      grade,
+      schoolOrUniv,
+      board,
+      houseNumber,
+      addressLine1,
+      addressLine2,
+      landmark,
+      district,
+      city,
+      pincode,
+      country,
+      facebookLink,
+      linkedinLink,
+      githubLink,
+    });
+
+    const config = {
+      headers: authHeader(),
+    };
+
+    axios
+      .put(`${url}/user/profile/edit`, body, config)
+      .then((res) => {
+        console.log("Updated user Data", res.data.user);
+        dispatch(success());
+        dispatch(alertActions.success(res.data.responseData));
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log(err.response.data);
+        console.log(err.response.status);
+        console.log(err.response.headers);
+        dispatch(failure());
+        dispatch(alertActions.error("Server Error or unauthorised"));
+      });
+  };
+
+  function request() {
+    return { type: userConstants.PROFILE_UPDATE_REQUEST };
+  }
+
+  function success() {
+    return { type: userConstants.PROFILE_UPDATE_SUCCESS };
+  }
+
+  function failure() {
+    return { type: userConstants.PROFILE_UPDATE_FAILURE };
+  }
+}
