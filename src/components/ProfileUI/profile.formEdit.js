@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import TextError from "./TextError";
+import TextError from "../TextError";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useHistory } from "react-router-dom";
 import "./profileEdit.css";
@@ -225,51 +225,49 @@ const FormEdit = ({ initialValues, validationSchema, onSubmit }) => {
                   </div>
                 }
 
-                {formik.values.schoolOrUniv !== "" ? (
-                  formik.values.schoolOrUniv === "school" ? (
-                    <div className="row">
-                      <div className="col-12 col-md-4 offset-md-2 mb-4">
-                        <label htmlFor="grade">
-                          Class<span style={{ color: "red" }}> *</span>
-                        </label>
-                        <Field
-                          className="form-control signUpInput  mb-0 mt-2"
-                          type="text"
-                          id="grade"
-                          name="grade"
-                          placeholder="Class"
-                        />
-                      </div>
-                      <div className="col-12 col-md-4 mb-4">
-                        <label htmlFor="board">
-                          Board<span style={{ color: "red" }}> *</span>
-                        </label>
-                        <Field
-                          className="form-control signUpInput  mb-0 mt-2"
-                          type="text"
-                          id="board"
-                          name="board"
-                          placeholder="Board"
-                        />
-                      </div>
+                {formik.values.schoolOrUniv === "school" ? (
+                  <div className="row">
+                    <div className="col-12 col-md-4 offset-md-2 mb-4">
+                      <label htmlFor="grade">
+                        Class<span style={{ color: "red" }}> *</span>
+                      </label>
+                      <Field
+                        className="form-control signUpInput  mb-0 mt-2"
+                        type="text"
+                        id="grade"
+                        name="grade"
+                        placeholder="Class"
+                      />
                     </div>
-                  ) : (
-                    <div className="row">
-                      <div className="col-12 col-md-8 offset-md-2 mb-4">
-                        <label htmlFor="year">
-                          Year<span style={{ color: "red" }}> *</span>
-                        </label>
-                        <Field
-                          className="form-control signUpInput  mb-0 mt-2"
-                          type="text"
-                          id="year"
-                          name="year"
-                          placeholder="Year"
-                        />
-                      </div>
+                    <div className="col-12 col-md-4 mb-4">
+                      <label htmlFor="board">
+                        Board<span style={{ color: "red" }}> *</span>
+                      </label>
+                      <Field
+                        className="form-control signUpInput  mb-0 mt-2"
+                        type="text"
+                        id="board"
+                        name="board"
+                        placeholder="Board"
+                      />
                     </div>
-                  )
-                ) : null}
+                  </div>
+                ) : (
+                  <div className="row">
+                    <div className="col-12 col-md-8 offset-md-2 mb-4">
+                      <label htmlFor="year">
+                        Year<span style={{ color: "red" }}> *</span>
+                      </label>
+                      <Field
+                        className="form-control signUpInput  mb-0 mt-2"
+                        type="text"
+                        id="year"
+                        name="year"
+                        placeholder="Year"
+                      />
+                    </div>
+                  </div>
+                )}
                 <div className="row">
                   <div className="col-12 col-md-4 offset-md-2 mb-4">
                     <label htmlFor="houseNumber">

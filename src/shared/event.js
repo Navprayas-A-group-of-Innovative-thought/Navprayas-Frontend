@@ -4,7 +4,7 @@ export const events = [
     name: "MTSE",
     image: "http://navprayas.in/static/img/mtseexam.jpg",
 
-    registeration: "http://link.navprayas.in/mtse",
+    registeration: "/forms/mtse",
 
     knowMore: "http://navprayas.in/static/rules/Puzzle%20Race%202020.pdf",
   },
@@ -13,7 +13,7 @@ export const events = [
     name: "PUZZLE RACE",
     image: "http://navprayas.in/static/img/puzzle.jpg",
 
-    registeration: "http://link.navprayas.in/mtse",
+    registeration: "/forms/puzzlerace",
 
     knowMore: "http://navprayas.in/static/rules/Puzzle%20Race%202020.pdf",
   },

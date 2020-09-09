@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Redirect, Switch, Route, withRouter } from "react-router-dom";
 import ShowProfile from "../../components/ProfileUI/ShowProfile";
-import ProfileEdit from "../../components/FormUI/profileEdit";
+import ProfileEdit from "../../components/ProfileUI/profileEdit";
 import { PrivateRoute } from "../../components/PrivateRoute.component";
 import { connect } from "react-redux";
 import { userActions } from "../../redux/actions/auth.actions";
