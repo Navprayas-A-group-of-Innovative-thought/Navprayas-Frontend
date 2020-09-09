@@ -19,7 +19,7 @@ const ShowProfile = (props) => {
   const user = props.user.user;
   console.log("Show Profile", user);
 
-  if (props.user.isLoading || user === null) {
+  if (props.user.isLoading || user === null || user == undefined) {
     return (
       <section style={{ height: "50vh", marginTop: "80px" }}>
         <div className="container">
@@ -33,10 +33,7 @@ const ShowProfile = (props) => {
   } else {
     return (
       <>
-        <div
-          className="container w-75 userProfile"
-          style={{ marginTop: "100px" }}
-        >
+        <div className="container  userProfile">
           {
             // <div className="row">
             //   <div className="col-12 col-md-8 offset-md-2">
@@ -81,7 +78,7 @@ const ShowProfile = (props) => {
           )}
           <div className="profileDiv">
             <label className="profileLabel">Date of Birth: </label>
-            <span className="profileSpan">{user.dob.split('T')[0]}</span>
+            <span className="profileSpan">{user.dob.split("T")[0]}</span>
           </div>
           <div className="profileDiv">
             <label className="profileLabel">Gender: </label>
@@ -93,10 +90,14 @@ const ShowProfile = (props) => {
               <span className="profileSpan">{user.contact}</span>
             </div>
           ) : null}
-          {user.schoolOrUniv ? (
+          {user.instituteName ? (
             <>
               <h4 className="sectionTitle">Education</h4>
-              {user.class ? (
+              <div className="profileDiv">
+                <label className="profileLabel">Institute: </label>
+                <span className="profileSpan">{user.instituteName}</span>
+              </div>
+              {user.grade ? (
                 <>
                   <div className="profileDiv">
                     <label className="profileLabel">Class: </label>

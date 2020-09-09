@@ -59,11 +59,11 @@ export function getUser(state = { isLoading: false, user: null }, action) {
     case userConstants.GETUSER_FAILURE:
       return { ...state, isLoading: false, user: null };
     case userConstants.PROFILE_UPDATE_REQUEST:
-      return {};
+      return { ...state, isLoading: true, user: null };
     case userConstants.PROFILE_UPDATE_SUCCESS:
-      return { ...state, isLoading: false, user: action.user };
+      return { ...state, isLoading: true };
     case userConstants.PROFILE_UPDATE_FAILURE:
-      return {};
+      return { ...state, isLoading: false };
     default:
       return state;
   }

@@ -10,6 +10,7 @@ export const profileSchema = {
   grade: "",
   year: "",
   schoolOrUniv: "",
+  instituteName: "",
   board: "",
   houseNumber: "",
   addressLine1: "",

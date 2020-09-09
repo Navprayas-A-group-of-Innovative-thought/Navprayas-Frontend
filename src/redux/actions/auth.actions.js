@@ -169,9 +169,10 @@ function updateProfile(user) {
       fatherName,
       motherName,
       contact,
-
-      year,
+      grade,
+      instituteName,
       schoolOrUniv,
+      year,
       board,
       houseNumber,
       addressLine1,
@@ -186,14 +187,18 @@ function updateProfile(user) {
       githubLink,
     } = user;
 
+    console.log("USer Data updating");
+    console.table(user);
+
     const body = JSON.stringify({
       firstName,
       lastName,
       fatherName,
       motherName,
       contact,
-
+      instituteName,
       year,
+      grade,
       schoolOrUniv,
       board,
       houseNumber,
@@ -209,7 +214,6 @@ function updateProfile(user) {
       githubLink,
     });
 
-    console.log("Body Request", body);
     const config = {
       headers: authHeader(),
     };
@@ -217,7 +221,7 @@ function updateProfile(user) {
     axios
       .put(`${url}/user/profile/edit`, body, config)
       .then((res) => {
-        console.log("Updated user Data", res);
+        console.log("Updated user Data", res.data.user);
         dispatch(success());
         dispatch(alertActions.success(res.data.responseData));
       })

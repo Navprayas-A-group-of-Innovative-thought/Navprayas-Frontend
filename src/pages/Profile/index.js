@@ -1,10 +1,11 @@
-import React, { Component, useEffect } from "react";
-import { useRouteMatch, Switch, Route, withRouter } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Redirect, Switch, Route, withRouter } from "react-router-dom";
 import ShowProfile from "../../components/ProfileUI/ShowProfile";
 import ProfileEdit from "../../components/FormUI/profileEdit";
 import { PrivateRoute } from "../../components/PrivateRoute.component";
 import { connect } from "react-redux";
 import { userActions } from "../../redux/actions/auth.actions";
+import Spinner from "../../components/spinner.component";
 
 const Profile = (props) => {
   useEffect(() => {
@@ -23,12 +24,21 @@ const Profile = (props) => {
   );
 
   return (
-    <>
+    <section style={{ height: "auto", marginTop: "100px" }}>
+      {props.user.isLoading ? (
+        <>
+          <div className="text-center">
+            <Spinner text="Loading..." />
+          </div>{" "}
+        </>
+      ) : (
+        <Redirect to="/profile/show" />
+      )}
       <Switch>
         <PrivateRoute exact path={`/profile/show`} component={ShowFun} />
         <PrivateRoute exact path={`/profile/edit`} component={EditFun} />
       </Switch>
-    </>
+    </section>
   );
 };
 

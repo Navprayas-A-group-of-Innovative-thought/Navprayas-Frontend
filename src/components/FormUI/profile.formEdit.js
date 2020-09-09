@@ -17,6 +17,7 @@ const FormEdit = ({ initialValues, validationSchema, onSubmit }) => {
         firstName: initialValues.firstName,
         lastName: initialValues.lastName,
         email: initialValues.email,
+        dob: initialValues.dob.split("T")[0],
         gender: initialValues.gender,
         fatherName: initialValues.fatherName,
         motherName: initialValues.motherName,
@@ -24,6 +25,7 @@ const FormEdit = ({ initialValues, validationSchema, onSubmit }) => {
         grade: initialValues.grade,
         year: initialValues.year,
         schoolOrUniv: initialValues.schoolOrUniv,
+        instituteName: initialValues.instituteName,
         board: initialValues.board,
         houseNumber: initialValues.houseNumber,
         addressLine1: initialValues.addressLine1,
@@ -185,8 +187,25 @@ const FormEdit = ({ initialValues, validationSchema, onSubmit }) => {
                     <ErrorMessage name="contact" component={TextError} />
                   </div>
 
-                  {
-                    <div className="col-12 col-md-4 mb-4">
+                  <div className="col-12 col-md-4 mb-4">
+                    <label htmlFor="instituteName">
+                      Institute Name<span style={{ color: "red" }}> *</span>
+                    </label>
+                    <Field
+                      className="form-control signUpInput  mb-0 mt-2"
+                      type="text"
+                      id="instituteName"
+                      name="instituteName"
+                      placeholder="institute Name"
+                    />
+
+                    <ErrorMessage name="instituteName" component={TextError} />
+                  </div>
+                </div>
+
+                {
+                  <div className="row">
+                    <div className="col-12 col-md-8 offset-md-2 mb-4">
                       <label htmlFor="schoolOrUniv">
                         School Or University
                         <span style={{ color: "red" }}> *</span>
@@ -203,8 +222,9 @@ const FormEdit = ({ initialValues, validationSchema, onSubmit }) => {
                       </Field>
                       <ErrorMessage name="schoolOrUniv" component={TextError} />
                     </div>
-                  }
-                </div>
+                  </div>
+                }
+
                 {formik.values.schoolOrUniv !== "" ? (
                   formik.values.schoolOrUniv === "school" ? (
                     <div className="row">
