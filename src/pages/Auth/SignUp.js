@@ -16,7 +16,8 @@ const SignUp = (props) => {
     props.register(e);
   };
 
-  console.log("ISloading State", props.isLoading);
+  const { isLoading } = props.isLoading;
+  console.log("ISloading State", isLoading);
   return (
     <div>
       <div className="row">
@@ -163,7 +164,7 @@ const SignUp = (props) => {
                     type="submit"
                     disabled={!formik.isValid}
                   >
-                    {props.isLoading ? (
+                    {!isLoading ? (
                       <span>Sign Up</span>
                     ) : (
                       <Spinner text="Loading..." />
