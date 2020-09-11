@@ -45,9 +45,17 @@ const FormEdit = ({ initialValues, validationSchema, onSubmit }) => {
   const history = useHistory();
 
   const handleSubmit = (e) => {
-    console.log("Updated Profile data", e);
+    console.log("Final FOrm");
+
+    if (e.schoolOrUniv === "university") {
+      e.board = "";
+      e.grade = "";
+    } else {
+      e.year = "";
+    }
+    console.table(e);
     onSubmit(e);
-    history.push("/");
+    history.push("/profile");
   };
 
   console.log("Props data profile", data);
