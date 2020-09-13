@@ -55,7 +55,7 @@ const FormEdit = ({ initialValues, validationSchema, onSubmit }) => {
     }
     console.table(e);
     onSubmit(e);
-    history.push("/");
+    // history.push("/");
   };
 
   console.log("Props data profile", data);

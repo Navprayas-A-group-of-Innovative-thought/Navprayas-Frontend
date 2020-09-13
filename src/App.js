@@ -14,7 +14,7 @@ import Gallery from "./pages/Gallery";
 import { PrivateRoute } from "./components/PrivateRoute.component";
 import { getCookie, isAuth } from "./_helpers/auth";
 import Forms from "./pages/Forms";
-
+import PaymentPage from "./components/PayementPage";
 import Profile from "./pages/Profile";
 
 class App extends Component {
@@ -53,6 +53,7 @@ class App extends Component {
                 <Auth title="Create New Account" formType="signup" />
               )}
             />
+            <Route exact path="/paytm/callback" component={PaymentPage} />
             <Route exact path="/gallery" component={Gallery} />
             <Route path="/forms" component={Forms} />
             <Route path="/profile" component={Profile} />
