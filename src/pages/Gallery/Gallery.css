@@ -5,6 +5,10 @@
 
 }
 
+figure{
+    margin-bottom: 0 !important;
+}
+
 .GalleryImageDiv figure img {
     max-height:300px;
     transform: scale(1);

@@ -92,7 +92,7 @@ const Login = (props) => {
             </div>
           </div>
           <div className="signUpButtonDiv">
-            <button className="cbtn signUpButton btn-lg">
+            <button className="cbtn btn-lg mt-4">
               {!isLoading ? <span>Log in</span> : <Spinner text="Logging In" />}
             </button>
           </div>
