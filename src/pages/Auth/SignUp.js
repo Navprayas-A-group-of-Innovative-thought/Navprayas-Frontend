@@ -65,7 +65,7 @@ const SignUp = (props) => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-12 col-md-8 offset-md-2">
+                < div className = "col-12 col-md-8 offset-md-2" >
                   <Field
                     className="form-control signUpInput"
                     type="email"
@@ -78,7 +78,7 @@ const SignUp = (props) => {
               </div>
 
               <div className="row">
-                <div className="col-12 col-md-8 offset-md-2">
+                < div className = "col-12 col-md-8 offset-md-2" >
                   <Field
                     className="form-control signUpInput"
                     type="password"
@@ -104,11 +104,11 @@ const SignUp = (props) => {
               </div>
 
               <div className="row">
-                <div className="col-12 col-md-4 offset-md-2">
-                  <label htmlFor="dob">Date of Birth</label>
+                < div className = "col-12 col-md-4 offset-md-2 dobLabel" >
+                  <label htmlFor="dob">Date of Birth :</label>
                 </div>
 
-                <div className=" col-12 col-md-4">
+                < div className = "col-12 col-md-4" >
                   <Field
                     className="form-control signUpInput"
                     type="date"
@@ -139,7 +139,7 @@ const SignUp = (props) => {
                 </div>
               </div>
 
-              <div className="row mb-1">
+              <div className="row mb-1 mt-4">
                 <div className="col-12 d-flex justify-content-center">
                   <Field
                     className="signUpCheckBox"
