@@ -59,7 +59,7 @@ function pay() {
     console.log(config);
     // console.log(query);
     axios
-      .get(`${url}/paytm/payment?formId=MTSE`, config)
+      .post(`${url}/paytm/payment?formId=MTSE`, config)
       .then((res) => {
         console.log(res.data.data);
         var details = {
