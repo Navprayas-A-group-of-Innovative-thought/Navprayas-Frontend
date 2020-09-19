@@ -9,6 +9,18 @@
 
 }
 
+@media only screen and (min-width:768px) and ( max-width: 930px){
+  .cbtn{
+    width:200px;
+    font-size:13px;
+  }
+}
+
+.scroll{
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 .line1 {
   height: 4px;
   background: #000;

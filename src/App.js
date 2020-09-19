@@ -16,6 +16,7 @@ import { getCookie, isAuth } from "./_helpers/auth";
 import Forms from "./pages/Forms";
 import PaymentPage from "./components/PayementPage";
 import Profile from "./pages/Profile";
+import viewAllAnnouncement from "./pages/viewAllAnnouncement"
 
 class App extends Component {
   render() {
@@ -58,6 +59,7 @@ class App extends Component {
             <Route path="/forms" component={Forms} />
             <Route path="/profile" component={Profile} />
             <Route exact path="/reset" component={ForgotPassword} />
+            <Route exact path="/viewAllAnnouncement" component={viewAllAnnouncement}/>
             <Redirect to="/" />
           </Switch>
           <Footer />

@@ -134,7 +134,7 @@ const Mtse = () => {
                     placeholder="Father Name"
                   />
 
-                  <ErrorMessage name="fatherName" component={TextError} />
+                  <ErrorMessage name="user.fatherName" component={TextError} />
                 </div>
 
                 <div className="col-12 col-md-4 mb-4">
@@ -149,7 +149,7 @@ const Mtse = () => {
                     placeholder="Mother Name"
                   />
 
-                  <ErrorMessage name="motherName" component={TextError} />
+                  <ErrorMessage name="user.motherName" component={TextError} />
                 </div>
               </div>
               <h4 className="col-12 col-md-4 offset-md-2 mb-4">Education</h4>

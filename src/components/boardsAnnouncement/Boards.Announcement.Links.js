@@ -7,7 +7,7 @@ const BoardAnnouncemetLinks = ({ announcement }) => {
       <li key={i}>
         <i id="icon" className="fa fa-angle-double-right"></i>
         <Link to={"#"}>{a.announce}</Link>
-        <p className="publishedDate">{a.publish}</p>
+        <p className="publishedDate">published on:- {a.publish}</p>
         <hr className="announcementSeperator"></hr>
       </li>
     );

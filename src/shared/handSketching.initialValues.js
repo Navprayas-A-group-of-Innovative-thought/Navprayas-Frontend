@@ -8,19 +8,19 @@ export const initialValues = {
         contact: {
             primary: "",
             other: "",
-        }
-    },
-    address: {
-        houseNumber: "",
-        addressLine1: "",
-        addressLine2: "",
-        landmark: "",
-        district: "",
-        city: "",
-        state: "",
-        country: "",
-        pincode: "",
-    },
-    fatherName: "",
-    motherName: "",
+        },
+        address: {
+            houseNumber: "",
+            addressLine1: "",
+            addressLine2: "",
+            landmark: "",
+            district: "",
+            city: "",
+            state: "",
+            country: "",
+            pincode: "",
+        },
+        fatherName: "",
+        motherName: "",
+    }
 };
