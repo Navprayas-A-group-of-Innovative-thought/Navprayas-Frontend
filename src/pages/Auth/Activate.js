@@ -32,7 +32,7 @@ const Activate = ({ match }) => {
       setFormData({ ...formData, token });
     }
 
-    console.log(token);
+    console.log("Activate your Account", token);
   }, []);
 
   const { token, name, email } = formData;
@@ -60,11 +60,14 @@ const Activate = ({ match }) => {
         console.log(res.data);
       })
       .catch((err) => {
+        console.log(err);
         setAlertMsg({
           ...alertMsg,
           show: true,
           color: "danger",
-          msg: err.response.data.errorDetails,
+          msg:
+            err.response.data.errorDetails ||
+            "Couldn't Verify please try again",
         });
       });
   };

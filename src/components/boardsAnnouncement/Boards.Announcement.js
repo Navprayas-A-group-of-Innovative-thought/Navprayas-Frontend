@@ -5,25 +5,8 @@ import BoardsAnnouncementLinks from "./Boards.Announcement.Links";
 import { Card, CardBody } from "reactstrap";
 
 import CustomButton from "../Button/index";
-
-//Sample Announcement Object
-const announcemets = [
-  {
-    announce:
-      "Application for MTSE start on dd-mm-yy. Students from class V to X can apply.",
-    publish: "published on:- 31-02-1999",
-  },
-  {
-    announce:
-      "Application for Rangotsav start on dd-mm-yy. Students from class V to X can apply.",
-    publish: "published on:- 31-02-1999",
-  },
-  {
-    announce:
-      "Application for SyncWithDance start on dd-mm-yy. Students from class V to X can apply.",
-    publish: "published on:- 31-02-1999",
-  },
-];
+import { Link } from "react-router-dom";
+import { announcemets} from "../../shared/announcement"
 
 //Boards Announcement Start-------
 const BoardsAnnouncement = (props) => {
@@ -35,12 +18,13 @@ const BoardsAnnouncement = (props) => {
       <div className="line2"></div>
     </div>
       <div className="card">
-        <div className="card-body">
+        <div className="card-body scroll">
           <BoardsAnnouncementLinks announcement={announcemets} />
-          <CustomButton className="btn">
-            VIEW ALL ANNOUNCEMENTS
-          </CustomButton>
         </div>
+        <div class="card-footer bg-transparent border-0">
+          <Link to="/viewAllAnnouncement" className="cbtn btn">VIEW ALL ANNOUNCEMENTS</Link>
+        </div>
+
       </div>
     </>
   );

@@ -5,6 +5,7 @@ import ProfileEdit from "../../components/ProfileUI/profileEdit";
 import { PrivateRoute } from "../../components/PrivateRoute.component";
 import { connect } from "react-redux";
 import { userActions } from "../../redux/actions/auth.actions";
+import { payementActions } from "../../redux/actions/payement.actions";
 import Spinner from "../../components/spinner.component";
 
 const Profile = (props) => {
@@ -14,7 +15,9 @@ const Profile = (props) => {
   }, []);
 
   console.log("Profile page", props.user.user);
-  const ShowFun = () => <ShowProfile user={props.user} alert={props.alert} />;
+  const ShowFun = () => (
+    <ShowProfile user={props.user} alert={props.alert} pay={props.pay} />
+  );
 
   const EditFun = () => (
     <ProfileEdit
@@ -52,6 +55,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
   getUser: () => dispatch(userActions.getUser()),
   updateProfile: (user) => dispatch(userActions.updateProfile(user)),
+  pay: () => dispatch(payementActions.pay()),
 });
 
 export default withRouter(

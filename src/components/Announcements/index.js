@@ -11,7 +11,7 @@ const Announcements = () => {
         textAlign: "left",
       }}
     >
-      <div className="container">
+      <div className="container-lg">
         <div className="row">
           <div className="col-12 col-md-4">
             <BoardsAnnouncement />

@@ -4,22 +4,25 @@
 	object-position: 0 0;
 }
 
+.carouselPosition {
+	height: 45vh !important;
+}
 
-@media only screen and (min-width: 992px){
-	.carouselPosition{
-		height: 92vh !important;
-	}
+.carousel-item>img {
+	height: 45vh !important;
+}
+/* @media only screen and (max-width: 992px){
+
 
 }
 
-@media only screen and (min-width:768px){
+@media only screen and (max-width:768px){
 	.carouselPosition{
-		z-index: 2;
-		height: 100vh;
+		height: 45vh;
 	}
 	.carousel-item > img{
-		height: 92vh !important;
+		height: 45vh !important;
 	}
-}
+} */
 
 

@@ -14,8 +14,9 @@ import Gallery from "./pages/Gallery";
 import { PrivateRoute } from "./components/PrivateRoute.component";
 import { getCookie, isAuth } from "./_helpers/auth";
 import Forms from "./pages/Forms";
-
+import PaymentPage from "./components/PayementPage";
 import Profile from "./pages/Profile";
+import viewAllAnnouncement from "./pages/viewAllAnnouncement"
 
 class App extends Component {
   render() {
@@ -53,10 +54,12 @@ class App extends Component {
                 <Auth title="Create New Account" formType="signup" />
               )}
             />
+            <Route exact path="/paytm/callback" component={PaymentPage} />
             <Route exact path="/gallery" component={Gallery} />
             <Route path="/forms" component={Forms} />
             <Route path="/profile" component={Profile} />
             <Route exact path="/reset" component={ForgotPassword} />
+            <Route exact path="/viewAllAnnouncement" component={viewAllAnnouncement}/>
             <Redirect to="/" />
           </Switch>
           <Footer />

@@ -57,6 +57,12 @@ const ShowProfile = (props) => {
               <Link to="/profile/edit" className="cbtn  btn-lg ">
                 Update
               </Link>
+              <button
+                onClick={() => props.pay()}
+                className="cbtn ml-1  btn-lg "
+              >
+                Pay
+              </button>
             </div>
           </div>
           <h4 className="sectionTitle">Personal Details</h4>

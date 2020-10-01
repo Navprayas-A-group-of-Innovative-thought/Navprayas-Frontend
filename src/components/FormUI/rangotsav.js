@@ -110,11 +110,11 @@ const Rangotsav = () => {
                     className="form-control signUpInput  mb-0 mt-2"
                     type="text"
                     id="fatherName"
-                    name="fatherName"
+                    name="user.fatherName"
                     placeholder="Father Name"
                   />
 
-                  <ErrorMessage name="fatherName" component={TextError} />
+                  <ErrorMessage name="user.fatherName" component={TextError} />
                 </div>
 
                 <div className="col-12 col-md-4 mb-4">
@@ -125,11 +125,11 @@ const Rangotsav = () => {
                     className="form-control signUpInput  mb-0 mt-2"
                     type="text"
                     id="motherName"
-                    name="motherName"
+                    name="user.motherName"
                     placeholder="Mother Name"
                   />
 
-                  <ErrorMessage name="motherName" component={TextError} />
+                  <ErrorMessage name="user.motherName" component={TextError} />
                 </div>
               </div>
 
@@ -141,7 +141,7 @@ const Rangotsav = () => {
                   </label>
                   <Field
                     className="form-control signUpInput  mb-0 mt-2"
-                    type="text"
+                    type="number"
                     id="primary"
                     name="user.contact.primary"
                     placeholder="1234567890"
@@ -156,7 +156,7 @@ const Rangotsav = () => {
                   <label htmlFor="other">Other</label>
                   <Field
                     className="form-control signUpInput  mb-0 mt-2"
-                    type="text"
+                    type="number"
                     id="other"
                     name="user.contact.other"
                     placeholder="1234567890"
@@ -178,11 +178,11 @@ const Rangotsav = () => {
                     className="form-control signUpInput  mb-0 mt-2"
                     type="text"
                     id="houseNumber"
-                    name="address.houseNumber"
+                    name="user.address.houseNumber"
                     placeholder="House Number"
                   />
                   <ErrorMessage
-                    name="address.houseNumber"
+                    name="user.address.houseNumber"
                     component={TextError}
                   />
                 </div>
@@ -195,11 +195,11 @@ const Rangotsav = () => {
                     className="form-control signUpInput  mb-0 mt-2"
                     type="text"
                     id="addressLine1"
-                    name="address.addressLine1"
+                    name="user.address.addressLine1"
                     placeholder="Address Line 1"
                   />
                   <ErrorMessage
-                    name="address.addressLine1"
+                    name="user.address.addressLine1"
                     component={TextError}
                   />
                 </div>
@@ -211,7 +211,7 @@ const Rangotsav = () => {
                     className="form-control signUpInput  mb-0 mt-2"
                     type="text"
                     id="addressLine2"
-                    name="address.addressLine2"
+                    name="user.address.addressLine2"
                     placeholder="Address Line 2"
                   />
                 </div>
@@ -223,7 +223,7 @@ const Rangotsav = () => {
                     className="form-control signUpInput  mb-0 mt-2"
                     type="text"
                     id="landmark"
-                    name="address.landmark"
+                    name="user.address.landmark"
                     placeholder="Landmark"
                   />
                 </div>
@@ -235,10 +235,10 @@ const Rangotsav = () => {
                     className="form-control signUpInput  mb-0 mt-2"
                     type="text"
                     id="district"
-                    name="address.district"
+                    name="user.address.district"
                     placeholder="District"
                   />
-                  <ErrorMessage name="address.district" component={TextError} />
+                  <ErrorMessage name="user.address.district" component={TextError} />
                 </div>
               </div>
               <div className="row">
@@ -250,10 +250,10 @@ const Rangotsav = () => {
                     className="form-control signUpInput  mb-0 mt-2"
                     type="text"
                     id="state"
-                    name="address.state"
+                    name="user.address.state"
                     placeholder="State"
                   />
-                  <ErrorMessage name="address.state" component={TextError} />
+                  <ErrorMessage name="user.address.state" component={TextError} />
                 </div>
 
                 <div className="col-12 col-md-4 mb-4">
@@ -264,10 +264,10 @@ const Rangotsav = () => {
                     className="form-control signUpInput  mb-0 mt-2"
                     type="text"
                     id="city"
-                    name="address.city"
+                    name="user.address.city"
                     placeholder="City"
                   />
-                  <ErrorMessage name="address.city" component={TextError} />
+                  <ErrorMessage name="user.address.city" component={TextError} />
                 </div>
               </div>
               <div className="row">
@@ -277,12 +277,12 @@ const Rangotsav = () => {
                   </label>
                   <Field
                     className="form-control signUpInput  mb-0 mt-2"
-                    type="text"
+                    type="number"
                     id="pincode"
-                    name="address.pincode"
+                    name="user.address.pincode"
                     placeholder="Pincode"
                   />
-                  <ErrorMessage name="address.pincode" component={TextError} />
+                  <ErrorMessage name="user.address.pincode" component={TextError} />
                 </div>
 
                 <div className="col-12 col-md-4 mb-4">
@@ -293,10 +293,10 @@ const Rangotsav = () => {
                     className="form-control signUpInput  mb-0 mt-2"
                     type="text"
                     id="country"
-                    name="address.country"
+                    name="user.address.country"
                     placeholder="Country"
                   />
-                  <ErrorMessage name="address.country" component={TextError} />
+                  <ErrorMessage name="user.address.country" component={TextError} />
                 </div>
               </div>
               <div className="text-center mb-4">

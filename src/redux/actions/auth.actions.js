@@ -221,8 +221,10 @@ function updateProfile(user) {
     axios
       .put(`${url}/user/profile/edit`, body, config)
       .then((res) => {
-        console.log("Updated user Data", res.data.user);
-        dispatch(success());
+        console.log("Received from backend");
+        console.table(res.data);
+        console.log(res.data);
+        dispatch(success(res.data));
         dispatch(alertActions.success(res.data.responseData));
       })
       .catch((err) => {
@@ -239,8 +241,8 @@ function updateProfile(user) {
     return { type: userConstants.PROFILE_UPDATE_REQUEST };
   }
 
-  function success() {
-    return { type: userConstants.PROFILE_UPDATE_SUCCESS };
+  function success(user) {
+    return { type: userConstants.PROFILE_UPDATE_SUCCESS, user };
   }
 
   function failure() {
