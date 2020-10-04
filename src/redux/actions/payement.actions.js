@@ -65,8 +65,10 @@ function pay() {
         success()
         const details = {
           action: `https://securegw-stage.paytm.in/theia/api/v1/showPaymentPage?mid=${res.data.data.mid}&orderId=${res.data.data.orderId}`,
+
           params: res.data.data
         }
+
 
         post(details)
       })
