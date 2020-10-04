@@ -1,56 +1,56 @@
-.profile-sidebar{
-    border-right: 2px solid #f69925;
+.profile-sidebar {
+  border-right: 2px solid #f69925;
 }
 
-.profile-picture{
-    background: #f69925;
-    width: 13vw;
-    height: 13vw;
+.profile-picture {
+  background: #f69925;
+  width: 13vw;
+  height: 13vw;
 }
 
-.active-link{
-    background: orange !important;
-    color:white !important;
+.active-link {
+  background: orange !important;
+  color: white !important;
 }
 
-.profile-link{
-    font-size:2em;
-    color:black;
-    min-height: 70px;
-    text-decoration:none;
+.profile-link {
+  font-size: 2em;
+  color: black;
+  min-height: 70px;
+  text-decoration: none;
 }
 
 .profileContainer {
-    border-style: solid;
-    padding:30px 60px 60px 60px;
-    border-color: #f69925;
-    border-radius: 20px;
+  border-style: solid;
+  padding: 30px 60px 60px 60px;
+  border-color: #f69925;
+  border-radius: 20px;
 }
 
-.signUpInput{
-    height:70px;
+.signUpInput {
+  height: 70px;
 }
 
-.save-button{
-    width:150px;
+.save-button {
+  width: 150px;
 }
 
-@media only screen and (max-width: 768px){
-    .profile-sidebar{
-        border:none;
-        width:100%;
-    }
-    .profileContainer{
-        margin-left: auto !important;
-    }
+@media only screen and (max-width: 768px) {
+  .profile-sidebar {
+    border: none;
+    width: 100%;
+  }
+  .profileContainer {
+    margin-left: auto !important;
+  }
 }
 
-@media only screen and (max-width: 510px){
-    .signUpButton{
-        font-size:15px;
-        width:100px;
-    }
-    .save-button{
-        margin-right: 10px !important;
-    }
+@media only screen and (max-width: 510px) {
+  .signUpButton {
+    font-size: 15px;
+    width: 100px;
+  }
+  .save-button {
+    margin-right: 10px !important;
+  }
 }

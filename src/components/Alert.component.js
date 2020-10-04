@@ -1,5 +1,5 @@
-import React from "react";
-import { Alert } from "reactstrap";
+import React from 'react'
+import { Alert } from 'reactstrap'
 
 const AlertModal = (props) => (
   <Alert
@@ -9,6 +9,6 @@ const AlertModal = (props) => (
   >
     {props.children}
   </Alert>
-);
+)
 
-export default AlertModal;
+export default AlertModal

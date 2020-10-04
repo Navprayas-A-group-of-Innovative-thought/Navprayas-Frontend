@@ -1,70 +1,69 @@
-.userProfile{
-    margin-top: 100px;
+.userProfile {
+  margin-top: 100px;
 }
 
-.profileLabel{
-    width:30%;
+.profileLabel {
+  width: 30%;
 }
 
-.profileSpan{
-    display: inline-block;
-    max-width:380px;
-    vertical-align: top;
-
+.profileSpan {
+  display: inline-block;
+  max-width: 380px;
+  vertical-align: top;
 }
 
-.profileName{
-    font-weight: 500;
-    text-transform: uppercase;
+.profileName {
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
-.sectionTitle{
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size:18px;
-    color: #2F3338;
-    margin: 1em 0 0.25em 0;
-    border-bottom: 1px solid #f89808;
-    padding-bottom:5px;
+.sectionTitle {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 18px;
+  color: #2f3338;
+  margin: 1em 0 0.25em 0;
+  border-bottom: 1px solid #f89808;
+  padding-bottom: 5px;
 }
 
 .profileDiv {
-    padding:8px 0;
+  padding: 8px 0;
 }
 
-.profileSocial{
-    margin-bottom:40px;
+.profileSocial {
+  margin-bottom: 40px;
 }
 
-.icon{
-    margin-top:10px;
-    margin-right:10px;
+.icon {
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .icon a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    border:1px solid #f89808;
-    font-size: 25px;
-    color: #f89808;
-    text-align: center;
-    margin-right: 7px;
-    transition: 0.3s;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: 1px solid #f89808;
+  font-size: 25px;
+  color: #f89808;
+  text-align: center;
+  margin-right: 7px;
+  transition: 0.3s;
 }
 
-.icon a:hover{
-    color: white;
-    background-color: #f89808;
+.icon a:hover {
+  color: white;
+  background-color: #f89808;
 }
 
-.profileButton{
-    width:100%;
+.profileButton {
+  width: 100%;
 }
 
-@media (max-width:615px){
-    label{
-        width:40%;
-    }
+@media (max-width: 615px) {
+  label {
+    width: 40%;
+  }
 }

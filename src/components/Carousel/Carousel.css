@@ -1,15 +1,15 @@
-.carouselImage{
-	width: 100% !important;
-	object-fit: cover;
-	object-position: 0 0;
+.carouselImage {
+  width: 100% !important;
+  object-fit: cover;
+  object-position: 0 0;
 }
 
 .carouselPosition {
-	height: 45vh !important;
+  height: 45vh !important;
 }
 
-.carousel-item>img {
-	height: 45vh !important;
+.carousel-item > img {
+  height: 45vh !important;
 }
 /* @media only screen and (max-width: 992px){
 
@@ -24,5 +24,3 @@
 		height: 45vh !important;
 	}
 } */
-
-

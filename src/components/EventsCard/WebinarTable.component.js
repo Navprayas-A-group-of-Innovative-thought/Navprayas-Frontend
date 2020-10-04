@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
 
 const WebinarTable = (props) => {
   return (
     <>
       <tr>
-        <th scope="row">{props.sr}</th>
+        <th scope='row'>{props.sr}</th>
         <td>{props.date}</td>
         <td>{props.name}</td>
         <td>{props.platform}</td>
@@ -13,7 +13,7 @@ const WebinarTable = (props) => {
         </td>
       </tr>
     </>
-  );
-};
+  )
+}
 
-export default WebinarTable;
+export default WebinarTable

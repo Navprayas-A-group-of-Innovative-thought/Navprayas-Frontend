@@ -14,12 +14,12 @@
   grid-column-start: 3;
   grid-column-end: 4;
 }
-.item3{
+.item3 {
   border-bottom: 4px solid #ff471a;
   padding: 1.5px;
   width: 120px;
 }
-.item4{
+.item4 {
   border-bottom: 4px solid #ff471a;
   padding: 2px;
   width: 120px;
@@ -33,11 +33,11 @@
   grid-column-start: 3;
   grid-column-end: 4;
 }
-ul{
-  list-style-type:none ;
+ul {
+  list-style-type: none;
 }
 
-.button{
+.button {
   float: right;
   font-size: 11px;
   border-radius: 10px;

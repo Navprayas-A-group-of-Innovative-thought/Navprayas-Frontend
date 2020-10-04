@@ -104,12 +104,11 @@ input:-webkit-autofill:active {
   color: #eb5310;
 }
 
-.dobLabel{
+.dobLabel {
   padding-top: 40px;
-  padding-left:37px;
+  padding-left: 37px;
   font-size: 18px;
 }
-
 
 @media only screen and (max-width: 992px) {
   .signUpContainer {
@@ -138,4 +137,3 @@ input:-webkit-autofill:active {
 }
 
 /* Error Message */
-
