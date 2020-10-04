@@ -1,58 +1,56 @@
-.input{
-    position: relative;
-    text-align: left;
-    width:100%;
-    margin: 40px auto 0 auto;
+.input {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  margin: 40px auto 0 auto;
 }
 
-.CustomInput{
-    background-color:#fffaf4;
-    border:1px solid #f69925;
-    color:black;
-    border-radius: 10px;
-    font-size:15px;
-    padding:20px 0 8px 25px;
-    height: 55px;
-    display: block;
-    font-weight: 400;
-    line-height: 1.5;
-    background-clip: padding-box;
-    transition: border-color .15s ease-in-out,
-                box-shadow .15s ease-in-out;
+.CustomInput {
+  background-color: #fffaf4;
+  border: 1px solid #f69925;
+  color: black;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 20px 0 8px 25px;
+  height: 55px;
+  display: block;
+  font-weight: 400;
+  line-height: 1.5;
+  background-clip: padding-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .CustomInput:focus {
-    outline:0;
-    border-color:#f69925;
-    box-shadow: 0 0 0 0.2rem rgba(246, 152, 37, 0.619);
-    padding-top: 20px;
+  outline: 0;
+  border-color: #f69925;
+  box-shadow: 0 0 0 0.2rem rgba(246, 152, 37, 0.619);
+  padding-top: 20px;
 }
 
-.label{
-    position: absolute;
-    font-size: 18px;
-    top:17px;
-    left:25px;
-    color:#9c9c9c;
-    pointer-events: none;
-    transition: .5s;
+.label {
+  position: absolute;
+  font-size: 18px;
+  top: 17px;
+  left: 25px;
+  color: #9c9c9c;
+  pointer-events: none;
+  transition: 0.5s;
 }
 
-.CustomInput:focus ~ .label
-{
-    top: 5px;
-    font-size:13px;
-    color: #f69925;
+.CustomInput:focus ~ .label {
+  top: 5px;
+  font-size: 13px;
+  color: #f69925;
 }
 
 .labelAlways {
-    top: 5px;
-    font-size:13px;
-    color: #f69925;
+  top: 5px;
+  font-size: 13px;
+  color: #f69925;
 }
 
-.date{
-    height:25px;
-    padding-top:14px;
-    padding-bottom: 14px;;
+.date {
+  height: 25px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }

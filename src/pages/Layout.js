@@ -4,15 +4,14 @@
   Replace h4 tag of Footer component with its Footer component
 */
 
-import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import React from 'react'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const Layout = (props) => {
-
   return (
     <>
-      {/*Header Component */}
+      {/* Header Component */}
       <Header />
       <div>
         {/* Main Content of Page */}
@@ -21,7 +20,7 @@ const Layout = (props) => {
       {/* Footer component */}
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

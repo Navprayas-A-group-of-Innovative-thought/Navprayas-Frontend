@@ -1,88 +1,84 @@
 /* Sidebar */
 .sidebar {
-    margin: 0;
-    padding: 0;
-    width: 250px;
-    height: 100%;
-    border: 1px solid #f69925;
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  height: 100%;
+  border: 1px solid #f69925;
 }
 
 .sidebar a {
-    display: block;
-    color: black;
-    padding: 10px;
-    text-decoration: none;
-    font-size: 15px;
+  display: block;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 15px;
 }
 
 .sidebar a.active {
-    background-color: #f69925;
-    color: white;
+  background-color: #f69925;
+  color: white;
 }
 
 .sidebar a:hover:not(.active) {
-    background-color: #f69925;
-    color: white;
+  background-color: #f69925;
+  color: white;
 }
 
-.sidebarTitle{
-    color: #f69925;
-    font-size:30px;
+.sidebarTitle {
+  color: #f69925;
+  font-size: 30px;
 }
-
 
 /* Announcement Content */
-.publish{
-    float:left;
-    width:14%;
-    font-size:14px;
-    color: #f69925;
+.publish {
+  float: left;
+  width: 14%;
+  font-size: 14px;
+  color: #f69925;
 }
 
-.announcementContent{
-    float:left;
-    width:80%;
+.announcementContent {
+  float: left;
+  width: 80%;
 }
-
-
 
 @media screen and (max-width: 1200px) {
-    .sidebar {
-        width: 200px;
-    }
+  .sidebar {
+    width: 200px;
+  }
 
-    .sidebar a {
-        font-size: 15px;
-    }
+  .sidebar a {
+    font-size: 15px;
+  }
 }
 
 @media screen and (max-width: 992px) {
-    .sidebar {
-        width: 170px;
-    }
-    .publish{
-        font-size:12px
-    }
-    .announcementContent{
-        font-size:15px;
-    }
+  .sidebar {
+    width: 170px;
+  }
+  .publish {
+    font-size: 12px;
+  }
+  .announcementContent {
+    font-size: 15px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .sidebar {
-        width: 100% !important;
-    }
-    .archive{
-        margin-bottom:20px;
-    }
-    .announcement {
-
-    }
+  .sidebar {
+    width: 100% !important;
+  }
+  .archive {
+    margin-bottom: 20px;
+  }
+  .announcement {
+  }
 }
 
 @media screen and (max-width: 400px) {
-    .sidebar a {
-        text-align: center;
-        float: none;
-    }
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
 }

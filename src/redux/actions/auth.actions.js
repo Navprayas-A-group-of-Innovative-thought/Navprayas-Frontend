@@ -1,9 +1,9 @@
-import axios from "axios";
-import { userConstants } from "../constants/constant";
-import { url } from "../api";
-import { alertActions } from "./alert.actions";
-import { authenticate, signout, getCookie } from "../../_helpers/auth";
-import { authHeader } from "../../_helpers/auth-header";
+import axios from 'axios'
+import { userConstants } from '../constants/constant'
+import { url } from '../api'
+import { alertActions } from './alert.actions'
+import { authenticate, signout } from '../../_helpers/auth'
+import { authHeader } from '../../_helpers/auth-header'
 
 // import { history } from "../../_helpers/history";
 
@@ -12,65 +12,65 @@ export const userActions = {
   logout,
   register,
   getUser,
-  updateProfile,
-};
+  updateProfile
+}
 
 // Action creator for Login
 
 function login(email, password) {
   return (dispatch) => {
-    console.log("Login", email, password);
-    dispatch(request());
+    console.log('Login', email, password)
+    dispatch(request())
 
     const config = {
       headers: {
-        "Content-Type": "application/json",
-      },
-    };
+        'Content-Type': 'application/json'
+      }
+    }
 
     const body = JSON.stringify({
       email: email,
-      password: password,
-    });
+      password: password
+    })
 
-    console.log("body", body);
+    console.log('body', body)
     // requesting to api
     axios
       .post(`${url}/login`, body, config)
       .then((res) => {
-        console.log("Login action Creator", res);
-        authenticate(res);
-        dispatch(success());
-        dispatch(alertActions.success("Log in Success"));
+        console.log('Login action Creator', res)
+        authenticate(res)
+        dispatch(success())
+        dispatch(alertActions.success('Log in Success'))
       })
       .catch((err) => {
-        console.log("Login action Creator", err.response.data.errorDetails);
-        dispatch(failure("Auth Error"));
-        dispatch(alertActions.error(err.response.data.errorDetails));
-      });
-  };
+        console.log('Login action Creator', err.response.data.errorDetails)
+        dispatch(failure('Auth Error'))
+        dispatch(alertActions.error(err.response.data.errorDetails))
+      })
+  }
 
   function request() {
-    return { type: userConstants.LOGIN_REQUEST };
+    return { type: userConstants.LOGIN_REQUEST }
   }
   function success() {
-    return { type: userConstants.LOGIN_SUCCESS };
+    return { type: userConstants.LOGIN_SUCCESS }
   }
   function failure() {
-    return { type: userConstants.LOGIN_FAILURE };
+    return { type: userConstants.LOGIN_FAILURE }
   }
 }
 
 // logout function
 function logout() {
-  signout();
-  return { type: userConstants.LOGOUT };
+  signout()
+  return { type: userConstants.LOGOUT }
 }
 
 function register(user) {
   return (dispatch) => {
-    dispatch(request());
-    console.log("Registering Users", user);
+    dispatch(request())
+    console.log('Registering Users', user)
 
     const {
       firstName,
@@ -79,14 +79,14 @@ function register(user) {
       password,
       confirmPassword,
       dob,
-      gender,
-    } = user;
+      gender
+    } = user
 
     const config = {
       headers: {
-        "Content-Type": "application/json",
-      },
-    };
+        'Content-Type': 'application/json'
+      }
+    }
 
     const body = JSON.stringify({
       firstName,
@@ -95,73 +95,73 @@ function register(user) {
       password,
       confirmPassword,
       dob,
-      gender,
-    });
+      gender
+    })
 
     axios
       .post(`${url}/signup`, body, config)
       .then((res) => {
-        console.log("Register Action Creator", res);
-        dispatch(success());
-        dispatch(alertActions.success(res.data.responseData));
+        console.log('Register Action Creator', res)
+        dispatch(success())
+        dispatch(alertActions.success(res.data.responseData))
       })
       .catch((err) => {
-        console.log("Register Action Creator");
-        console.log(err);
-        dispatch(failure());
-        dispatch(alertActions.error(err.response.data.errorDetails));
-      });
-  };
+        console.log('Register Action Creator')
+        console.log(err)
+        dispatch(failure())
+        dispatch(alertActions.error(err.response.data.errorDetails))
+      })
+  }
 
   function request() {
-    return { type: userConstants.REGISTER_REQUEST };
+    return { type: userConstants.REGISTER_REQUEST }
   }
   function success() {
-    return { type: userConstants.REGISTER_SUCCESS };
+    return { type: userConstants.REGISTER_SUCCESS }
   }
   function failure() {
-    return { type: userConstants.REGISTER_FAILURE };
+    return { type: userConstants.REGISTER_FAILURE }
   }
 }
 
 // Get User Details
 function getUser() {
   return (dispatch) => {
-    dispatch(request());
+    dispatch(request())
 
     const config = {
-      headers: authHeader(),
-    };
+      headers: authHeader()
+    }
 
     axios
       .get(`${url}/user/profile`, config)
       .then((res) => {
-        console.log(res);
-        dispatch(success(res.data));
+        console.log(res)
+        dispatch(success(res.data))
       })
       .catch((err) => {
-        console.log(err);
-        dispatch(failure);
-      });
-  };
+        console.log(err)
+        dispatch(failure)
+      })
+  }
 
   function request() {
-    return { type: userConstants.GETUSER_REQUEST };
+    return { type: userConstants.GETUSER_REQUEST }
   }
 
   function success(user) {
-    return { type: userConstants.GETUSER_SUCCESS, user };
+    return { type: userConstants.GETUSER_SUCCESS, user }
   }
 
   function failure() {
-    return { type: userConstants.GETUSER_FAILURE };
+    return { type: userConstants.GETUSER_FAILURE }
   }
 }
 
 // Update Profile Details
 function updateProfile(user) {
   return (dispatch) => {
-    dispatch(request());
+    dispatch(request())
 
     const {
       firstName,
@@ -184,11 +184,11 @@ function updateProfile(user) {
       country,
       facebookLink,
       linkedinLink,
-      githubLink,
-    } = user;
+      githubLink
+    } = user
 
-    console.log("USer Data updating");
-    console.table(user);
+    console.log('USer Data updating')
+    console.table(user)
 
     const body = JSON.stringify({
       firstName,
@@ -211,41 +211,41 @@ function updateProfile(user) {
       country,
       facebookLink,
       linkedinLink,
-      githubLink,
-    });
+      githubLink
+    })
 
     const config = {
-      headers: authHeader(),
-    };
+      headers: authHeader()
+    }
 
     axios
       .put(`${url}/user/profile/edit`, body, config)
       .then((res) => {
-        console.log("Received from backend");
-        console.table(res.data);
-        console.log(res.data);
-        dispatch(success(res.data));
-        dispatch(alertActions.success(res.data.responseData));
+        console.log('Received from backend')
+        console.table(res.data)
+        console.log(res.data)
+        dispatch(success(res.data))
+        dispatch(alertActions.success(res.data.responseData))
       })
       .catch((err) => {
-        console.log(err);
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-        dispatch(failure());
-        dispatch(alertActions.error("Server Error or unauthorised"));
-      });
-  };
+        console.log(err)
+        console.log(err.response.data)
+        console.log(err.response.status)
+        console.log(err.response.headers)
+        dispatch(failure())
+        dispatch(alertActions.error('Server Error or unauthorised'))
+      })
+  }
 
   function request() {
-    return { type: userConstants.PROFILE_UPDATE_REQUEST };
+    return { type: userConstants.PROFILE_UPDATE_REQUEST }
   }
 
   function success(user) {
-    return { type: userConstants.PROFILE_UPDATE_SUCCESS, user };
+    return { type: userConstants.PROFILE_UPDATE_SUCCESS, user }
   }
 
   function failure() {
-    return { type: userConstants.PROFILE_UPDATE_FAILURE };
+    return { type: userConstants.PROFILE_UPDATE_FAILURE }
   }
 }

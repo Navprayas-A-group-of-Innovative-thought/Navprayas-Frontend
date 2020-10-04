@@ -1,33 +1,33 @@
 export const initialValues = {
   user: {
-    firstName: "",
-    lastName: "",
-    email: "",
-    dob: "",
-    gender: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    dob: '',
+    gender: '',
     contact: {
-      primary: "",
-      other: "",
+      primary: '',
+      other: ''
     },
-    fatherName: "",
-    motherName: "",
+    fatherName: '',
+    motherName: '',
 
     address: {
-      houseNumber: "",
-      addressLine1: "",
-      addressLine2: "",
-      landmark: "",
-      district: "",
-      city: "",
-      state: "",
-      country: "",
-      pincode: "",
+      houseNumber: '',
+      addressLine1: '',
+      addressLine2: '',
+      landmark: '',
+      district: '',
+      city: '',
+      state: '',
+      country: '',
+      pincode: ''
     },
     education: {
-      class: "",
-      school: "",
-      board: "",
-    },
+      class: '',
+      school: '',
+      board: ''
+    }
   },
-  questionPaperLang: "",
-};
+  questionPaperLang: ''
+}

@@ -104,37 +104,36 @@ I think these commands are enough but still you forgot some commands you can tak
 
 <h1>Contribution Guide</h1>
 
-* Clone Navprayas Frontend Repo
+- Clone Navprayas Frontend Repo
 
 ```
 git clone https://github.com/Navprayas-A-group-of-Innovative-thought/Navprayas-Frontend.git
 ```
 
-* <span class="highlight" style="background-color:inherit"><span class="colour" style="color:var(--vscode-markdown-wysList)">You will see a Navprayas-Backend folder</span></span>
-* `cd Navprayas-Frontend`
-* Install all dependencies
-* `npm install`
-* To check your current branch - `git branch`
-  
-   **Repeat Point : commands to be reused**
+- <span class="highlight" style="background-color:inherit"><span class="colour" style="color:var(--vscode-markdown-wysList)">You will see a Navprayas-Backend folder</span></span>
+- `cd Navprayas-Frontend`
+- Install all dependencies
+- `npm install`
+- To check your current branch - `git branch`
 
-* Now you have been assigned test. 
-* Open Github and Create a remote branch with name test in origin(remote).
-* Come to your local computer and
-  
-* `git checkout test` to switch to local test branch (test branch already exists in remote so no need to create).
-* `git pull` to get changes from remote test branch to your local test branch. Note `git pull` pulls all changes from (current)remote branch to your current local branch, it does not work necessarily only master branch but is true for all branches.
-* Now do your work.Then add your changes.
-* `git add .`
-* Then commit your changes.
-* `git commit -m "your message"`
-* Your commit should answer what this commit will do. Answer should be This commit will "your message".
-* Now push your branch work to Navprayas Frontend repo. Note you are in test branch.
-* `git push` will push all your local changes to remote test.
-* Open you github and select branch test
-* Now create a pull request to development branch
-* Then Admin will merge your request to master accordingly.
-* For another issue, first go to **Repeat point**.
+  **Repeat Point : commands to be reused**
+
+- Now you have been assigned test.
+- Open Github and Create a remote branch with name test in origin(remote).
+- Come to your local computer and
+- `git checkout test` to switch to local test branch (test branch already exists in remote so no need to create).
+- `git pull` to get changes from remote test branch to your local test branch. Note `git pull` pulls all changes from (current)remote branch to your current local branch, it does not work necessarily only master branch but is true for all branches.
+- Now do your work.Then add your changes.
+- `git add .`
+- Then commit your changes.
+- `git commit -m "your message"`
+- Your commit should answer what this commit will do. Answer should be This commit will "your message".
+- Now push your branch work to Navprayas Frontend repo. Note you are in test branch.
+- `git push` will push all your local changes to remote test.
+- Open you github and select branch test
+- Now create a pull request to development branch
+- Then Admin will merge your request to master accordingly.
+- For another issue, first go to **Repeat point**.
 
 <br>
 

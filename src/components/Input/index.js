@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./input.css";
+import React from 'react'
+import './input.css'
 
 const CustomInput = ({ ...props }) => {
   // constructor({ name, id, required, type, label }) {
@@ -24,24 +24,24 @@ const CustomInput = ({ ...props }) => {
   // };
 
   return (
-    <div className="input">
+    <div className='input'>
       <input
         name={props.name}
         id={props.id}
         required={props.required}
         type={props.type}
         className={
-          props.type === "date"
+          props.type === 'date'
             ? `form-control CustomInput date`
             : `form-control CustomInput`
         }
         onChange={props.onChange}
       ></input>
-      <label className={props.content ? "label labelAlways" : "label"}>
+      <label className={props.content ? 'label labelAlways' : 'label'}>
         {props.label}
       </label>
     </div>
-  );
-};
+  )
+}
 
-export default CustomInput;
+export default CustomInput

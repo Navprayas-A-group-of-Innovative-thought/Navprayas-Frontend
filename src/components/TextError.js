@@ -1,11 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const TextError = (props) => {
-    return (
-        <div className="error mt-0">
-            {props.children}
-        </div>
-    );
+  return <div className='error mt-0'>{props.children}</div>
 }
 
-export default TextError;
+export default TextError

@@ -1,135 +1,135 @@
-.GalleryImageDiv{
-    position: relative;
-    overflow:hidden;
-    cursor:pointer;
-
+.GalleryImageDiv {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-figure{
-    margin-bottom: 0 !important;
+figure {
+  margin-bottom: 0 !important;
 }
 
 .GalleryImageDiv figure img {
-    max-height:300px;
-    transform: scale(1);
-    transition: 0.4s ease-in-out;
-    background:black;
+  max-height: 300px;
+  transform: scale(1);
+  transition: 0.4s ease-in-out;
+  background: black;
 }
 
-.GalleryImageDiv:hover img{
-    transform: scale(1.1);
+.GalleryImageDiv:hover img {
+  transform: scale(1.1);
 }
 
 .details {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color:white;
-    transform: translate(-50%, -50%) rotateY(90deg);
-    transform-origin: 50%;
-    background: rgba(251, 153, 6, 0.6);
-    opacity: 0;
-    transition: all 0.4s ease-in;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%) rotateY(90deg);
+  transform-origin: 50%;
+  background: rgba(251, 153, 6, 0.6);
+  opacity: 0;
+  transition: all 0.4s ease-in;
 }
 
-.GalleryImageDiv:hover .details{
-    transform: translate(-50%, -50%) rotateY(0deg);
-    opacity: 1;
+.GalleryImageDiv:hover .details {
+  transform: translate(-50%, -50%) rotateY(0deg);
+  opacity: 1;
 }
 
-.Galleryline1 , .Galleryline2{
-    height: 3px;
-    background: #000;
-    width: 25vw;
-    background: #eb5310;
+.Galleryline1,
+.Galleryline2 {
+  height: 3px;
+  background: #000;
+  width: 25vw;
+  background: #eb5310;
 }
 
-.backdrop{
-    position: fixed;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(5px);
-    background: rgba(0,0,0,0.7);
-    z-index: 999;
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
 }
 
-.backdrop img{
-    max-height: 80%;
-    margin:90px auto;
-    box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
-    border: 3px solid white;
+.backdrop img {
+  max-height: 80%;
+  margin: 90px auto;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+  border: 3px solid white;
 }
 
-@media only screen and (max-width:992px){
-    .backdrop img{
-        margin-top:130px;
-        max-width: 70%;
-        max-height: 90%;
-    }
+@media only screen and (max-width: 992px) {
+  .backdrop img {
+    margin-top: 130px;
+    max-width: 70%;
+    max-height: 90%;
+  }
 }
 
 /* Our Team Section */
 
-.img-area:hover .social{
-    cursor:pointer;
-    opacity: 1;
-    transform: rotateY(0deg);
+.img-area:hover .social {
+  cursor: pointer;
+  opacity: 1;
+  transform: rotateY(0deg);
 }
 
-.img-area:hover img{
-    transform:scale(1.1);
+.img-area:hover img {
+  transform: scale(1.1);
 }
 
-.img-area img{
-    transition: all 0.4s ease 0s;
+.img-area img {
+  transition: all 0.4s ease 0s;
 }
 
-@media (max-width:768px){
-    .img-area img{
-        display:inline-block;
-    }
+@media (max-width: 768px) {
+  .img-area img {
+    display: inline-block;
+  }
 }
 
-.img-area .social{
-    background-color: rgba(251, 153, 6, 0.6);
-    left:0;
-    top:0;
-    opacity:0;
-    transition:0.5s;
-    transform: rotateY(90deg);
+.img-area .social {
+  background-color: rgba(251, 153, 6, 0.6);
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: 0.5s;
+  transform: rotateY(90deg);
 }
 
-.img-area .social ul{
-    top:40%;
+.img-area .social ul {
+  top: 40%;
 }
 
-.img-area .social li{
-    display:inline-block;
-    margin:10px
+.img-area .social li {
+  display: inline-block;
+  margin: 10px;
 }
 
-.img-area .social ul li a{
-    border: 1px solid #fff;
-    color: #fff;
-    display: block;
-    font-size: 20px;
-    height: 40px;
-    width:40px;
-    line-height: 40px;
-    text-align: center;
+.img-area .social ul li a {
+  border: 1px solid #fff;
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
 }
 
-.img-area .social ul li a:hover{
-    background-color: #fff;
-    color:#000;
-    border: 1px solid transparent;
+.img-area .social ul li a:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid transparent;
 }
 
-.img-text h4{
-    font-size: 30px;
-    letter-spacing:5px;
+.img-text h4 {
+  font-size: 30px;
+  letter-spacing: 5px;
 }
 
 .img-text h5 {
-    font-size: 17px;
+  font-size: 17px;
 }
